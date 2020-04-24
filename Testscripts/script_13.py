@@ -1,32 +1,31 @@
 
 import time
 import unittest
-
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
+from Data.Paramters import Data
 from Testscripts.script_1 import Home_page
 
 #script to click on home_button
 
 class Homebtn_click(unittest.TestCase):
     def setUp(self):
-        # self.driver = webdriver.Chrome(executable_path="/home/chetan/Downloads/chromedriver_linux64/chromedriver")
-        self.driver =webdriver.Chrome("/home/chetan/Downloads/chromedriver_linux64/chromedriver")
+        self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
-        self.driver.get("https://cqube.tibilprojects.com")
+        self.driver.get(Data.URL)
 
-    def test_start(self):
+    def test_login(self):
         print(self.driver.title)
-        self.driver.find_element_by_xpath("//input[@id='exampleInputEmail']").send_keys("tibilsolutions@cqube.com")
-        self.driver.find_element_by_xpath("//input[@id='exampleInputPassword']").send_keys("tibil123")
-        self.driver.find_element_by_xpath("//button[@type='submit']").click()
-        print(self.driver.current_url)
+        self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
+        self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
+        self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(10)
-
-        def ClickOn_HomeButton(self):
-            self.driver.find_element_by_id("//img[@id='home']").click()
+    def click_blocks(self):
+        self.driver.find_elements_by_xpath(Data.Blocks).click()
+    def ClickOn_HomeButton(self):
+            self.driver.find_element_by_id(Data.Home_icon).click()
             print(self.driver.current_url)
 
     def tearDown(self):
@@ -35,6 +34,5 @@ class Homebtn_click(unittest.TestCase):
         self.driver.close()
 
 if __name__ == "__main__":
-    # unittest.main(testRunner=HTMLTestRunner.HTMLTestRunner(output="/home/chetan/PycharmProjects/cQube/Reports/script_1.html"))
     unittest.main()
 

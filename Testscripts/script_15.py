@@ -6,6 +6,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
+from Data.Paramters import Data
 from Testscripts.script_1 import Home_page
 
 #script to Regular User
@@ -13,17 +14,17 @@ from Testscripts.script_1 import Home_page
 class Regular_userBack(unittest.TestCase):
     def setUp(self):
         # self.driver = webdriver.Chrome(executable_path="/home/chetan/Downloads/chromedriver_linux64/chromedriver")
-        self.driver =webdriver.Chrome("/home/chetan/Downloads/chromedriver_linux64/chromedriver")
+        self.driver =webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
-        self.driver.get("https://cqube.tibilprojects.com")
+        self.driver.get(Data.URL)
 
     def test_start(self):
         print(self.driver.title)
-        self.driver.find_element_by_xpath("//a").click()
+        self.driver.find_element_by_xpath(Data.reg_user).click()
         time.sleep(10)
         print(self.driver.title)
-        self.driver.find_element_by_xpath("//a").click()
+        self.driver.find_element_by_xpath(Data.back).click()
 
     def tearDown(self):
         print(self.driver.current_url)
