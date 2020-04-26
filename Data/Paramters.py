@@ -1,10 +1,15 @@
+import base64
+
 
 class Data():
 
     Path =executable_path="/home/chetan/Downloads/chromedriver_linux64/chromedriver"
     URL = "https://cqube.tibilprojects.com"
-    username = "tibilsolutions@cqube.com"
-    password = "tibil123"
+
+
+
+    username = base64.b64decode("dGliaWxzb2x1dGlvbnNAY3F1YmUuY29t").decode("utf-8")
+    password= base64.b64decode("dGliaWwxMjM=").decode("utf-8")
 
     email = "//input[@id='exampleInputEmail']"
     pwd = "//input[@id='exampleInputPassword']"
