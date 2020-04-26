@@ -25,24 +25,24 @@ class Choose20(unittest.TestCase):
     def test_District(self):
         dist = self.driver.find_element_by_xpath(Data.dist20).click()
         blk = self.driver.find_element_by_xpath(Data.blk3).click()
-        clus = self.driver.find_element_by_xpath(Data.clu8).click()
+        clus = self.driver.find_element_by_xpath(Data.clu2).click()
 
         print(self.driver.find_element_by_xpath(Data.dist20).text)
         print(self.driver.find_element_by_xpath(Data.blk3).text)
-        print(self.driver.find_element_by_xpath(Data.clu8).text)
+        print(self.driver.find_element_by_xpath(Data.clu2).text)
 
         data = self.driver.find_elements_by_xpath(Data.details)
         print(len(data))
         for i in range(len(data)):
             print(data[i].text)
-        time.sleep(5)
+        time.sleep(3)
 
         lists = self.driver.find_elements_by_class_name(Data.dots)
         def mouseover(i):
 
             action = ActionChains(self.driver)
             action.move_to_element(lists[i]).perform()
-            time.sleep(5)
+            time.sleep(2)
             del action
 
         i = 0

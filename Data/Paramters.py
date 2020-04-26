@@ -64,17 +64,19 @@ class Data():
     dist17 = "//select[@name='myDistrict']/option[17]"
     dist18 = "//select[@name='myDistrict']/option[18]"
     dist19 = "//select[@name='myDistrict']/option[19]"
+    dist20 = "//select[@name='myDistrict']/option[20]"
 
     hyper_link = "//p/span"
     Download ="//img[@title='Download Report']"
 # Dash board
-    Dashboard ="//button[@class='mat-icon-button mat-button-base']/span"
-    login_in = "//a[1]/div/text()"
-    SAR = "//a[2]/div/text()"
-    TAR ="//a[3]/div/text()"
-    SR  = "//a[1]/div/text()"
-    crc ="//a[5]"
-    Log_out ="//button[@class='mat-button mat-button-base']"
+    Dashboard ="//span[@class='" \
+               "mat-button-wrapper']/mat-icon"
+    login_in = "//span[@class='span']"
+    SAR = "//div[@class='mat-list-item-content']/td[contains(text(),'Student')]"
+    TAR ="//div[@class='mat-list-item-content']/td[contains(text(),'Teacher')]"
+    SR  = "//div[@class='mat-list-item-content']/td[contains(text(),'Semester')]"
+    crc ="//div[@class='mat-list-item-content']/td[contains(text(),'CRC Reports')]"
+    Log_out ="//button/span[contains(text(),'Log Out')]"
     Home_icon ="//img[@id='home']"
 
 

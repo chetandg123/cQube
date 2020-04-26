@@ -36,7 +36,7 @@ class Choose5(unittest.TestCase):
         print(len(data))
         for i in range(len(data)):
             print(data[i].text)
-        time.sleep(5)
+        time.sleep(3)
 
         lists = self.driver.find_elements_by_class_name(Data.dots)
 
@@ -45,7 +45,7 @@ class Choose5(unittest.TestCase):
 
             action = ActionChains(self.driver)
             action.move_to_element(lists[i]).perform()
-            time.sleep(5)
+            time.sleep(3)
             del action
 
         i = 0

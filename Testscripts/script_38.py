@@ -21,8 +21,6 @@ class Log_Out(unittest.TestCase):
         time.sleep(10)
 
     def test_logout(self):
-        self.driver.find_element_by_xpath(Data.Dashboard).click()
-        time.sleep(2)
         self.driver.find_element_by_xpath(Data.Log_out).click()
         # print(self.driver.get_screenshot_as_file("/home/chetan/PycharmProjects/cQube/Screenshots/log_out.png"))
     def tearDown(self):

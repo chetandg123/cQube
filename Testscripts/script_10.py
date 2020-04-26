@@ -32,7 +32,7 @@ class Block_Dots(unittest.TestCase):
         def mouseover(i):
             action = ActionChains(self.driver)
             action.move_to_element(lists[i]).perform()
-            time.sleep(5)
+            time.sleep(3)
             del action
 
         i = 0

@@ -24,12 +24,12 @@ class Choose16(unittest.TestCase):
 
     def test_District(self):
         dist = self.driver.find_element_by_xpath(Data.dist16).click()
-        blk = self.driver.find_element_by_xpath(Data.blk1).click()
-        clus = self.driver.find_element_by_xpath(Data.clu4).click()
+        blk = self.driver.find_element_by_xpath(Data.blk2).click()
+        clus = self.driver.find_element_by_xpath(Data.clu2).click()
 
         print(self.driver.find_element_by_xpath(Data.dist16).text)
-        print(self.driver.find_element_by_xpath(Data.blk1).text)
-        print(self.driver.find_element_by_xpath(Data.clu4).text)
+        print(self.driver.find_element_by_xpath(Data.blk2).text)
+        print(self.driver.find_element_by_xpath(Data.clu2).text)
 
         data = self.driver.find_elements_by_xpath(Data.details)
         print(len(data))
@@ -42,7 +42,7 @@ class Choose16(unittest.TestCase):
 
             action = ActionChains(self.driver)
             action.move_to_element(lists[i]).perform()
-            time.sleep(5)
+            time.sleep(2)
             del action
 
         i = 0

@@ -30,7 +30,7 @@ class Home_Dots(unittest.TestCase):
 
             action = ActionChains(self.driver)
             action.move_to_element(lists[i]).perform()
-            time.sleep(5)
+            time.sleep(3)
             del action
 
         i = 0

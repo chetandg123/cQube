@@ -8,7 +8,7 @@ from selenium.webdriver.support.select import Select
 from Data.Paramters import Data
 
 
-class Dist(unittest.TestCase):
+class Dist_5(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()

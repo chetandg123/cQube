@@ -4,12 +4,13 @@ import unittest
 from Testscripts import script_1, script_2, script_3, script_4, script_5, script_6, script_7, script_8, script_9, \
     script_10, script_11, script_12, script_13, script_14, script_15, script_16, script_40, script_17, script_18, \
     script_19, script_20, script_21, script_22, script_23, script_24, script_25, script_26, script_27, script_28, \
-    script_29, script_30, script_31, script_32, script_33, script_34, script_35, script_36, script_38, script_37
+    script_29, script_30, script_31, script_32, script_33, script_34, script_35, script_36, script_38, script_37, \
+    script_39
 
 
 class MyTestSuite(unittest.TestCase):
 
-    def test_Issue(self, script_39=None):
+    def test_Issue(self):
         smoke_test = unittest.TestSuite()
         smoke_test.addTests([
              # file name .class name
@@ -51,12 +52,12 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(script_36.CRC),
             unittest.defaultTestLoader.loadTestsFromTestCase(script_37.Logerror),
             unittest.defaultTestLoader.loadTestsFromTestCase(script_38.Log_Out),
-            # unittest.defaultTestLoader.loadTestsFromTestCase(script_39.Dist),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_40.Hyper_link),
+            unittest.defaultTestLoader.loadTestsFromTestCase(script_39.Dist_5),
+            unittest.defaultTestLoader.loadTestsFromTestCase(script_40.Hyper_link)
 
         ])
 
-        outfile = open("/home/chetan/PycharmProjects/cQube/Report/ReportAll.html", "w")
+        outfile = open("/home/chetan/PycharmProjects/cQube/Report/Reports.html", "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,

@@ -35,7 +35,7 @@ class Choose6(unittest.TestCase):
         print(len(data))
         for i in range(len(data)):
             print(data[i].text)
-        time.sleep(5)
+        time.sleep(3)
 
         lists = self.driver.find_elements_by_class_name(Data.dots)
 
@@ -48,7 +48,7 @@ class Choose6(unittest.TestCase):
 
         i = 0
         while i < len(lists):
-            mouseover(i)
+            mouseover(3)
             i = i + 1
 
     def tearDown(self):
