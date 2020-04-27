@@ -1,32 +1,25 @@
-
 import time
 import unittest
+
 from selenium import webdriver
-from selenium.webdriver import ActionChains
 
 from Data.Paramters import Data
-from Testscripts.script_1 import Home_page
+from Testscripts.login_page import Home_page
 
-#script to click on home_button
-
-class Homebtn_click(unittest.TestCase):
+#script to click on cluster button  and take screenshot
+class Clusters(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
         self.driver.get(Data.URL)
-
-    def test_login(self):
         print(self.driver.title)
         self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
         self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
         self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(10)
-    def click_blocks(self):
-        self.driver.find_elements_by_xpath(Data.Blocks).click()
-    def ClickOn_HomeButton(self):
-            self.driver.find_element_by_id(Data.Home_icon).click()
-            print(self.driver.current_url)
+    def test_click_on_cluster(self):
+        self.driver.find_element_by_xpath(Data.Clusters).click()
 
     def tearDown(self):
         time.sleep(5)
@@ -35,4 +28,3 @@ class Homebtn_click(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

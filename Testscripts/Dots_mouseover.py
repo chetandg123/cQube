@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 
 from Data.Paramters import Data
-from Testscripts.script_1 import Home_page
+from Testscripts.login_page import Home_page
 
 
 #mouse over on dots in homePage
@@ -32,6 +32,7 @@ class Home_Dots(unittest.TestCase):
             action.move_to_element(lists[i]).perform()
             time.sleep(3)
             del action
+
 
         i = 0
         while i < len(lists):

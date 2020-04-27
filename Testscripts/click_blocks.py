@@ -1,16 +1,15 @@
 
 import time
 import unittest
-
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
 from Data.Paramters import Data
-from Testscripts.script_1 import Home_page
+from Testscripts.login_page import Home_page
 
-#script to click on blocks and mouse over on it dots
+#script to click on home_button
 
-class Block_Dots(unittest.TestCase):
+class Homebtn_click(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
@@ -23,23 +22,11 @@ class Block_Dots(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
         self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(10)
-
-        def ClickOn_Blocks(self):
-            self.driver.find_element_by_xpath(Data.Blocks).click()
+    def click_on_blocks(self):
+        self.driver.find_elements_by_xpath(Data.Blocks).click()
+    def ClickOn_HomeButton(self):
+            self.driver.find_element_by_id(Data.Home_icon).click()
             print(self.driver.current_url)
-        lists = self.driver.find_elements_by_class_name(Data.dots)
-        # print(lists.count())
-        def mouseover(i):
-            action = ActionChains(self.driver)
-            action.move_to_element(lists[i]).perform()
-            time.sleep(3)
-            del action
-
-        i = 0
-
-        while i < len(lists):
-            mouseover(i)
-            i = i + 1
 
     def tearDown(self):
         time.sleep(5)
@@ -48,3 +35,4 @@ class Block_Dots(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

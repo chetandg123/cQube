@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 
 from Data.Paramters import Data
-from Testscripts.script_1 import Home_page
+from Testscripts.login_page import Home_page
 
 #script to Regular User
 

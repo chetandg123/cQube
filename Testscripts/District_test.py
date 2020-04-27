@@ -22,7 +22,7 @@ class Choose10(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(10)
 
-    def test_District(self):
+    def test_on_District(self):
         dist = self.driver.find_element_by_xpath(Data.dist10).click()
         blk = self.driver.find_element_by_xpath(Data.blk2).click()
         clus = self.driver.find_element_by_xpath(Data.clu3).click()

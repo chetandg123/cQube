@@ -4,7 +4,7 @@ import unittest
 from selenium import webdriver
 
 from Data.Paramters import Data
-from Testscripts.script_1 import Home_page
+from Testscripts.login_page import Home_page
 
 #script to click on District button  and take screenshot
 class District(unittest.TestCase):
@@ -18,7 +18,7 @@ class District(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
         self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(10)
-    def test_District(self):
+    def test_click_on_District(self):
         self.driver.find_element_by_xpath(Data.District).click()
         print(self.driver.current_url)
     def tearDown(self):

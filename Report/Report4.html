@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Testscript Execution Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-04-23 08:31:00</p>
-<p class='attribute'><strong>Duration:</strong> 0:10:59.527174</p>
-<p class='attribute'><strong>Status:</strong> Pass 8 Error 3</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-04-27 17:45:36</p>
+<p class='attribute'><strong>Duration:</strong> 0:08:20.882028</p>
+<p class='attribute'><strong>Status:</strong> Pass 10</p>
 
 <p class='description'>Smoke Tests</p>
 </div>
@@ -221,48 +221,38 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>Testscripts.script_31.Choose16</td>
+<tr class='passClass'>
+    <td>Testscripts.District2.Choose16</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_start</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: cQube
-https://cqube.tibilprojects.com/
- JUNAGADH 
-Choose a Block 
-Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Testscripts/script_31.py", line 32, in test_start
-    clus= self.driver.find_element_by_xpath("//select[@name='myCluster']/option[4]").click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@name='myCluster']/option[4]"}
-  (Session info: chrome=81.0.4044.122)
-
+pt1.1: cQube
+ Junagadh 
+ Bhesan 
+ Bhatt Prakashbhai 
+3
+Number of students: 0
+Number of schools: 0
+Date range: 01-08-2019 to 31-10-2019
 
 
         </pre>
@@ -273,7 +263,7 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 </tr>
 
 <tr class='passClass'>
-    <td>Testscripts.script_32.Choose17</td>
+    <td>Testscripts.Random_district.Choose17</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -282,7 +272,7 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 </tr>
 
 <tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_start</div></td>
+    <td class='none'><div class='testcase'>test_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -297,10 +287,9 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
         <pre>
         
 pt2.1: cQube
-https://cqube.tibilprojects.com/
- KACHCHH 
- ABDASA 
- ASHISH CHOUDHARI 
+ Kachchh 
+ Abdasa 
+ Arvindbhai Dama 
 3
 Number of students: 0
 Number of schools: 0
@@ -315,7 +304,7 @@ Date range: 01-08-2019 to 31-10-2019
 </tr>
 
 <tr class='passClass'>
-    <td>Testscripts.script_33.Choose18</td>
+    <td>Testscripts.District_18_click.Choose18</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -324,7 +313,7 @@ Date range: 01-08-2019 to 31-10-2019
 </tr>
 
 <tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_start</div></td>
+    <td class='none'><div class='testcase'>test_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -339,10 +328,9 @@ Date range: 01-08-2019 to 31-10-2019
         <pre>
         
 pt3.1: cQube
-https://cqube.tibilprojects.com/
- KHEDA 
- GALTESHWAR 
- GOHIL VINAYKANT KANUBHAI 
+ Kheda 
+ Galteshwar 
+ Gohil Vinaykant Kanubhai 
 3
 Number of students: 0
 Number of schools: 0
@@ -357,7 +345,7 @@ Date range: 01-08-2019 to 31-10-2019
 </tr>
 
 <tr class='passClass'>
-    <td>Testscripts.script_34.Choose19</td>
+    <td>Testscripts.Dist_mousehover.Choose19</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -366,7 +354,7 @@ Date range: 01-08-2019 to 31-10-2019
 </tr>
 
 <tr id='pt4.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_start</div></td>
+    <td class='none'><div class='testcase'>test_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -381,10 +369,9 @@ Date range: 01-08-2019 to 31-10-2019
         <pre>
         
 pt4.1: cQube
-https://cqube.tibilprojects.com/
- MAHESANA 
- BECHARAJI 
- I/C CHAUDHARY HIMANSHUBHAI V 
+ Mahesana 
+ Becharaji 
+ I/C Chaudhary Himanshubhai V 
 3
 Number of students: 0
 Number of schools: 0
@@ -399,7 +386,7 @@ Date range: 01-08-2019 to 31-10-2019
 </tr>
 
 <tr class='passClass'>
-    <td>Testscripts.script_35.Choose20</td>
+    <td>Testscripts.Data_test.Choose20</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -408,7 +395,7 @@ Date range: 01-08-2019 to 31-10-2019
 </tr>
 
 <tr id='pt5.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_start</div></td>
+    <td class='none'><div class='testcase'>test_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -423,10 +410,9 @@ Date range: 01-08-2019 to 31-10-2019
         <pre>
         
 pt5.1: cQube
-https://cqube.tibilprojects.com/
- MAHISAGAR 
- KADANA 
- KAMLESHBHAI MOTIBHAI PATEL 
+ Mahisagar 
+ Balasinor 
+ Chauhan Laxmansinh Andarsinh 
 3
 Number of students: 0
 Number of schools: 0
@@ -440,70 +426,34 @@ Date range: 01-08-2019 to 31-10-2019
     </td>
 </tr>
 
-<tr class='errorClass'>
-    <td>Testscripts.script_36.CRC_reports</td>
-    <td>2</td>
+<tr class='passClass'>
+    <td>Testscripts.click_on_crcreports.CRC</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c6',2)">Detail</a></td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
 </tr>
 
-<tr id='ft6.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_crcreports</div></td>
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcreports</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        error</a>
-
-    <div id='div_ft6.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft6.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Testscripts/script_36.py", line 26, in test_crcreports
-    self.driver.find_element_by_xpath("//div[@class='col-sm-2']/span").click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='col-sm-2']/span"}
-  (Session info: chrome=81.0.4044.122)
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt6.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_start</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.2')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
         pass</a>
 
-    <div id='div_pt6.2' class="popup_window">
+    <div id='div_pt6.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.2').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt6.2: cQube
-https://cqube.tibilprojects.com/
+pt6.1: cQube
+ AHMEDABAD 
+ AKRAMBHAI ANSARI 
+ AMC 
 
 
         </pre>
@@ -514,7 +464,7 @@ https://cqube.tibilprojects.com/
 </tr>
 
 <tr class='passClass'>
-    <td>Testscripts.script_37.Logerror</td>
+    <td>Testscripts.Error_msg.Logerror</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -523,7 +473,7 @@ https://cqube.tibilprojects.com/
 </tr>
 
 <tr id='pt7.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_start</div></td>
+    <td class='none'><div class='testcase'>test_login</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -538,8 +488,8 @@ https://cqube.tibilprojects.com/
         <pre>
         
 pt7.1: cQube
-https://cqube.tibilprojects.com/
-Username/ Password is wrong
+https://cqube.tibilprojects.com/#/home/map-view
+Attendance report for: Gujarat
 
 
         </pre>
@@ -550,7 +500,7 @@ Username/ Password is wrong
 </tr>
 
 <tr class='passClass'>
-    <td>Testscripts.script_38.Log_Out</td>
+    <td>Testscripts.log_in_out.Log_Out</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -559,7 +509,7 @@ Username/ Password is wrong
 </tr>
 
 <tr id='pt8.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_start</div></td>
+    <td class='none'><div class='testcase'>test_logout</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -574,56 +524,6 @@ Username/ Password is wrong
         <pre>
         
 pt8.1: cQube
-True
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='errorClass'>
-    <td>Testscripts.script_39.Dist_5</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
-</tr>
-
-<tr id='ft9.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_start</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
-        error</a>
-
-    <div id='div_ft9.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft9.1: cQube
-https://cqube.tibilprojects.com/
-Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Testscripts/script_39.py", line 22, in test_start
-    self.driver.find_element_by_xpath("//select[@name='myDistrict']/option[5]").click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@name='myDistrict']/option[5]"}
-  (Session info: chrome=81.0.4044.122)
-
 
 
         </pre>
@@ -634,7 +534,42 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 </tr>
 
 <tr class='passClass'>
-    <td>Testscripts.script_40.Hyper_link</td>
+    <td>Testscripts.dots_hover.Dist_5</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_dist5</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: cQube
+https://cqube.tibilprojects.com/#/home/map-view
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Testscripts.click_on_hyperlink.Hyper_link</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -643,7 +578,7 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 </tr>
 
 <tr id='pt10.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_start</div></td>
+    <td class='none'><div class='testcase'>test_hypertext</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -658,8 +593,8 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
         <pre>
         
 pt10.1: cQube
-https://cqube.tibilprojects.com/
-GUJARAT
+https://cqube.tibilprojects.com/#/home/map-view
+Gujarat
 
 
         </pre>
@@ -671,10 +606,10 @@ GUJARAT
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>11</td>
-    <td>8</td>
+    <td>10</td>
+    <td>10</td>
     <td>0</td>
-    <td>3</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>

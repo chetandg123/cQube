@@ -2,8 +2,9 @@ import base64
 
 
 class Data():
+    #path should be chrome.exe file location
+    Path =executable_path="/home/chetan/PycharmProjects/cQube/Driverfile/chromedriver"
 
-    Path =executable_path="/home/chetan/Downloads/chromedriver_linux64/chromedriver"
 
     URL = base64.b64decode("aHR0cHM6Ly9jcXViZS50aWJpbHByb2plY3RzLmNvbQ==").decode("utf-8")
     username = base64.b64decode("dGliaWxzb2x1dGlvbnNAY3F1YmUuY29t").decode("utf-8")

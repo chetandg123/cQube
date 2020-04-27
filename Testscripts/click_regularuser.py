@@ -1,27 +1,31 @@
+
+
 import time
 import unittest
 
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 
 from Data.Paramters import Data
-from Testscripts.script_1 import Home_page
+from Testscripts.login_page import Home_page
 
-#script to click on cluster button  and take screenshot
-class Clusters(unittest.TestCase):
+#script to Regular User
+
+class Regular_user(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
         self.driver.get(Data.URL)
+
+    def test_RegularUsr(self):
         print(self.driver.title)
-        self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
-        self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
-        self.driver.find_element_by_xpath(Data.loginbtn).click()
+        self.driver.find_element_by_xpath(Data.reg_user).click()
         time.sleep(10)
-    def test_cluster(self):
-        self.driver.find_element_by_xpath(Data.Clusters).click()
+        print(self.driver.title)
 
     def tearDown(self):
+        print(self.driver.current_url)
         time.sleep(5)
         # print(self.driver.get_screenshot_as_file(""))
         self.driver.close()

@@ -1,8 +1,8 @@
 from HTMLTestRunner import HTMLTestRunner
 import unittest
 
-from Testscripts import script_31, script_32, script_33, script_34, script_35, script_36, script_38, script_37, \
-    script_40, script_39
+from Testscripts import District2, Random_district, District_18_click, Dist_mousehover, Data_test, click_on_crcreports, log_in_out, Error_msg, \
+    click_on_hyperlink, dots_hover
 
 
 class MyTestSuite(unittest.TestCase):
@@ -10,16 +10,16 @@ class MyTestSuite(unittest.TestCase):
     def test_Issue(self):
         smoke_test = unittest.TestSuite()
         smoke_test.addTests([
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_31.Choose16),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_32.Choose17),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_33.Choose18),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_34.Choose19),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_35.Choose20),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_36.CRC_reports),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_37.Logerror),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_38.Log_Out),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_39.Dist_5),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_40.Hyper_link),
+            unittest.defaultTestLoader.loadTestsFromTestCase(District2.Choose16),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Random_district.Choose17),
+            unittest.defaultTestLoader.loadTestsFromTestCase(District_18_click.Choose18),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Dist_mousehover.Choose19),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Data_test.Choose20),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_on_crcreports.CRC),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Error_msg.Logerror),
+            unittest.defaultTestLoader.loadTestsFromTestCase(log_in_out.Log_Out),
+            unittest.defaultTestLoader.loadTestsFromTestCase(dots_hover.Dist_5),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_on_hyperlink.Hyper_link),
 
         ])
 

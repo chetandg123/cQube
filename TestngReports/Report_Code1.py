@@ -1,10 +1,10 @@
 from HTMLTestRunner import HTMLTestRunner
 import unittest
 
-from Testscripts import script_1, script_2, script_3, script_4, script_5, script_6, script_7, script_8, script_9, \
-    script_10, script_11, script_12, script_13, script_14, script_15, script_16, script_40, script_17, script_18, \
-    script_19, script_20, script_21, script_22, script_23, script_24, script_25, script_26, script_27, script_28, \
-    script_29, script_30, script_31, script_32, script_33, script_34, script_35, script_36, script_38, script_37
+from Testscripts import login_page, click_block, click_clusters, click_schools, click_on_District, District_options, click_Dashboard, click_download, Dots_mouseover, \
+    Mouse_over_homepage, mouseover_clusters, mouseover_schools, click_blocks, click_regularuser, Regular_user, click_districts, click_on_hyperlink, Test_on_District, click_on_district, \
+    test_District, District_operations, mouseover_District, mouseover_on_District, mouse_over, mouseover_dots, District_test, District_tests, Dist_options, District_details, \
+    mouse_hover_on_dots, block_mouse_hover, District2, Random_district, District_18_click, Dist_mousehover, Data_test, click_on_crcreports, log_in_out, Error_msg
 
 
 class MyTestSuite1(unittest.TestCase):
@@ -13,16 +13,16 @@ class MyTestSuite1(unittest.TestCase):
         smoke_test = unittest.TestSuite()
         smoke_test.addTests([
 
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_1.Home_page),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_2.Blocks),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_3.Clusters),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_4.Schools),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_5.District),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_6.District),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_7.District),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_8.Report_download),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_9.Home_Dots),
-            unittest.defaultTestLoader.loadTestsFromTestCase(script_10.Block_Dots),
+            unittest.defaultTestLoader.loadTestsFromTestCase(block_mouse_hover.Choose15),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_block.Blocks),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_clusters.Clusters),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_schools.Schools),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_on_District.District),
+            unittest.defaultTestLoader.loadTestsFromTestCase(District_options.District),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_Dashboard.District),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_download.Report_download),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Dots_mouseover.Home_Dots),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Mouse_over_homepage.Block_Dots),
 
         ])
 

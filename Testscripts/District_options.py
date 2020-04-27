@@ -3,14 +3,11 @@ import unittest
 
 from selenium import webdriver
 
-from Data import Paramters
 from Data.Paramters import Data
-from Data.SetUP import code_2
-from Testscripts.script_1 import Home_page
+from Testscripts.login_page import Home_page
 
-#script to click on block button  and take screenshot
-class Blocks(unittest.TestCase):
-    @classmethod
+#script to click on District names list and take screenshot
+class District(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
@@ -22,12 +19,16 @@ class Blocks(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(10)
 
-    def test_blocks(self):
-        self.driver.find_element_by_xpath(Data.Blocks).click()
+    def test_DistOptions(self):
+        self.driver.find_element_by_xpath(Data.District).click()
+        time.sleep(2)
+        Distlist =self.driver.find_elements_by_xpath(Data.Distoptions)
+        for i in Distlist:
+            print(i.text)
         print(self.driver.current_url)
 
     def tearDown(self):
-        time.sleep(3)
+        time.sleep(5)
         # print(self.driver.get_screenshot_as_file(""))
         self.driver.close()
 
