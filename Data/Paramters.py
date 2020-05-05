@@ -14,6 +14,11 @@ class Data():
     pwd = "//input[@id='exampleInputPassword']"
     loginbtn = "//button[@type='submit']"
 
+
+
+    zoom_in = "//a[@title='Zoom in']"
+    zoom_out = "//a[@title='Zoom out']"
+
     Blocks ="//button[@class='btn btn-secondary']/b[contains(text(),'Blocks')]"
     Clusters ="//button[@class='btn btn-secondary']/b[contains(text(),'Clusters')]"
     Schools  = "//button[@class='btn btn-secondary']/b[contains(text(),'Schools')]"
@@ -71,6 +76,7 @@ class Data():
     dist20 = "//select[@name='myDistrict']/option[20]"
 
     hyper_link = "//p/span"
+    directory ="//p[contains(text(),' Semester report for:')]/span"
     Download ="//img[@title='Download Report']"
 # Dash board
     Dashboard ="//span[@class='" \

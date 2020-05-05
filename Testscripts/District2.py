@@ -31,11 +31,11 @@ class Choose16(unittest.TestCase):
         print(self.driver.find_element_by_xpath(Data.blk2).text)
         print(self.driver.find_element_by_xpath(Data.clu2).text)
 
-        data = self.driver.find_elements_by_xpath(Data.details)
+        data = self.driver.find_elements_by_xpath(Data.directory)
         print(len(data))
         for i in range(len(data)):
             print(data[i].text)
-        time.sleep(5)
+        time.sleep(3)
 
         lists = self.driver.find_elements_by_class_name(Data.dots)
         def mouseover(i):
