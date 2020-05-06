@@ -44,7 +44,7 @@ class defect_four(unittest.TestCase):
         i = 0
         while i < len(lists):
             mouseover(i)
-            i = i + 1
+            i = i + 10
 
     def tearDown(self):
         time.sleep(5)

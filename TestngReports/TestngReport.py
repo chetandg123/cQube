@@ -1,11 +1,15 @@
 from HTMLTestRunner import HTMLTestRunner
 import unittest
 
-from Testscripts import login_page, click_block, click_clusters, click_schools, click_on_District, District_options, click_Dashboard, click_download, Dots_mouseover, \
-    Mouse_over_homepage, mouseover_clusters, mouseover_schools, click_blocks, click_regularuser, Regular_user, click_districts, click_on_hyperlink, Test_on_District, click_on_district, \
-    test_District, District_operations, mouseover_District, mouseover_on_District, mouse_over, mouseover_dots, District_test, District_tests, Dist_options, District_details, \
-    mouse_hover_on_dots, block_mouse_hover, District2, Random_district, District_18_click, Dist_mousehover, Data_test, click_on_crcreports, log_in_out, Error_msg, \
-    dots_hover
+from Testscripts import login_page, click_block, click_clusters, click_schools, click_on_District, District_options, \
+    click_Dashboard, click_download, Dots_mouseover, \
+    Mouse_over_homepage, mouseover_clusters, mouseover_schools, click_blocks, click_regularuser, Regular_user, \
+    click_districts, click_on_hyperlink, Test_on_District, click_on_district, \
+    test_District, District_operations, mouseover_District, mouseover_on_District, mouse_over, mouseover_dots, \
+    District_test, District_tests, Dist_options, District_details, \
+    mouse_hover_on_dots, block_mouse_hover, District2, Random_district, District_18_click, Dist_mousehover, Data_test, \
+    click_on_crcreports, log_in_out, Error_msg, \
+    dots_hover, defect_1, defect_2, defect_3, defect_4, defect_5, defect_6, defect_7
 
 
 class MyTestSuite(unittest.TestCase):
@@ -53,11 +57,18 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(Error_msg.Logerror),
             unittest.defaultTestLoader.loadTestsFromTestCase(log_in_out.Log_Out),
             unittest.defaultTestLoader.loadTestsFromTestCase(dots_hover.Dist_5),
-            unittest.defaultTestLoader.loadTestsFromTestCase(click_on_hyperlink.Hyper_link)
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_on_hyperlink.Hyper_link),
+            unittest.defaultTestLoader.loadTestsFromTestCase(defect_1.defect_one),
+            unittest.defaultTestLoader.loadTestsFromTestCase(defect_2.defect_two),
+            unittest.defaultTestLoader.loadTestsFromTestCase(defect_3.defect_three),
+            unittest.defaultTestLoader.loadTestsFromTestCase(defect_4.defect_four),
+            unittest.defaultTestLoader.loadTestsFromTestCase(defect_5.defect_five),
+            unittest.defaultTestLoader.loadTestsFromTestCase(defect_6.defect_six),
+            unittest.defaultTestLoader.loadTestsFromTestCase(defect_7.defect_seven),
 
         ])
 
-        outfile = open("/home/chetan/PycharmProjects/cQube/Report/Reports.html", "w")
+        outfile = open("/home/chetan/PycharmProjects/cQube/Report/Repo.html", "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,

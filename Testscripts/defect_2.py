@@ -9,8 +9,9 @@ from selenium.webdriver import ActionChains
 from Data.Paramters import Data
 from Testscripts.login_page import Home_page
 
+#script to click on home_button
 
-class defect_four(unittest.TestCase):
+class defect_two(unittest.TestCase):
     @classmethod
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
@@ -24,14 +25,13 @@ class defect_four(unittest.TestCase):
 
     def test_defect(self):
         dist = self.driver.find_element_by_xpath("//select[@name='myDistrict']/option[contains(text(),'Ahmedabad')]").click()
-        blk =self.driver.find_element_by_xpath("//select[@name='myBlock']/option[contains(text(),'City')]").click()
-        self.driver.find_element_by_xpath("//select[@name='myCluster']/option[contains(text(),'Chanakya')]").click()
+        blk =self.driver.find_element_by_xpath("//select[@name='myBlock']/option[contains(text(),'Dascroi')]").click()
+        self.driver.find_element_by_xpath("//select[@name='myCluster']/option[contains(text(),'Bopal')]").click()
 
         self.driver.find_element_by_xpath(Data.zoom_in).click()
 
         time.sleep(3)
         lists =self.driver.find_elements_by_class_name("leaflet-interactive")
-        print("data is not loading!..")
         self.assertEqual(len(lists),4,"dots are less then no of schools in map")
         print(len(lists))
         def mouseover(i):
@@ -44,7 +44,7 @@ class defect_four(unittest.TestCase):
         i = 0
         while i < len(lists):
             mouseover(i)
-            i = i + 1
+            i = i + 10
 
     def tearDown(self):
         time.sleep(5)

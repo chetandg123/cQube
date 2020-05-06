@@ -10,7 +10,7 @@ from Data.Paramters import Data
 from Testscripts.login_page import Home_page
 
 
-class defect_four(unittest.TestCase):
+class defect_three(unittest.TestCase):
     @classmethod
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
@@ -23,28 +23,16 @@ class defect_four(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.loginbtn).click()
 
     def test_defect(self):
-        dist = self.driver.find_element_by_xpath("//select[@name='myDistrict']/option[contains(text(),'Ahmedabad')]").click()
-        blk =self.driver.find_element_by_xpath("//select[@name='myBlock']/option[contains(text(),'City')]").click()
-        self.driver.find_element_by_xpath("//select[@name='myCluster']/option[contains(text(),'Chanakya')]").click()
+        dist = self.driver.find_element_by_xpath("//select[@name='myDistrict']/option[contains(text(),'Amreli')]").click()
+        blk =self.driver.find_element_by_xpath("//select[@name='myBlock']/option[contains(text(),'Babara')]").click()
+        self.driver.find_element_by_xpath("//select[@name='myCluster']/option[contains(text(),'Babara Taluka Shala')]").click()
 
         self.driver.find_element_by_xpath(Data.zoom_in).click()
 
         time.sleep(3)
         lists =self.driver.find_elements_by_class_name("leaflet-interactive")
-        print("data is not loading!..")
-        self.assertEqual(len(lists),4,"dots are less then no of schools in map")
+        self.assertEqual(len(lists),7,"dots are less then no of schools in map")
         print(len(lists))
-        def mouseover(i):
-
-            action = ActionChains(self.driver)
-            action.move_to_element(lists[i]).perform()
-            time.sleep(4)
-            del action
-
-        i = 0
-        while i < len(lists):
-            mouseover(i)
-            i = i + 1
 
     def tearDown(self):
         time.sleep(5)
