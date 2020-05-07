@@ -3,8 +3,8 @@ import base64
 
 class Data():
     #path should be chrome.exe file location
-    Path =executable_path="/home/chetan/PycharmProjects/cQube/Driverfile/chromedriver"
-
+    #Path =executable_path="/home/chetan/PycharmProjects/cQube/Driverfile/chromedriver"
+    Path =executable_path="/home/devraj/softwares/chromedriver"
 
     URL = base64.b64decode("aHR0cHM6Ly9jcXViZS50aWJpbHByb2plY3RzLmNvbQ==").decode("utf-8")
     username = base64.b64decode("dGliaWxzb2x1dGlvbnNAY3F1YmUuY29t").decode("utf-8")
@@ -88,6 +88,9 @@ class Data():
     crc ="//div[@class='mat-list-item-content']/td[contains(text(),'CRC Reports')]"
     Log_out ="//button/span[contains(text(),'Log Out')]"
     Home_icon ="//img[@id='home']"
+
+
+
 
 
 
