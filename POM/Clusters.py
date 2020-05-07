@@ -7,7 +7,7 @@ from selenium.webdriver import ActionChains
 from Data.Paramters import Data
 
 
-class Blocks_button(unittest.TestCase):
+class Clusters_button(unittest.TestCase):
     @classmethod
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
@@ -20,26 +20,24 @@ class Blocks_button(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(10)
 
-    def test_click_on_blocksbtn(self):
-        self.driver.find_element_by_xpath(Data.Blocks).click()
+    def test_click_on_schoolsbtn(self):
+        self.driver.find_element_by_xpath(Data.Clusters).click()
         time.sleep(5)
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)
         print(count)
-        # self.driver.find_element_by_xpath()
-        # self.assertEqual()
-        # 
+
         # def mouseover(i):
         #     action = ActionChains(self.driver)
         #     action.move_to_element(lists[i]).perform()
         #     time.sleep(3)
         #     del action
-        # 
+        #
         # i = 0
         # while i < len(lists):
         #     mouseover(i)
         #     i = i + 1
-        time.sleep(15)
+        time.sleep(20)
         print(self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[1]/span").text)
         print(self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[2]/span").text)
         print(self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[3]/span").text)
