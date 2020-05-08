@@ -89,7 +89,9 @@ class Data():
     Log_out ="//button/span[contains(text(),'Log Out')]"
     Home_icon ="//img[@id='home']"
 
-
+    students = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[1]/span"
+    schoolcount = " /html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[2]/span"
+    DateRange =  "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[3]/span"
 
 
 

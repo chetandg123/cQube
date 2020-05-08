@@ -25,8 +25,6 @@ class Log_Out(unittest.TestCase):
 
 
 
-    # def test_logout(self):
-    #     # self.driver.find_element_by_xpath(Data.Log_out).click()
 
     def tearDown(self):
             time.sleep(5)

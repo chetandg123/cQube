@@ -30,12 +30,10 @@ class Choose20(unittest.TestCase):
         print(self.driver.find_element_by_xpath(Data.dist20).text)
         print(self.driver.find_element_by_xpath(Data.blk3).text)
         print(self.driver.find_element_by_xpath(Data.clu2).text)
-
+        time.sleep(15)
         data = self.driver.find_elements_by_xpath(Data.details)
-        print(len(data))
         for i in range(len(data)):
             print(data[i].text)
-        time.sleep(3)
 
         lists = self.driver.find_elements_by_class_name(Data.dots)
         def mouseover(i):

@@ -1,3 +1,4 @@
+import re
 import time
 import unittest
 
@@ -30,12 +31,13 @@ class Choose7(unittest.TestCase):
         print(self.driver.find_element_by_xpath(Data.dist7).text)
         print(self.driver.find_element_by_xpath(Data.clu4).text)
         print(self.driver.find_element_by_xpath(Data.blk2).text)
+        time.sleep(15)
 
         data = self.driver.find_elements_by_xpath(Data.details)
-        print(len(data))
+
         for i in range(len(data)):
             print(data[i].text)
-        time.sleep(3)
+
 
         lists = self.driver.find_elements_by_class_name(Data.dots)
 
@@ -50,7 +52,10 @@ class Choose7(unittest.TestCase):
         while i < len(lists):
             mouseover(i)
             i = i + 1
-
+        count = len(lists) - 1
+        school = self.driver.find_element_by_xpath(Data.schoolcount).text
+        res = re.sub("\D", "", school)
+        self.assertEqual(res, str(count), "both are not having matching records")
     def tearDown(self):
             time.sleep(5)
             # print(self.driver.get_screenshot_as_file(""))

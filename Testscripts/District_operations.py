@@ -1,3 +1,4 @@
+import re
 import time
 import unittest
 
@@ -15,8 +16,6 @@ class Choose5(unittest.TestCase):
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
         self.driver.get(Data.URL)
-
-
         print(self.driver.title)
         self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
         self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
@@ -31,9 +30,9 @@ class Choose5(unittest.TestCase):
         print(self.driver.find_element_by_xpath(Data.dist5).text)
         print(self.driver.find_element_by_xpath(Data.clu5).text)
         print(self.driver.find_element_by_xpath(Data.blk5).text)
-
+        time.sleep(15)
         data = self.driver.find_elements_by_xpath(Data.details)
-        print(len(data))
+
         for i in range(len(data)):
             print(data[i].text)
         time.sleep(3)
@@ -52,6 +51,10 @@ class Choose5(unittest.TestCase):
         while i < len(lists):
             mouseover(i)
             i = i + 1
+        count = len(lists) - 1
+        school = self.driver.find_element_by_xpath(Data.schoolcount).text
+        res = re.sub("\D", "", school)
+        self.assertEqual(res, str(count), "both are not having matching records")
 
     def tearDown(self):
             time.sleep(5)

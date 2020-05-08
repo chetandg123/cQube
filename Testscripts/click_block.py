@@ -27,7 +27,6 @@ class Blocks(unittest.TestCase):
 
     def tearDown(self):
         time.sleep(3)
-        # print(self.driver.get_screenshot_as_file(""))
         self.driver.close()
 
 if __name__ == "__main__":

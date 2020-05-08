@@ -3,11 +3,11 @@ import unittest
 
 from Testscripts import login_page, click_block, click_clusters, click_schools, click_on_District, District_options, \
     click_Dashboard, click_download, Dots_mouseover, \
-    Mouse_over_homepage, mouseover_clusters, mouseover_schools, click_blocks, click_regularuser, Regular_user, \
+    Mouse_over_homepage, mouseover_clusters, mouseover_schools, block_home, click_regularuser, Regular_user, \
     click_districts, click_on_hyperlink, Test_on_District, click_on_district, \
     test_District, District_operations, mouseover_District, mouseover_on_District, mouse_over, mouseover_dots, \
     District_test, District_tests, Dist_options, District_details, \
-    mouse_hover_on_dots, block_mouse_hover, District2, Random_district, District_18_click, Dist_mousehover, Data_test, \
+    mouse_hover_on_dots, click_over_schools, District2, Random_district, District_18_click, Dist_mousehover, Data_test, \
     click_on_crcreports, log_in_out, Error_msg, \
     dots_hover, defect_1, defect_2, defect_3, defect_4, defect_5, defect_6, defect_7
 
@@ -30,7 +30,7 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(Mouse_over_homepage.Block_Dots),
             unittest.defaultTestLoader.loadTestsFromTestCase(mouseover_clusters.Cluster_Dots),
             unittest.defaultTestLoader.loadTestsFromTestCase(mouseover_schools.Schools_Dots),
-            unittest.defaultTestLoader.loadTestsFromTestCase(click_blocks.Homebtn_click),
+            unittest.defaultTestLoader.loadTestsFromTestCase(block_home.Homebtn_click),
             unittest.defaultTestLoader.loadTestsFromTestCase(click_regularuser.Regular_user),
             unittest.defaultTestLoader.loadTestsFromTestCase(Regular_user.Regular_userBack),
             unittest.defaultTestLoader.loadTestsFromTestCase(click_districts.Choose2),
@@ -47,7 +47,7 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(Dist_options.Choose12),
             unittest.defaultTestLoader.loadTestsFromTestCase(District_details.Choose13),
             unittest.defaultTestLoader.loadTestsFromTestCase(mouse_hover_on_dots.Choose14),
-            unittest.defaultTestLoader.loadTestsFromTestCase(block_mouse_hover.Choose15),
+            unittest.defaultTestLoader.loadTestsFromTestCase(click_over_schools.Choose15),
             unittest.defaultTestLoader.loadTestsFromTestCase(District2.Choose16),
             unittest.defaultTestLoader.loadTestsFromTestCase(Random_district.Choose17),
             unittest.defaultTestLoader.loadTestsFromTestCase(District_18_click.Choose18),

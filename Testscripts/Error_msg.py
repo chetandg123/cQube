@@ -25,6 +25,7 @@ class Logerror(unittest.TestCase):
         print(self.driver.current_url)
         errormsg = self.driver.find_element_by_xpath("//p").text
         print(errormsg)
+        self.assertEqual(errormsg,"Username/ Password is wrong","Invalid credentials")
 
     def tearDown(self):
             time.sleep(5)

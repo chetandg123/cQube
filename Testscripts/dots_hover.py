@@ -27,7 +27,6 @@ class Dist_5(unittest.TestCase):
 
     def tearDown(self):
             time.sleep(5)
-            # print(self.driver.get_screenshot_as_file(""))
             self.driver.close()
 
 

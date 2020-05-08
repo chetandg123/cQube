@@ -1,3 +1,4 @@
+import re
 import time
 import unittest
 
@@ -29,20 +30,12 @@ class Blocks_button(unittest.TestCase):
         # self.driver.find_element_by_xpath()
         # self.assertEqual()
         # 
-        # def mouseover(i):
-        #     action = ActionChains(self.driver)
-        #     action.move_to_element(lists[i]).perform()
-        #     time.sleep(3)
-        #     del action
-        # 
-        # i = 0
-        # while i < len(lists):
-        #     mouseover(i)
-        #     i = i + 1
+
         time.sleep(15)
-        print(self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[1]/span").text)
-        print(self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[2]/span").text)
-        print(self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[3]/span").text)
+        print(self.driver.find_element_by_xpath(Data.students).text)
+        print(self.driver.find_element_by_xpath(Data.schoolcount).text)
+        print(self.driver.find_element_by_xpath(Data.DateRange).text)
+
     def tearDown(self):
         time.sleep(3)
         self.driver.close()
