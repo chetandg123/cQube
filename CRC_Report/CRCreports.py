@@ -1,0 +1,45 @@
+import time
+import unittest
+
+from selenium import webdriver
+
+from Data.Paramters import Data
+
+
+class Crc_Reports(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Chrome(Data.Path)
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(10)
+        self.driver.get(Data.URL)
+        self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
+        self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
+        self.driver.find_element_by_xpath(Data.loginbtn).click()
+        time.sleep(2)
+
+    def test_crcclick(self):
+        self.driver.find_element_by_xpath(Data.Dashboard).click()
+        head =self.driver.find_element_by_xpath("//td[contains(text(),'CRC Reports ')]").text
+        # self.assertEqual(head,"    CRC Reports ","not matching!..")
+        self.driver.find_element_by_xpath(Data.crc).click()
+        time.sleep(30)
+        x_axis = self.driver.find_elements_by_xpath(Data.xaxis)
+        print("X axis menu list...")
+        for i in range(len(x_axis)):
+            print(x_axis[i].text)
+        print("Y axis menu list...")
+        time.sleep(2)
+        y_axis = self.driver.find_elements_by_xpath(Data.yaxis)
+        for i in range(len(y_axis)):
+            print(y_axis[i].text)
+        time.sleep(10)
+        print(self.driver.find_element_by_xpath(Data.crcvisits).text)
+        print(self.driver.find_element_by_xpath(Data.totalschools).text)
+        print(self.driver.find_element_by_xpath(Data.visited).text)
+        print(self.driver.find_element_by_xpath(Data.notvisited).text)
+    def tearDown(self):
+            time.sleep(5)
+            self.driver.close()
+
+    if __name__ == "__main__":
+        unittest.main()

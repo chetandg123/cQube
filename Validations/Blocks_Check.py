@@ -1,48 +1,38 @@
-import re
+import csv
 import time
 import unittest
-#!/usr/bin/env python
 
 from selenium import webdriver
-from selenium.webdriver import ActionChains
 
 from Data.Paramters import Data
 
 
-class Blocks_button(unittest.TestCase):
-    @classmethod
+class Block_validation(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
         self.driver.get(Data.URL)
-        print(self.driver.title)
         self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
         self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
         self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(10)
 
-    def test_click_on_blocksbtn(self):
-
-
+    def test_validate_blockrecords(self):
         self.driver.find_element_by_xpath(Data.Blocks).click()
-        time.sleep(5)
+        time.sleep(10)
+        self.driver.find_element_by_xpath(Data.Download).click()
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)
-        print(count)
-        # self.driver.find_element_by_xpath()
-        # self.assertEqual()
-        # 
-
-        time.sleep(15)
-        print(self.driver.find_element_by_xpath(Data.students).text)
-        print(self.driver.find_element_by_xpath(Data.schoolcount).text)
-        print(self.driver.find_element_by_xpath(Data.DateRange).text)
-
+        print("no of dots:",count)
+        with open('/home/chetan/Documents/Data_files/Block_wise_report.csv', 'r') as file:
+            reader = csv.reader(file)
+            lines = len(list(reader))
+            print("no of records in file:",lines)
+        self.assertEqual(count,lines,"unmatching count found")
     def tearDown(self):
-        time.sleep(3)
-        self.driver.close()
-
+            time.sleep(5)
+            self.driver.close()
 
 if __name__ == "__main__":
-    unittest.main()
+        unittest.main()

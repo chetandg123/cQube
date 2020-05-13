@@ -30,6 +30,8 @@ class defect_four(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.zoom_in).click()
 
         time.sleep(3)
+        print(self.driver.get_screenshot_as_file("/home/chetan/PycharmProjects/cQube/Screenshots/defects/def_4.png"))
+
         lists =self.driver.find_elements_by_class_name("leaflet-interactive")
         print("data is not loading!..")
         self.assertEqual(len(lists),4,"dots are less then no of schools in map")

@@ -47,10 +47,10 @@ class Choose8(unittest.TestCase):
             time.sleep(3)
             del action
 
-        i = 0
-        while i < len(lists):
-            mouseover(i)
-            i = i + 1
+            i = 0
+            while i < len(lists):
+                mouseover(i)
+                i = i + 1
         count = len(lists) - 1
         school = self.driver.find_element_by_xpath(Data.schoolcount).text
         res = re.sub("\D", "", school)

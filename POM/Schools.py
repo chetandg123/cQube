@@ -22,10 +22,11 @@ class Schools_button(unittest.TestCase):
 
     def test_click_on_schoolssbtn(self):
         self.driver.find_element_by_xpath(Data.Schools).click()
+        time.sleep(20)
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)
         print(count)
-        time.sleep(20)
+        time.sleep(30)
         print(self.driver.find_element_by_xpath(
             "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[1]/span").text)
         print(self.driver.find_element_by_xpath(

@@ -93,6 +93,33 @@ class Data():
     schoolcount = " /html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[2]/span"
     DateRange =  "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-map-view/div/div[4]/div[3]/span"
 
+    # xpath of Dashboard
+
+    crcvisits = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-bar-chart/div/div[5]/div[1]/span"
+    totalschools= "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-bar-chart/div/div[5]/div[2]/span"
+
+    visited = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-bar-chart/div/div[5]/div[3]/span"
+    notvisited = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-bar-chart/div/div[5]/div[4]/span"
+
+    range = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-bar-chart/div/div[5]/div[5]/span"
+
+    # Table in CRC
+
+    # rowby data
+    distrows = "//tr[@class='odd']/td"
+    headers = "//th"
+
+    # X axis and Y axis
+
+    xaxis = "//select[@name='xAxis']/option"
+    yaxis = "//select[@name='yAxis']/option"
+
+    crcdistrict = "//select[@name='myDistrict']/option"
+    seltype ="//select[@name='downloadType']/option"
+
+    dload = "//img[@alt='Download Report']"
+    Notemsg = "//div[@class='col-sm-12']/p/b"
+
 
 
 

@@ -1,6 +1,7 @@
 from HTMLTestRunner import HTMLTestRunner
 import unittest
 
+from POM import Blocks, Clusters, District, Schools
 from Testscripts import login_page, click_block, click_clusters, click_schools, click_on_District, District_options, \
     click_Dashboard, click_download, Dots_mouseover, \
     Mouse_over_homepage, mouseover_clusters, mouseover_schools, block_home, click_regularuser, Regular_user, \
@@ -15,8 +16,8 @@ from Testscripts import login_page, click_block, click_clusters, click_schools, 
 class MyTestSuite(unittest.TestCase):
 
     def test_Issue(self):
-        smoke_test = unittest.TestSuite()
-        smoke_test.addTests([
+        Regression_test = unittest.TestSuite()
+        Regression_test.addTests([
              # file name .class name
             unittest.defaultTestLoader.loadTestsFromTestCase(login_page.Home_page),
             unittest.defaultTestLoader.loadTestsFromTestCase(click_block.Blocks),
@@ -65,20 +66,24 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(defect_5.defect_five),
             unittest.defaultTestLoader.loadTestsFromTestCase(defect_6.defect_six),
             unittest.defaultTestLoader.loadTestsFromTestCase(defect_7.defect_seven),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Blocks.Blocks_button),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Clusters.Clusters_button),
+            unittest.defaultTestLoader.loadTestsFromTestCase(District.Districts),
+            unittest.defaultTestLoader.loadTestsFromTestCase(Schools.Schools_button),
 
         ])
 
-        outfile = open("/home/chetan/PycharmProjects/cQube/Report/Repo.html", "w")
+        outfile = open("/home/chetan/PycharmProjects/cQube/Report/Dummy.html", "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,
             title='Test Report',
             verbosity = 1,
-            description='Smoke Tests'
+            description='Regression Tests'
 
         )
 
-        runner1.run(smoke_test)
+        runner1.run(Regression_test)
 
 if __name__ == '__main__':
     unittest.main()

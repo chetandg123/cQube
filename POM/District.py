@@ -23,7 +23,7 @@ class Districts(unittest.TestCase):
 
     def test_click_on_districtnames(self):
         distnames = self.driver.find_elements_by_xpath(Data.Distoptions)
-        for i in len(distnames):
+        for i in range(len(distnames)):
             print(distnames[i].text)
 
     def tearDown(self):
