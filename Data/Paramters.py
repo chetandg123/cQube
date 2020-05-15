@@ -21,13 +21,20 @@ class Data():
 
     Blocks ="//button[@class='btn btn-secondary']/b[contains(text(),'Blocks')]"
     Clusters ="//button[@class='btn btn-secondary']/b[contains(text(),'Clusters')]"
-    Schools  = "//button[@class='btn btn-secondary']/b[contains(text(),'Schools')]"
+    Schools  ="//button[@class='btn btn-secondary']/b[contains(text(),'Schools')]"
 
     District ="//select[@name='myDistrict']"
 
     Distoptions = "//select[@name='myDistrict']/option"
-    dots = "leaflet-interactive"
+    year = "//select[@id='year']/option[1]"
+    monthnames = "//select[@id='month']/option"
+    august = "//select[@id='month']/option[contains(text(),'August')]"
+    Sept = "//select[@id='month']/option[contains(text(),' September')]"
+    Oct = "//select[@id='month']/option[contains(text(),' October ')]"
 
+    dots = "leaflet-interactive"
+    blockslist = "//select[@name='myBlock']/option"
+    clusterlist ="//select[@name='myCluster']/option"
     reg_user = "//a"
     back = "//a"
 
@@ -115,7 +122,7 @@ class Data():
     yaxis = "//select[@name='yAxis']/option"
 
     crcdistrict = "//select[@name='myDistrict']/option"
-    seltype ="//select[@name='downloadType']/option"
+    selecttype ="//*[@id='select']/select/option"
 
     dload = "//img[@alt='Download Report']"
     Notemsg = "//div[@class='col-sm-12']/p/b"

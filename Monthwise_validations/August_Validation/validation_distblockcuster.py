@@ -7,7 +7,7 @@ from selenium import webdriver
 from Data.Paramters import Data
 
 
-class District_Gandhinagar(unittest.TestCase):
+class Schools_validation(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
@@ -19,16 +19,19 @@ class District_Gandhinagar(unittest.TestCase):
         time.sleep(10)
 
     def test_validate_schoolrecords(self):
-        self.driver.find_element_by_xpath("//select[@name='myDistrict']/option[contains(text(),'Gandhinagar')]").click()
-        self.driver.find_element_by_xpath("//select[@name='myBlock']/option[contains(text(),'Mansa')]").click()
-        self.driver.find_element_by_xpath("//select[@name='myCluster']/option[contains(text(),'Vallabhnagar')]").click()
-
-        time.sleep(15)
+        self.driver.find_element_by_xpath(Data.year).click()
+        time.sleep(2)
+        self.driver.find_element_by_xpath(Data.august).click()
+        time.sleep(5)
+        dist = self.driver.find_element_by_xpath(Data.dist17).click()
+        blk = self.driver.find_element_by_xpath(Data.blk2).click()
+        clus = self.driver.find_element_by_xpath(Data.clu3).click()
+        time.sleep(10)
         self.driver.find_element_by_xpath(Data.Download).click()
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)
         print("no of dots:",count)
-        with open('/home/chetan/Documents/Data_files/Schools_Per_Cluster_report (12).csv', 'r') as file:
+        with open('/home/chetan/Documents/Data_files/Schools_Per_Cluster_report (1).csv', 'r') as file:
             reader = csv.reader(file)
             lines = len(list(reader))
             print("no of records in file:",lines)

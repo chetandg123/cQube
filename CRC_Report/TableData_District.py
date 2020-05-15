@@ -6,32 +6,31 @@ from selenium import webdriver
 from Data.Paramters import Data
 
 
-class Sel_type(unittest.TestCase):
+class Crc_Reports(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
-        # self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(10)
         self.driver.get(Data.URL)
         self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
         self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
         self.driver.find_element_by_xpath(Data.loginbtn).click()
         time.sleep(2)
 
-    def test_select_for_download(self):
+    def test_crcclick(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
         head =self.driver.find_element_by_xpath("//td[contains(text(),'CRC Reports ')]").text
         self.driver.find_element_by_xpath(Data.crc).click()
         time.sleep(30)
-        sel_type =self.driver.find_elements_by_xpath(Data.selecttype)
-        time.sleep(5)
-        count = len(sel_type)
-        print(count)
-        for i in range(len(sel_type)):
-            sel_type[i].click()
-            print(sel_type[i].text)
+        headers = self.driver.find_elements_by_xpath(Data.headers)
+        for i in range(len(headers)):
+            print(headers[i].text)
             time.sleep(3)
 
-
+        rows = self.driver.find_elements_by_xpath(Data.distrows)
+        for j in range(len(rows)):
+            print(rows[i].text)
+            time.sleep(5)
     def tearDown(self):
             time.sleep(5)
             self.driver.close()

@@ -1,0 +1,1152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2020-05-14 20:32:05</p>
+<p class='attribute'><strong>Duration:</strong> 1:42:04.536466</p>
+<p class='attribute'><strong>Status:</strong> Pass 14 Failure 1 Error 1</p>
+
+<p class='description'>Integration Testing</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Arvali_district.District_Arvalli</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_schoolrecords</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: no of dots: 13
+no of records in file: 13
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>SAR_validations.Cluster_Mathak.Morbi_dist_validation</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/SAR_validations/Cluster_Mathak.py", line 24, in test_validate_District
+    dist = self.driver.find_element_by_xpath("//select[@name='myDistrict']/option[contains(text(),'Morbi')]").click()
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@name='myDistrict']/option[contains(text(),'Morbi')]"}
+  (Session info: chrome=81.0.4044.138)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Dangs.Block_Dangs</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: cQube
+Choose a Block  dots :  3   Number of schools: 358   Number of students: 41,767
+ Ahwa  dots :  14   Number of schools: 84   Number of students: 11,208
+ Subir  dots :  10   Number of schools: 72   Number of students: 9,164
+ Waghai  dots :  10   Number of schools: 58   Number of students: 6,627
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>SAR_validations.Dangs_clusters.Dangs_clusters</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_click_on_clusterwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        fail</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: cQube
+Ahwa block details...
+Choose a cluster  No of dots: 14   No of schools Number of schools: 84   Number of students: 11,208
+ Ahwa  No of dots: 9   No of schools Number of schools: 9   Number of students: 3,251
+ Bhavandagad  No of dots: 12   No of schools Number of schools: 12   Number of students: 804
+ Borkhal  No of dots: 9   No of schools Number of schools: 9   Number of students: 873
+ Chikhali  No of dots: 7   No of schools Number of schools: 7   Number of students: 636
+ Dhavlidod  No of dots: 9   No of schools Number of schools: 9   Number of students: 2,042
+ Gadhavi  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,854
+ Galkund  No of dots: 14   No of schools Number of schools: 14   Number of students: 829
+ Lahancharya  No of dots: 11   No of schools Number of schools: 11   Number of students: 882
+ Linga  No of dots: 8   No of schools Number of schools: 8   Number of students: 614
+ Mahalpada  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,364
+ Malegaon  No of dots: 3   No of schools Number of schools: 3   Number of students: 447
+ Morzira  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,273
+ Pimpri  No of dots: 8   No of schools Number of schools: 8   Number of students: 1,245
+ Samgahan  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,418
+Subir block details...
+
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 10 != 'Number of schools: 72' : mismatching record!...
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/SAR_validations/Dangs_clusters.py", line 52, in test_click_on_clusterwise
+    self.assertEqual(count, school, "mismatching record!...")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: mismatching record!... :: 10 != Number of schools: 72
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.District_block_clicks.Districts</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_districtnames</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: cQube
+Choose a District  dots :  33   Number of schools: 32,544   Number of students: 49,41,571
+ Ahmedabad  dots :  11   Number of schools: 1,179   Number of students: 2,93,148
+ Amreli  dots :  11   Number of schools: 793   Number of students: 1,24,065
+ Anand  dots :  8   Number of schools: 1,036   Number of students: 1,84,837
+ Aravalli  dots :  6   Number of schools: 1,239   Number of students: 1,13,015
+ Banaskantha  dots :  14   Number of schools: 2,359   Number of students: 4,40,478
+ Bharuch  dots :  9   Number of schools: 940   Number of students: 1,10,668
+ Bhavnagar  dots :  10   Number of schools: 1,020   Number of students: 2,28,529
+ Botad  dots :  4   Number of schools: 256   Number of students: 70,786
+ Chhotaudepur  dots :  6   Number of schools: 1,266   Number of students: 1,11,968
+ Devbhoomi Dwarka  dots :  4   Number of schools: 635   Number of students: 65,597
+ Dohad  dots :  8   Number of schools: 1,610   Number of students: 3,30,779
+ Gandhinagar  dots :  4   Number of schools: 627   Number of students: 1,15,131
+ Gir Somnath  dots :  6   Number of schools: 548   Number of students: 99,584
+ Jamnagar  dots :  6   Number of schools: 752   Number of students: 89,859
+ Junagadh  dots :  10   Number of schools: 798   Number of students: 85,683
+ Kachchh  dots :  10   Number of schools: 1,773   Number of students: 2,42,166
+ Kheda  dots :  10   Number of schools: 1,385   Number of students: 2,06,269
+ Mahesana  dots :  10   Number of schools: 970   Number of students: 1,78,338
+ Mahisagar  dots :  6   Number of schools: 1,210   Number of students: 1,21,920
+ Morbi  dots :  5   Number of schools: 622   Number of students: 94,442
+ Narmada  dots :  5   Number of schools: 698   Number of students: 60,604
+ Navsari  dots :  6   Number of schools: 725   Number of students: 82,139
+ Panch Mahals  dots :  7   Number of schools: 1,413   Number of students: 1,98,557
+ Patan  dots :  9   Number of schools: 819   Number of students: 1,52,983
+ Porbandar  dots :  3   Number of schools: 324   Number of students: 38,754
+ Rajkot  dots :  12   Number of schools: 1,000   Number of students: 1,56,625
+ Sabar Kantha  dots :  8   Number of schools: 1,228   Number of students: 1,59,745
+ Surat  dots :  10   Number of schools: 1,235   Number of students: 2,32,848
+ Surendranagar  dots :  10   Number of schools: 922   Number of students: 1,62,203
+ Tapi  dots :  5   Number of schools: 644   Number of students: 58,631
+ The Dangs  dots :  3   Number of schools: 358   Number of students: 41,767
+ Vadodara  dots :  9   Number of schools: 1,167   Number of students: 1,53,025
+ Valsad  dots :  6   Number of schools: 993   Number of students: 1,36,428
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Districtoptions_click.Districts</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_districtnames</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: cQube
+Choose a District  : 34
+ Ahmedabad  : 12
+ Amreli  : 12
+ Anand  : 9
+ Aravalli  : 7
+ Banaskantha  : 15
+ Bharuch  : 10
+ Bhavnagar  : 11
+ Botad  : 5
+ Chhotaudepur  : 7
+ Devbhoomi Dwarka  : 5
+ Dohad  : 9
+ Gandhinagar  : 5
+ Gir Somnath  : 7
+ Jamnagar  : 7
+ Junagadh  : 11
+ Kachchh  : 11
+ Kheda  : 11
+ Mahesana  : 11
+ Mahisagar  : 7
+ Morbi  : 6
+ Narmada  : 6
+ Navsari  : 7
+ Panch Mahals  : 8
+ Patan  : 10
+ Porbandar  : 4
+ Rajkot  : 13
+ Sabar Kantha  : 9
+ Surat  : 11
+ Surendranagar  : 11
+ Tapi  : 6
+ The Dangs  : 4
+ Vadodara  : 10
+ Valsad  : 7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Gandhinagar_district.Gandhinagar_dist_validation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: no of dots: 5
+no of records in file: 5
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Morbi_wise_validation.Block_morbi</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: cQube
+Choose a Block  dots :  5   Number of schools: 622   Number of students: 94,442
+ Halvad  dots :  10   Number of schools: 60   Number of students: 11,202
+ Maliya  dots :  6   Number of schools: 39   Number of students: 5,098
+ Morbi  dots :  18   Number of schools: 99   Number of students: 15,762
+ Tankara  dots :  6   Number of schools: 42   Number of students: 5,777
+ Wankaner  dots :  16   Number of schools: 51   Number of students: 7,466
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Rajkot_blockwisie.Block_Rajokot</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',2)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: cQube
+Choose a Block    dots:  12   Number of schools: 1,000   Number of students: 1,56,625
+ Dhoraji    dots:  7   Number of schools: 38   Number of students: 5,733
+ Gondal    dots:  14   Number of schools: 57   Number of students: 6,604
+ Jamkandorna    dots:  7   Number of schools: 33   Number of students: 2,760
+ Jasdan    dots:  11   Number of schools: 59   Number of students: 8,784
+ Jetpur    dots:  9   Number of schools: 49   Number of students: 6,426
+ Kotda Sangani    dots:  5   Number of schools: 26   Number of students: 4,479
+ Lodhika    dots:  5   Number of schools: 41   Number of students: 6,273
+ Paddhari    dots:  9   Number of schools: 38   Number of students: 3,730
+ Rajkot    dots:  15   Number of schools: 77   Number of students: 12,797
+ Rajkot Corporation    dots:  25   Number of schools: 73   Number of students: 25,159
+ Upleta    dots:  10   Number of schools: 47   Number of students: 8,413
+ Vinchhiya    dots:  9   Number of schools: 56   Number of students: 6,998
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt9.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.2')" >
+        pass</a>
+
+    <div id='div_pt9.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.2: cQube
+Choose a Block    dots:  12   Number of schools: 1,000   Number of students: 1,56,625
+ Dhoraji    dots:  7   Number of schools: 38   Number of students: 5,733
+ Gondal    dots:  14   Number of schools: 57   Number of students: 6,604
+ Jamkandorna    dots:  7   Number of schools: 33   Number of students: 2,760
+ Jasdan    dots:  11   Number of schools: 59   Number of students: 8,784
+ Jetpur    dots:  9   Number of schools: 49   Number of students: 6,426
+ Kotda Sangani    dots:  5   Number of schools: 26   Number of students: 4,479
+ Lodhika    dots:  5   Number of schools: 41   Number of students: 6,273
+ Paddhari    dots:  9   Number of schools: 38   Number of students: 3,730
+ Rajkot    dots:  15   Number of schools: 77   Number of students: 12,797
+ Rajkot Corporation    dots:  25   Number of schools: 73   Number of students: 25,159
+ Upleta    dots:  10   Number of schools: 47   Number of students: 8,413
+ Vinchhiya    dots:  9   Number of schools: 56   Number of students: 6,998
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Tapi_blockwise.Tapi_blkwise</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: cQube
+Choose a Block  dots :  5   Number of schools: 644   Number of students: 58,631
+ Nizar  dots :  5   Number of schools: 27   Number of students: 3,959
+ Songadh  dots :  21   Number of schools: 161   Number of students: 11,249
+ Uchchhal  dots :  7   Number of schools: 28   Number of students: 3,332
+ Valod  dots :  7   Number of schools: 36   Number of students: 2,732
+ Vyara  dots :  13   Number of schools: 85   Number of students: 5,555
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Vallabnagar_clusters.District_Vallabnagar</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_schoolrecords</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: no of dots: 7
+no of records in file: 7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Valsad_blockwise.Valsad_blocks</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: cQube
+Choose a Block  dots :  6   Number of schools: 993   Number of students: 1,36,428
+ Dharampur  dots :  20   Number of schools: 103   Number of students: 14,405
+ Kaparada  dots :  23   Number of schools: 111   Number of students: 16,889
+ Pardi  dots :  11   Number of schools: 71   Number of students: 6,298
+ Umbergaon  dots :  15   Number of schools: 85   Number of students: 13,496
+ Valsad  dots :  17   Number of schools: 76   Number of students: 6,351
+ Vapi  dots :  7   Number of schools: 29   Number of students: 7,778
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Valsad_clusterwise.Valsad_blocks</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',2)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.1')" >
+        pass</a>
+
+    <div id='div_pt13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.1: cQube
+Dharampur block details...
+
+Choose a cluster  No of dots: 20   No of schools Number of schools: 103   Number of students: 14,405
+ Ambatalat  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,738
+ Bamti  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,316
+ Baroliya  No of dots: 6   No of schools Number of schools: 6   Number of students: 910
+ Bhesdara  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,228
+ Bilpudi  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,139
+ Bopi  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,126
+ Gundiya  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,276
+ Hanmatmal  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,514
+ Jamliya  No of dots: 9   No of schools Number of schools: 9   Number of students: 913
+ Karanjveri  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,945
+ Kumar Shala  No of dots: 10   No of schools Number of schools: 10   Number of students: 2,067
+ Lakadmaad  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,633
+ Makadban  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,874
+ Moti Korvad  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,087
+ Pendha  No of dots: 10   No of schools Number of schools: 10   Number of students: 890
+ Pindval  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,268
+ Sadadpada  No of dots: 7   No of schools Number of schools: 7   Number of students: 814
+ Sidumbar  No of dots: 0   No of schools Number of schools: 0   Number of students: 0
+ Tutarkhed  No of dots: 23   No of schools Number of schools: 23   Number of students: 2,38,62,73,32,11,33,32,93,74,73,82,66,513
+ Vankhas  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,264
+
+
+Kaparada block details...
+Choose a cluster  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,264
+ Ambatalat  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,738
+ Bamti  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,316
+ Baroliya  No of dots: 6   No of schools Number of schools: 6   Number of students: 910
+ Bhesdara  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,228
+ Bilpudi  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,139
+ Bopi  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,126
+ Gundiya  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,276
+ Hanmatmal  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,514
+ Jamliya  No of dots: 9   No of schools Number of schools: 9   Number of students: 913
+ Karanjveri  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,945
+ Kumar Shala  No of dots: 10   No of schools Number of schools: 10   Number of students: 2,067
+ Lakadmaad  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,633
+ Makadban  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,874
+ Moti Korvad  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,087
+ Pendha  No of dots: 10   No of schools Number of schools: 10   Number of students: 890
+ Pindval  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,268
+ Sadadpada  No of dots: 7   No of schools Number of schools: 7   Number of students: 814
+ Sidumbar  No of dots: 12   No of schools Number of schools: 12   Number of students: 2,386
+ Tutarkhed  No of dots: 11   No of schools Number of schools: 11   Number of students: 706
+ Vankhas  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,264
+
+
+Pardi block details...
+Choose a cluster  No of dots: 11   No of schools Number of schools: 71   Number of students: 6,298
+ Ambach  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,001
+ Dungri Mukhya  No of dots: 9   No of schools Number of schools: 9   Number of students: 718
+ Goima  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,105
+ Kotlav  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,214
+ Mota Waghchhipa  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,221
+ Pardi Kumar  No of dots: 10   No of schools Number of schools: 10   Number of students: 958
+ Pariya  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,095
+ Rentlav  No of dots: 9   No of schools Number of schools: 9   Number of students: 874
+ Samarpada  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,072
+ Sonwada  No of dots: 13   No of schools Number of schools: 13   Number of students: 868
+ Sukhesh  No of dots: 12   No of schools Number of schools: 12   Number of students: 694
+Umbergaon block details...
+
+Choose a cluster  No of dots: 15   No of schools Number of schools: 85   Number of students: 13,496
+ Anklaas  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,834
+ Bhagatwada  No of dots: 9   No of schools Number of schools: 9   Number of students: 521
+ Daheli  No of dots: 15   No of schools Number of schools: 15   Number of students: 2,513
+ Dhodipada  No of dots: 8   No of schools Number of schools: 8   Number of students: 1,402
+ Fansa  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,025
+ Khatalwada  No of dots: 13   No of schools Number of schools: 13   Number of students: 3,773
+ Manda  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,608
+ Maroli  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,257
+ Nahuli  No of dots: 9   No of schools Number of schools: 9   Number of students: 910
+ Palikarambeli  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,327
+ Sanjan  No of dots: 12   No of schools Number of schools: 12   Number of students: 2,548
+ Sarigam  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,863
+ Solsumba  No of dots: 14   No of schools Number of schools: 14   Number of students: 2,598
+ Umargam  No of dots: 12   No of schools Number of schools: 12   Number of students: 2,366
+ Valwada  No of dots: 8   No of schools Number of schools: 8   Number of students: 1,005
+Valsad block details...
+
+Choose a cluster  No of dots: 17   No of schools Number of schools: 76   Number of students: 6,351
+ Abrama  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,440
+ Atgam  No of dots: 9   No of schools Number of schools: 9   Number of students: 501
+ Bhadeli  No of dots: 9   No of schools Number of schools: 9   Number of students: 742
+ Dandi  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,242
+ Dived  No of dots: 14   No of schools Number of schools: 14   Number of students: 861
+ Dungri  No of dots: 15   No of schools Number of schools: 15   Number of students: 1,615
+ Faldhara  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,151
+ Gorgam  No of dots: 11   No of schools Number of schools: 11   Number of students: 939
+ Kalwada  No of dots: 12   No of schools Number of schools: 12   Number of students: 966
+ Kanjanhari  No of dots: 13   No of schools Number of schools: 13   Number of students: 997
+ Kosamba  No of dots: 6   No of schools Number of schools: 6   Number of students: 306
+ Mograwadi  No of dots: 11   No of schools Number of schools: 11   Number of students: 2,386
+ Mukhy Kumar  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,236
+ Navera  No of dots: 13   No of schools Number of schools: 13   Number of students: 735
+ Parnera  No of dots: 10   No of schools Number of schools: 10   Number of students: 871
+ Ronvel  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,023
+ Saron  No of dots: 15   No of schools Number of schools: 15   Number of students: 849
+Vapi block details..
+
+Choose a cluster  No of dots: 7   No of schools Number of schools: 29   Number of students: 7,778
+ Degam  No of dots: 14   No of schools Number of schools: 14   Number of students: 1,824
+ Dungra  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,752
+ Gidc, Vapi  No of dots: 7   No of schools Number of schools: 7   Number of students: 2,625
+ Rata Patel Faliya  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,402
+ Sulpad  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,729
+ Vapi  No of dots: 10   No of schools Number of schools: 10   Number of students: 2,663
+ Vatar  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,342
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt13.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.2')" >
+        pass</a>
+
+    <div id='div_pt13.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.2: cQube
+Dharampur block details...
+
+Choose a cluster  No of dots: 20   No of schools Number of schools: 103   Number of students: 14,405
+ Ambatalat  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,738
+ Bamti  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,316
+ Baroliya  No of dots: 6   No of schools Number of schools: 6   Number of students: 910
+ Bhesdara  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,228
+ Bilpudi  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,139
+ Bopi  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,126
+ Gundiya  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,276
+ Hanmatmal  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,514
+ Jamliya  No of dots: 9   No of schools Number of schools: 9   Number of students: 913
+ Karanjveri  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,945
+ Kumar Shala  No of dots: 10   No of schools Number of schools: 10   Number of students: 2,067
+ Lakadmaad  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,633
+ Makadban  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,874
+ Moti Korvad  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,087
+ Pendha  No of dots: 10   No of schools Number of schools: 10   Number of students: 890
+ Pindval  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,268
+ Sadadpada  No of dots: 7   No of schools Number of schools: 7   Number of students: 814
+ Sidumbar  No of dots: 12   No of schools Number of schools: 12   Number of students: 2,386
+ Tutarkhed  No of dots: 11   No of schools Number of schools: 11   Number of students: 706
+ Vankhas  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,264
+
+
+Kaparada block details...
+Choose a cluster  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,264
+ Ambatalat  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,738
+ Bamti  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,316
+ Baroliya  No of dots: 6   No of schools Number of schools: 6   Number of students: 910
+ Bhesdara  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,228
+ Bilpudi  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,139
+ Bopi  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,126
+ Gundiya  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,276
+ Hanmatmal  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,514
+ Jamliya  No of dots: 9   No of schools Number of schools: 9   Number of students: 913
+ Karanjveri  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,945
+ Kumar Shala  No of dots: 10   No of schools Number of schools: 10   Number of students: 2,067
+ Lakadmaad  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,633
+ Makadban  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,874
+ Moti Korvad  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,087
+ Pendha  No of dots: 10   No of schools Number of schools: 10   Number of students: 890
+ Pindval  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,268
+ Sadadpada  No of dots: 7   No of schools Number of schools: 7   Number of students: 814
+ Sidumbar  No of dots: 12   No of schools Number of schools: 12   Number of students: 2,386
+ Tutarkhed  No of dots: 11   No of schools Number of schools: 11   Number of students: 706
+ Vankhas  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,264
+
+
+Pardi block details...
+Choose a cluster  No of dots: 11   No of schools Number of schools: 71   Number of students: 6,298
+ Ambach  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,001
+ Dungri Mukhya  No of dots: 9   No of schools Number of schools: 9   Number of students: 718
+ Goima  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,105
+ Kotlav  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,214
+ Mota Waghchhipa  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,221
+ Pardi Kumar  No of dots: 10   No of schools Number of schools: 10   Number of students: 958
+ Pariya  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,095
+ Rentlav  No of dots: 9   No of schools Number of schools: 9   Number of students: 874
+ Samarpada  No of dots: 10   No of schools Number of schools: 10   Number of students: 1,072
+ Sonwada  No of dots: 13   No of schools Number of schools: 13   Number of students: 868
+ Sukhesh  No of dots: 12   No of schools Number of schools: 12   Number of students: 694
+Umbergaon block details...
+
+Choose a cluster  No of dots: 15   No of schools Number of schools: 85   Number of students: 13,496
+ Anklaas  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,834
+ Bhagatwada  No of dots: 9   No of schools Number of schools: 9   Number of students: 521
+ Daheli  No of dots: 15   No of schools Number of schools: 15   Number of students: 2,513
+ Dhodipada  No of dots: 8   No of schools Number of schools: 8   Number of students: 1,402
+ Fansa  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,025
+ Khatalwada  No of dots: 13   No of schools Number of schools: 13   Number of students: 3,773
+ Manda  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,608
+ Maroli  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,257
+ Nahuli  No of dots: 9   No of schools Number of schools: 9   Number of students: 910
+ Palikarambeli  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,327
+ Sanjan  No of dots: 12   No of schools Number of schools: 12   Number of students: 2,548
+ Sarigam  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,863
+ Solsumba  No of dots: 14   No of schools Number of schools: 14   Number of students: 2,598
+ Umargam  No of dots: 12   No of schools Number of schools: 12   Number of students: 2,366
+ Valwada  No of dots: 8   No of schools Number of schools: 8   Number of students: 1,005
+Valsad block details...
+
+Choose a cluster  No of dots: 17   No of schools Number of schools: 76   Number of students: 6,351
+ Abrama  No of dots: 11   No of schools Number of schools: 11   Number of students: 1,440
+ Atgam  No of dots: 9   No of schools Number of schools: 9   Number of students: 501
+ Bhadeli  No of dots: 9   No of schools Number of schools: 9   Number of students: 742
+ Dandi  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,242
+ Dived  No of dots: 14   No of schools Number of schools: 14   Number of students: 861
+ Dungri  No of dots: 15   No of schools Number of schools: 15   Number of students: 1,615
+ Faldhara  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,151
+ Gorgam  No of dots: 11   No of schools Number of schools: 11   Number of students: 939
+ Kalwada  No of dots: 12   No of schools Number of schools: 12   Number of students: 966
+ Kanjanhari  No of dots: 13   No of schools Number of schools: 13   Number of students: 997
+ Kosamba  No of dots: 6   No of schools Number of schools: 6   Number of students: 306
+ Mograwadi  No of dots: 11   No of schools Number of schools: 11   Number of students: 2,386
+ Mukhy Kumar  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,236
+ Navera  No of dots: 13   No of schools Number of schools: 13   Number of students: 735
+ Parnera  No of dots: 10   No of schools Number of schools: 10   Number of students: 871
+ Ronvel  No of dots: 13   No of schools Number of schools: 13   Number of students: 1,023
+ Saron  No of dots: 15   No of schools Number of schools: 15   Number of students: 849
+Vapi block details..
+
+Choose a cluster  No of dots: 7   No of schools Number of schools: 29   Number of students: 7,778
+ Degam  No of dots: 14   No of schools Number of schools: 14   Number of students: 1,824
+ Dungra  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,752
+ Gidc, Vapi  No of dots: 7   No of schools Number of schools: 7   Number of students: 2,625
+ Rata Patel Faliya  No of dots: 12   No of schools Number of schools: 12   Number of students: 1,402
+ Sulpad  No of dots: 7   No of schools Number of schools: 7   Number of students: 1,729
+ Vapi  No of dots: 10   No of schools Number of schools: 10   Number of students: 2,663
+ Vatar  No of dots: 9   No of schools Number of schools: 9   Number of students: 1,342
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>SAR_validations.Jamnagar_district.Jayva_cluster_validation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: no of dots: 17
+no of records in file: 17
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>16</td>
+    <td>14</td>
+    <td>1</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

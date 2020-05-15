@@ -1,11 +1,11 @@
 from HTMLTestRunner import HTMLTestRunner
 import unittest
 
-from POM import Blocks, Clusters, District, Schools
 from Validations import Amreli_district, Block_Halvad, Block_memnagar, Block_Nernyanagar, blockdata_check, Blocks_Check, \
-    Chandloadiacluster, Check_dist_blk, cluster_jaliya, Cluster_Mathak, Cluster_vankiya, Clusters_check, DBP_schoolwise, \
+    Chandloadiacluster, Check_dist_blk, cluster_jaliya, Cluster_vankiya, Clusters_check, DBP_schoolwise, \
     Dist_morbi, District_DevBhoomi, District_Gir, District_random, district_Vadodara, Home_map, Khedadist, \
     Schools_check, Simar_Una_test, una_block, validation_distblockcuster, AMH_schoollevel
+from SAR_validations import Cluster_Mathak
 
 
 class MyTestSuite(unittest.TestCase):
