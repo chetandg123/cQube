@@ -4,7 +4,7 @@ import base64
 class Data():
     #path should be chrome.exe file location
     Path =executable_path="/home/chetan/PycharmProjects/cQube/Driverfile/chromedriver"
-
+    fpath="Driverfile/geckodriver"
 
     # URL = base64.b64decode("aHR0cHM6Ly9jcXViZS50aWJpbHByb2plY3RzLmNvbQ==").decode("utf-8")
     URL ="http://52.66.209.6:4200/#/login"
