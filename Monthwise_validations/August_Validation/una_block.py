@@ -9,7 +9,7 @@ from selenium import webdriver
 from Data.Paramters import Data
 
 
-class Gir_dist_validation(unittest.TestCase):
+class Una_blocks(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()

@@ -19,12 +19,13 @@ class Yaxis(unittest.TestCase):
 
     def test_click_yaxis(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
-        head =self.driver.find_element_by_xpath("//td[contains(text(),'CRC Reports ')]").text
+        head =self.driver.find_element_by_xpath("//td[contains(text(),'CRC Report ')]").text
         self.driver.find_element_by_xpath(Data.crc).click()
         time.sleep(30)
         yaxis_lists =self.driver.find_elements_by_xpath(Data.yaxis)
         for i in range(len(yaxis_lists)):
             yaxis_lists[i].click()
+            print(yaxis_lists[i].text)
             time.sleep(10)
 
 

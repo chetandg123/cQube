@@ -15,11 +15,11 @@ class Sel_type(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
         self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
         self.driver.find_element_by_xpath(Data.loginbtn).click()
-        time.sleep(2)
+        time.sleep(5)
 
     def test_select_for_download(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
-        head =self.driver.find_element_by_xpath("//td[contains(text(),'CRC Reports ')]").text
+        time.sleep(3)
         self.driver.find_element_by_xpath(Data.crc).click()
         time.sleep(30)
         sel_type =self.driver.find_elements_by_xpath(Data.selecttype)

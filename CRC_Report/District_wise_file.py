@@ -1,3 +1,4 @@
+import csv
 import time
 import unittest
 
@@ -20,17 +21,17 @@ class Crc_Reports(unittest.TestCase):
     def test_crcclick(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
         time.sleep(3)
-        # self.assertEqual(head,"    CRC Reports ","not matching!..")
         self.driver.find_element_by_xpath(Data.crc).click()
         time.sleep(30)
-        distnames = self.driver.find_elements_by_xpath(Data.crcdistrict)
-        for i in range(len(distnames)):
-            distnames[i].click()
-            time.sleep(5)
-            print(distnames[i].text)
+        self.driver.find_element_by_xpath("//*[@id='select']/select/option[2]").click()
+        time.sleep(2)
+        with open("/home/chetan/Downloads/Datafiles/Block_level_CRC_Report (3).csv", 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                print(row)
     def tearDown(self):
             time.sleep(5)
-
+            self.driver.close()
 
     if __name__ == "__main__":
         unittest.main()

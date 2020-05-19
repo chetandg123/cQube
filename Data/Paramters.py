@@ -6,7 +6,9 @@ class Data():
     Path =executable_path="/home/chetan/PycharmProjects/cQube/Driverfile/chromedriver"
 
 
-    URL = base64.b64decode("aHR0cHM6Ly9jcXViZS50aWJpbHByb2plY3RzLmNvbQ==").decode("utf-8")
+    # URL = base64.b64decode("aHR0cHM6Ly9jcXViZS50aWJpbHByb2plY3RzLmNvbQ==").decode("utf-8")
+    URL ="http://52.66.209.6:4200/#/login"
+
     username = base64.b64decode("dGliaWxzb2x1dGlvbnNAY3F1YmUuY29t").decode("utf-8")
     password= base64.b64decode("dGliaWwxMjM=").decode("utf-8")
 
@@ -86,13 +88,12 @@ class Data():
     directory ="//p[contains(text(),' Semester report for:')]/span"
     Download ="//img[@title='Download Report']"
 # Dash board
-    Dashboard ="//span[@class='" \
-               "mat-button-wrapper']/mat-icon"
+    Dashboard ="/html/body/app-root/app-home/mat-toolbar/button[1]/span/mat-icon"
     login_in = "//span[@class='span']"
     SAR = "//div[@class='mat-list-item-content']/td[contains(text(),'Student')]"
     TAR ="//div[@class='mat-list-item-content']/td[contains(text(),'Teacher')]"
     SR  = "//div[@class='mat-list-item-content']/td[contains(text(),'Semester')]"
-    crc ="//div[@class='mat-list-item-content']/td[contains(text(),'CRC Reports')]"
+    crc ="//div[@class='mat-list-item-content']/td[contains(text(),'CRC Report')]"
     Log_out ="//button/span[contains(text(),'Log Out')]"
     Home_icon ="//img[@id='home']"
 
@@ -114,10 +115,15 @@ class Data():
 
     # rowby data
     distrows = "//tr[@class='odd']/td"
-    headers = "//th"
+    headers = "//tr[@role='row']/th"
+    footer = "/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-bar-chart/div/div[5]/div/span"
 
+    #select_type
+    distwise = "//select[@name='downloadType']/option[2]"
+    blkwise = "//select[@name='downloadType']/option[3]"
+    clusterwise ="//select[@name='downloadType']/option[4]"
+    schoolwise = "//select[@name='downloadType']/option[5]"
     # X axis and Y axis
-
     xaxis = "//select[@name='xAxis']/option"
     yaxis = "//select[@name='yAxis']/option"
 

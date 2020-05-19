@@ -1,0 +1,2660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2020-05-18 21:08:51</p>
+<p class='attribute'><strong>Duration:</strong> 1:31:42.308311</p>
+<p class='attribute'><strong>Status:</strong> Pass 17 Failure 10 Error 4</p>
+
+<p class='description'>Integration Testing of CRC Report</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Ahmedbad_Dist.Ahmedabad_report</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Anand_District.Sundalpur_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        fail</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1:  Anand 
+ Umreth 
+ Sundalpura 
+no of records in file: 7
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 'Total Number of schools: 0' != 7 : unmatching count found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Anand_District.py", line 50, in test_crcclick
+    self.assertEqual(count, lines, "unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: Total Number of schools: 0 != 7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Anand_Umreth.Umreth_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        fail</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1:  Anand 
+ Umreth 
+no of records in file: 7
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 'Total Number of schools: 59' != 7 : unmatching count found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Anand_Umreth.py", line 46, in test_crcclick
+    self.assertEqual(count, lines, "unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: Total Number of schools: 59 != 7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Bharuch_district.Bharuch_cluster</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1:  Bharuch 
+ Bharuch 
+ Chhipwad 
+Total Number of visits: 0
+Total Number of schools: 0
+Total schools visited: 5
+Total schools not visited: 19
+Date range:
+['\ufeffdistrictId', 'districtName', 'visit_0', 'visit_1_2', 'visit_3_5', 'visit_6_10', 'visit_10_more', 'totalVisits', 'blockId', 'blockName', 'clusterId', 'clusterName', 'no_of_schools_per_crc', 'visits_per_school', 'percentage_crc_visited_school', 'totalSchools']
+['2421', 'Bharuch', '0.00', '0.00', '100.00', '0.00', '0.00', '4', '242103', 'Bharuch', '2421030001', 'Bhadbhut', '5.00', '0.80', '100.00 %', '5']
+['2421', 'Bharuch', '0.00', '50.00', '0.00', '50.00', '0.00', '110', '242103', 'Bharuch', '2421030003', 'Chhipwad', '11.00', '10.00', '100.00 %', '11']
+['2421', 'Bharuch', '0.00', '0.00', '50.00', '50.00', '0.00', '37', '242103', 'Bharuch', '2421030005', 'Kanthariya', '8.00', '4.63', '100.00 %', '8']
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Bhavanagar_test.Bhavnagar_cluster</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1:  Bhavnagar 
+ Palitana 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.block_file.Crc_Reports</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: ['\ufeffdistrictId', 'districtName', 'visit_0', 'visit_1_2', 'visit_3_5', 'visit_6_10', 'visit_10_more', 'totalVisits', 'blockId', 'blockName', 'no_of_schools_per_crc', 'visits_per_school', 'percentage_crc_visited_school', 'totalSchools']
+['2401', 'Kachchh', '30.77', '23.08', '23.08', '23.08', '0.00', '36', '240102', 'Rapar', '9.97', '0.10', '25.71 %', '349']
+['2401', 'Kachchh', '16.67', '50.00', '16.67', '16.67', '0.00', '17', '240103', 'Bhachau', '9.92', '0.07', '16.67 %', '238']
+['2401', 'Kachchh', '11.11', '33.33', '33.33', '22.22', '0.00', '32', '240104', 'Anjar', '11.74', '0.14', '36.84 %', '223']
+['2401', 'Kachchh', '0.00', '66.67', '0.00', '33.33', '0.00', '515', '240105', 'Bhuj', '12.30', '0.97', '11.63 %', '529']
+['2401', 'Kachchh', '50.00', '0.00', '50.00', '0.00', '0.00', '04', '240106', 'Nakhatrana', '9.81', '0.02', '9.52 %', '206']
+['2401', 'Kachchh', '33.33', '33.33', '0.00', '33.33', '0.00', '16', '240107', 'Abdasa', '8.88', '0.08', '8.33 %', '213']
+['2401', 'Kachchh', '71.43', '0.00', '28.57', '0.00', '0.00', '07', '240108', 'Mandvi', '8.39', '0.03', '21.43 %', '235']
+['2401', 'Kachchh', '25.00', '25.00', '25.00', '25.00', '0.00', '22', '240109', 'Mundra', '11.00', '0.13', '46.67 %', '165']
+['2401', 'Kachchh', '30.77', '7.69', '53.85', '7.69', '0.00', '32', '240110', 'Gandhidham', '23.56', '0.15', '88.89 %', '212']
+['2402', 'Banaskantha', '50.00', '37.50', '12.50', '0.00', '0.00', '8', '240201', 'Amirgadh', '12.33', '0.05', '58.33 %', '148']
+['2402', 'Banaskantha', '66.67', '16.67', '16.67', '0.00', '0.00', '4', '240202', 'Bhabhar', '12.92', '0.03', '41.67 %', '155']
+['2402', 'Banaskantha', '30.00', '30.00', '20.00', '20.00', '0.00', '29', '240203', 'Danta', '11.00', '0.10', '25.93 %', '297']
+['2402', 'Banaskantha', '38.46', '15.38', '7.69', '30.77', '7.69', '51', '240204', 'Dantiwada', '12.00', '0.39', '72.73 %', '132']
+['2402', 'Banaskantha', '61.54', '0.00', '23.08', '15.38', '0.00', '0914', '240205', 'Deesa', '11.61', '2.07', '23.68 %', '441']
+['2402', 'Banaskantha', '0.00', '36.36', '27.27', '36.36', '0.00', '61331', '240206', 'Deodar', '11.89', '271.38', '42.11 %', '226']
+['2402', 'Banaskantha', '42.86', '0.00', '42.86', '14.29', '0.00', '0107', '240207', 'Dhanera', '14.27', '0.50', '26.67 %', '214']
+['2402', 'Banaskantha', '0.00', '83.33', '16.67', '0.00', '0.00', '83', '240208', 'Kankarej', '10.97', '0.26', '20.69 %', '318']
+['2402', 'Banaskantha', '75.00', '12.50', '12.50', '0.00', '0.00', '6', '240209', 'Palanpur', '15.15', '0.02', '30.77 %', '394']
+['2402', 'Banaskantha', '22.22', '11.11', '44.44', '22.22', '0.00', '31', '240210', 'Tharad', '12.23', '0.08', '20.00 %', '367']
+['2402', 'Banaskantha', '25.00', '0.00', '50.00', '25.00', '0.00', '086', '240211', 'Vadgam', '12.39', '0.39', '22.22 %', '223']
+['2402', 'Banaskantha', '50.00', '0.00', '25.00', '25.00', '0.00', '056', '240212', 'Vav', '10.73', '0.35', '20.00 %', '161']
+['2402', 'Banaskantha', '40.00', '50.00', '10.00', '0.00', '0.00', '9', '240213', 'Lakhani', '11.94', '0.04', '44.44 %', '215']
+['2402', 'Banaskantha', '50.00', '33.33', '16.67', '0.00', '0.00', '7', '240214', 'Suigam', '10.25', '0.09', '50.00 %', '82']
+['2403', 'Patan', '33.33', '25.00', '33.33', '8.33', '0.00', '29', '240301', 'Chanasma', '11.55', '0.23', '63.64 %', '127']
+['2403', 'Patan', '57.14', '7.14', '14.29', '21.43', '0.00', '32', '240302', 'Harij', '10.78', '0.33', '66.67 %', '97']
+['2403', 'Patan', '20.00', '50.00', '10.00', '20.00', '0.00', '25', '240303', 'Patan', '14.60', '0.11', '40.00 %', '219']
+['2403', 'Patan', '15.38', '0.00', '7.69', '69.23', '7.69', '046811', '240304', 'Sami', '9.82', '433.44', '54.55 %', '108']
+['2403', 'Patan', '10.00', '10.00', '40.00', '30.00', '10.00', '58', '240305', 'Siddhpur', '12.33', '0.39', '58.33 %', '148']
+['2403', 'Patan', '41.67', '0.00', '41.67', '16.67', '0.00', '01918', '240308', 'Radhanpur', '9.93', '12.87', '46.67 %', '149']
+['2403', 'Patan', '60.00', '0.00', '40.00', '0.00', '0.00', '08', '240309', 'Santalpur', '9.38', '0.07', '30.77 %', '122']
+['2403', 'Patan', '16.67', '0.00', '16.67', '0.00', '66.67', '0371', '240312', 'Saraswati', '11.38', '2.04', '25.00 %', '182']
+['2404', 'Mahesana', '66.67', '25.00', '8.33', '0.00', '0.00', '7', '240401', 'Becharaji', '11.44', '0.07', '66.67 %', '103']
+['2404', 'Mahesana', '18.75', '12.50', '31.25', '37.50', '0.00', '69', '240402', 'Kadi', '11.05', '0.28', '40.91 %', '243']
+['2404', 'Mahesana', '22.22', '33.33', '22.22', '22.22', '0.00', '29', '240403', 'Kheralu', '8.60', '0.22', '40.00 %', '129']
+['2404', 'Mahesana', '20.00', '30.00', '40.00', '10.00', '0.00', '26', '240404', 'Mehsana', '13.42', '0.08', '29.17 %', '322']
+['2404', 'Mahesana', '37.50', '50.00', '12.50', '0.00', '0.00', '9', '240405', 'Satlasana', '11.10', '0.08', '70.00 %', '111']
+['2404', 'Mahesana', '20.00', '40.00', '26.67', '13.33', '0.00', '38', '240406', 'Unjha', '10.55', '0.33', '72.73 %', '116']
+['2404', 'Mahesana', '0.00', '16.67', '83.33', '0.00', '0.00', '121', '240407', 'Vadnagar', '12.08', '0.83', '33.33 %', '145']
+['2404', 'Mahesana', '0.00', '28.57', '28.57', '42.86', '0.00', '3721', '240408', 'Vijapur', '11.10', '16.76', '25.00 %', '222']
+['2404', 'Mahesana', '18.18', '36.36', '45.45', '0.00', '0.00', '26', '240409', 'Visnagar', '11.18', '0.14', '41.18 %', '190']
+['2404', 'Mahesana', '9.09', '45.45', '27.27', '18.18', '0.00', '33', '240411', 'Jotana', '8.86', '0.53', '71.43 %', '62']
+['2405', 'Sabar Kantha', '71.43', '14.29', '14.29', '0.00', '0.00', '8', '240501', 'Khedbrahma', '11.68', '0.04', '52.63 %', '222']
+['2405', 'Sabar Kantha', '22.22', '55.56', '11.11', '11.11', '0.00', '22', '240502', 'Vijaynagar', '9.58', '0.12', '36.84 %', '182']
+['2405', 'Sabar Kantha', '9.09', '45.45', '18.18', '27.27', '0.00', '35', '240503', 'Vadali', '10.38', '0.26', '61.54 %', '135']
+['2405', 'Sabar Kantha', '21.43', '14.29', '21.43', '42.86', '0.00', '55', '240504', 'Idar', '11.10', '0.16', '29.03 %', '344']
+['2405', 'Sabar Kantha', '42.86', '7.14', '35.71', '14.29', '0.00', '42', '240507', 'Himmatnagar', '12.24', '0.10', '27.27 %', '404']
+['2405', 'Sabar Kantha', '20.00', '20.00', '40.00', '20.00', '0.00', '31', '240508', 'Prantij', '10.69', '0.18', '50.00 %', '171']
+['2405', 'Sabar Kantha', '8.33', '16.67', '8.33', '58.33', '8.33', '71', '240509', 'Talod', '9.00', '0.34', '30.43 %', '207']
+['2406', 'Gandhinagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240601', 'Dehgam', '11.86', '0.00', '3.57 %', '332']
+['2406', 'Gandhinagar', '75.00', '25.00', '0.00', '0.00', '0.00', '1', '240602', 'Gandhinagar', '18.76', '0.00', '12.12 %', '619']
+['2406', 'Gandhinagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240603', 'Kalol', '14.35', '0.00', '5.00 %', '287']
+['2407', 'Ahmedabad', '40.00', '40.00', '20.00', '0.00', '0.00', '7', '240701', 'Mandal', '9.13', '0.10', '37.50 %', '73']
+['2407', 'Ahmedabad', '0.00', '0.00', '66.67', '33.33', '0.00', '86', '240702', 'Detroj-Rampura', '7.45', '1.05', '27.27 %', '82']
+['2407', 'Ahmedabad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240703', 'Viramgam', '8.22', '0.00', '5.56 %', '148']
+['2407', 'Ahmedabad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240704', 'Sanand', '11.06', '0.00', '11.11 %', '199']
+['2407', 'Ahmedabad', '16.67', '33.33', '16.67', '33.33', '0.00', '21', '240706', 'Dascroi', '20.50', '0.03', '16.67 %', '615']
+['2407', 'Ahmedabad', '0.00', '0.00', '100.00', '0.00', '0.00', '3', '240707', 'Dholka', '11.16', '0.01', '5.26 %', '212']
+['2407', 'Ahmedabad', '25.00', '50.00', '25.00', '0.00', '0.00', '6', '240710', 'Bavla', '9.17', '0.05', '33.33 %', '110']
+['2407', 'Ahmedabad', '33.33', '44.44', '22.22', '0.00', '0.00', '13', '240711', 'Dhandhuka', '9.78', '0.15', '55.56 %', '88']
+['2407', 'Ahmedabad', '35.29', '25.49', '13.73', '23.53', '1.96', '145', '240712', 'Amc', '43.56', '0.08', '97.67 %', '1873']
+['2407', 'Ahmedabad', '80.00', '10.00', '10.00', '0.00', '0.00', '6', '240713', 'Dholera', '9.00', '0.11', '83.33 %', '54']
+['2408', 'Surendranagar', '36.36', '18.18', '45.45', '0.00', '0.00', '22', '240802', 'Dhrangadhra', '11.53', '0.11', '41.18 %', '196']
+['2408', 'Surendranagar', '66.67', '33.33', '0.00', '0.00', '0.00', '3', '240805', 'Wadhvan', '16.32', '0.01', '21.05 %', '310']
+['2408', 'Surendranagar', '44.44', '11.11', '44.44', '0.00', '0.00', '16', '240806', 'Muli', '12.00', '0.13', '50.00 %', '120']
+['2408', 'Surendranagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240807', 'Chotila', '18.00', '0.00', '36.36 %', '198']
+['2408', 'Surendranagar', '62.50', '37.50', '0.00', '0.00', '0.00', '6', '240808', 'Sayla', '10.53', '0.04', '40.00 %', '158']
+['2408', 'Surendranagar', '71.43', '0.00', '28.57', '0.00', '0.00', '06', '240809', 'Chuda', '7.67', '0.09', '44.44 %', '69']
+['2408', 'Surendranagar', '0.00', '90.91', '9.09', '0.00', '0.00', '154', '240810', 'Limbdi', '7.44', '1.29', '37.50 %', '119']
+['2408', 'Surendranagar', '11.11', '22.22', '44.44', '22.22', '0.00', '34', '240811', 'Thangadh', '15.80', '0.43', '80.00 %', '79']
+['2409', 'Rajkot', '0.00', '83.33', '16.67', '0.00', '0.00', '93', '240901', 'Dhoraji', '24.00', '0.65', '50.00 %', '144']
+['2409', 'Rajkot', '16.67', '33.33', '33.33', '0.00', '16.67', '1422', '240902', 'Gondal', '15.16', '4.94', '21.05 %', '288']
+['2409', 'Rajkot', '12.50', '37.50', '37.50', '12.50', '0.00', '25', '240903', 'Jamkandorna', '11.00', '0.28', '75.00 %', '88']
+['2409', 'Rajkot', '60.00', '40.00', '0.00', '0.00', '0.00', '3', '240904', 'Jasdan', '17.00', '0.01', '28.57 %', '238']
+['2409', 'Rajkot', '50.00', '0.00', '33.33', '16.67', '0.00', '086', '240906', 'Kotda Sangani', '14.00', '0.88', '42.86 %', '98']
+['2409', 'Rajkot', '50.00', '0.00', '40.00', '10.00', '0.00', '0147', '240907', 'Lodhika', '14.17', '1.73', '83.33 %', '85']
+['2409', 'Rajkot', '33.33', '50.00', '0.00', '16.67', '0.00', '67', '240911', 'Rajkot', '15.35', '0.26', '23.53 %', '261']
+['2409', 'Rajkot', '0.00', '28.57', '0.00', '57.14', '14.29', '22816', '240913', 'Upleta', '13.08', '134.21', '46.15 %', '170']
+['2409', 'Rajkot', '0.00', '42.86', '28.57', '14.29', '14.29', '48615', '240915', 'Rajkot Corporation', '38.83', '52.16', '25.00 %', '932']
+['2409', 'Rajkot', '66.67', '33.33', '0.00', '0.00', '0.00', '1', '240916', 'Vinchhiya', '13.80', '0.01', '30.00 %', '138']
+['2410', 'Jamnagar', '57.14', '42.86', '0.00', '0.00', '0.00', '3', '241002', 'Dhrol', '11.70', '0.03', '40.00 %', '117']
+['2410', 'Jamnagar', '28.57', '7.14', '42.86', '21.43', '0.00', '43', '241004', 'Jamjodhpur', '10.24', '0.25', '41.18 %', '174']
+['2410', 'Jamnagar', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '241007', 'Jamnagar', '17.74', '0.00', '17.65 %', '603']
+['2410', 'Jamnagar', '25.00', '16.67', '41.67', '16.67', '0.00', '35', '241008', 'Jodiya', '6.08', '0.48', '33.33 %', '73']
+['2410', 'Jamnagar', '44.44', '44.44', '11.11', '0.00', '0.00', '10', '241009', 'Kalavad', '9.83', '0.06', '33.33 %', '177']
+['2410', 'Jamnagar', '60.00', '40.00', '0.00', '0.00', '0.00', '5', '241010', 'Lalpur', '10.39', '0.03', '33.33 %', '187']
+['2411', 'Porbandar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '241101', 'Porbandar', '11.70', '0.00', '3.70 %', '316']
+['2411', 'Porbandar', '30.00', '50.00', '20.00', '0.00', '0.00', '14', '241102', 'Ranavav', '12.60', '0.11', '60.00 %', '126']
+['2411', 'Porbandar', '14.29', '42.86', '28.57', '14.29', '0.00', '17', '241103', 'Kutiyana', '9.09', '0.17', '36.36 %', '100']
+['2412', 'Junagadh', '12.50', '12.50', '62.50', '12.50', '0.00', '25', '241201', 'Junagadh', '15.67', '0.18', '66.67 %', '141']
+['2412', 'Junagadh', '14.29', '64.29', '14.29', '7.14', '0.00', '28', '241202', 'Mendarda', '10.10', '0.28', '80.00 %', '101']
+['2412', 'Junagadh', '75.00', '0.00', '0.00', '25.00', '0.00', '06', '241206', 'Maliya Hatina', '14.50', '0.03', '21.43 %', '203']
+['2412', 'Junagadh', '10.00', '10.00', '30.00', '40.00', '10.00', '51', '241207', 'Mangrol', '17.86', '0.20', '64.29 %', '250']
+['2412', 'Junagadh', '25.00', '0.00', '50.00', '25.00', '0.00', '077', '241208', 'Keshod', '19.27', '0.36', '36.36 %', '212']
+['2412', 'Junagadh', '23.08', '23.08', '30.77', '15.38', '7.69', '45', '241209', 'Manavadar', '12.70', '0.35', '80.00 %', '127']
+['2412', 'Junagadh', '21.43', '7.14', '57.14', '14.29', '0.00', '47', '241210', 'Vanthali', '12.44', '0.42', '77.78 %', '112']
+['2412', 'Junagadh', '57.14', '28.57', '0.00', '0.00', '14.29', '315', '241211', 'Bhesan', '11.29', '3.99', '42.86 %', '79']
+['2412', 'Junagadh', '40.00', '40.00', '20.00', '0.00', '0.00', '18', '241212', 'Visavadar', '14.17', '0.11', '83.33 %', '170']
+['2412', 'Junagadh', '66.67', '0.00', '33.33', '0.00', '0.00', '03', '241216', 'Junagadh Corporation', '51.50', '0.01', '75.00 %', '206']
+['2413', 'Amreli', '20.00', '80.00', '0.00', '0.00', '0.00', '5', '241301', 'Amreli', '14.43', '0.02', '35.71 %', '202']
+['2413', 'Amreli', '80.00', '20.00', '0.00', '0.00', '0.00', '3', '241302', 'Babara', '10.67', '0.02', '58.33 %', '128']
+['2413', 'Amreli', '80.00', '0.00', '0.00', '20.00', '0.00', '09', '241303', 'Bagasara', '10.86', '0.12', '71.43 %', '76']
+['2413', 'Amreli', '0.00', '50.00', '50.00', '0.00', '0.00', '14', '241304', 'Dhari', '9.86', '0.10', '14.29 %', '138']
+['2413', 'Amreli', '50.00', '33.33', '16.67', '0.00', '0.00', '6', '241305', 'Jafrabad', '10.75', '0.07', '37.50 %', '86']
+['2413', 'Amreli', '12.50', '25.00', '50.00', '12.50', '0.00', '23', '241306', 'Khambha', '8.50', '0.27', '40.00 %', '85']
+['2413', 'Amreli', '0.00', '44.44', '44.44', '11.11', '0.00', '8136', '241308', 'Lathi', '8.83', '76.75', '41.67 %', '106']
+['2413', 'Amreli', '62.50', '12.50', '12.50', '12.50', '0.00', '12', '241309', 'Liliya', '9.33', '0.21', '66.67 %', '56']
+['2413', 'Amreli', '33.33', '33.33', '0.00', '33.33', '0.00', '17', '241310', 'Rajula', '11.00', '0.11', '14.29 %', '154']
+['2413', 'Amreli', '18.18', '18.18', '45.45', '18.18', '0.00', '34', '241311', 'Savarkundla', '13.50', '0.18', '42.86 %', '189']
+['2414', 'Bhavnagar', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '241405', 'Bhavnagar', '18.18', '0.01', '9.09 %', '400']
+['2414', 'Bhavnagar', '0.00', '66.67', '22.22', '11.11', '0.00', '1077', '241406', 'Ghogha', '9.78', '12.24', '44.44 %', '88']
+['2414', 'Bhavnagar', '30.00', '0.00', '60.00', '10.00', '0.00', '0246', '241407', 'Shihor', '9.88', '1.46', '29.41 %', '168']
+['2414', 'Bhavnagar', '37.50', '37.50', '25.00', '0.00', '0.00', '12', '241408', 'Gariyadhar', '9.67', '0.14', '44.44 %', '87']
+['2414', 'Bhavnagar', '25.00', '25.00', '50.00', '0.00', '0.00', '7', '241409', 'Palitana', '10.25', '0.04', '25.00 %', '164']
+['2414', 'Bhavnagar', '30.00', '30.00', '20.00', '20.00', '0.00', '26', '241410', 'Talaja', '11.59', '0.10', '36.36 %', '255']
+['2414', 'Bhavnagar', '25.00', '33.33', '25.00', '16.67', '0.00', '38', '241411', 'Mahuva', '12.26', '0.13', '34.78 %', '282']
+['2414', 'Bhavnagar', '66.67', '0.00', '33.33', '0.00', '0.00', '07', '241413', 'Jesar', '8.00', '0.10', '55.56 %', '72']
+['2415', 'Anand', '12.50', '50.00', '37.50', '0.00', '0.00', '19', '241501', 'Anand', '11.95', '0.04', '21.62 %', '442']
+['2415', 'Anand', '37.50', '25.00', '12.50', '12.50', '12.50', '27', '241502', 'Anklav', '8.50', '0.23', '42.86 %', '119']
+['2415', 'Anand', '14.29', '0.00', '57.14', '14.29', '14.29', '016912', '241503', 'Borsad', '10.55', '51.72', '22.58 %', '327']
+['2415', 'Anand', '12.50', '25.00', '50.00', '12.50', '0.00', '25', '241504', 'Khambhat', '9.38', '0.11', '25.00 %', '225']
+['2415', 'Anand', '27.27', '18.18', '18.18', '36.36', '0.00', '38', '241506', 'Sojitra', '10.13', '0.47', '62.50 %', '81']
+['2415', 'Anand', '30.00', '30.00', '30.00', '10.00', '0.00', '21', '241507', 'Tarapur', '9.50', '0.28', '50.00 %', '76']
+['2415', 'Anand', '42.86', '28.57', '28.57', '0.00', '0.00', '11', '241508', 'Umreth', '10.31', '0.07', '37.50 %', '165']
+['2416', 'Kheda', '14.29', '35.71', '21.43', '21.43', '7.14', '51', '241602', 'Kapadvanj', '9.71', '0.15', '22.86 %', '340']
+['2416', 'Kheda', '27.27', '27.27', '27.27', '18.18', '0.00', '32', '241603', 'Kathlal', '11.29', '0.14', '42.86 %', '237']
+['2416', 'Kheda', '0.00', '100.00', '0.00', '0.00', '0.00', '2', '241604', 'Kheda', '11.60', '0.02', '10.00 %', '116']
+['2416', 'Kheda', '40.00', '60.00', '0.00', '0.00', '0.00', '4', '241605', 'Mahemdavad', '11.70', '0.02', '25.00 %', '234']
+['2416', 'Kheda', '33.33', '55.56', '11.11', '0.00', '0.00', '11', '241606', 'Mahudha', '10.64', '0.09', '54.55 %', '117']
+['2416', 'Kheda', '21.43', '28.57', '42.86', '7.14', '0.00', '35', '241607', 'Matar', '11.08', '0.26', '58.33 %', '133']
+['2416', 'Kheda', '33.33', '22.22', '33.33', '11.11', '0.00', '22', '241608', 'Nadiad', '12.90', '0.06', '23.33 %', '387']
+['2416', 'Kheda', '71.43', '0.00', '0.00', '28.57', '0.00', '017', '241609', 'Thasara', '9.52', '0.08', '21.74 %', '219']
+['2416', 'Kheda', '25.00', '0.00', '25.00', '0.00', '50.00', '0426', '241611', 'Galteshwar', '10.42', '3.41', '33.33 %', '125']
+['2416', 'Kheda', '12.50', '62.50', '25.00', '0.00', '0.00', '29', '241612', 'Vaso', '14.60', '0.40', '100.00 %', '73']
+['2417', 'Panch Mahals', '55.56', '22.22', '22.22', '0.00', '0.00', '12', '241701', 'Ghoghamba', '10.48', '0.04', '33.33 %', '283']
+['2417', 'Panch Mahals', '33.33', '50.00', '16.67', '0.00', '0.00', '7', '241702', 'Godhra', '12.64', '0.01', '10.26 %', '493']
+['2417', 'Panch Mahals', '58.33', '25.00', '0.00', '16.67', '0.00', '512', '241704', 'Jambughoda', '10.86', '6.74', '71.43 %', '76']
+['2417', 'Panch Mahals', '25.00', '41.67', '16.67', '16.67', '0.00', '34', '241709', 'Morva Hadaf', '9.86', '0.16', '42.86 %', '207']
+['2417', 'Panch Mahals', '42.86', '42.86', '14.29', '0.00', '0.00', '7', '241711', 'Shahera', '10.33', '0.02', '20.00 %', '310']
+['2418', 'Dohad', '57.14', '14.29', '28.57', '0.00', '0.00', '8', '241801', 'Dahod', '14.67', '0.02', '22.22 %', '396']
+['2418', 'Dohad', '60.00', '10.00', '30.00', '0.00', '0.00', '13', '241802', 'Garbada', '12.07', '0.07', '46.67 %', '181']
+['2418', 'Dohad', '50.00', '50.00', '0.00', '0.00', '0.00', '2', '241803', 'Limkheda', '13.10', '0.01', '13.79 %', '380']
+['2418', 'Dohad', '60.00', '20.00', '20.00', '0.00', '0.00', '6', '241804', 'Dhanpur', '11.30', '0.03', '20.00 %', '226']
+['2418', 'Dohad', '33.33', '66.67', '0.00', '0.00', '0.00', '5', '241805', 'Fatepura', '12.15', '0.02', '23.08 %', '316']
+['2418', 'Dohad', '42.86', '28.57', '28.57', '0.00', '0.00', '12', '241806', 'Zalod', '13.61', '0.03', '25.00 %', '381']
+['2418', 'Dohad', '54.55', '18.18', '27.27', '0.00', '0.00', '12', '241807', 'Dev.Baria', '13.55', '0.04', '40.91 %', '298']
+['2418', 'Dohad', '50.00', '25.00', '25.00', '0.00', '0.00', '5', '241808', 'Sanjeli', '13.00', '0.04', '44.44 %', '117']
+['2419', 'Vadodara', '33.33', '0.00', '33.33', '33.33', '0.00', '01221', '241902', 'Dabhoi', '12.79', '5.02', '42.11 %', '243']
+['2419', 'Vadodara', '60.00', '20.00', '0.00', '20.00', '0.00', '26', '241904', 'Karjan', '10.06', '0.16', '18.75 %', '161']
+['2419', 'Vadodara', '15.38', '46.15', '7.69', '30.77', '0.00', '44', '241907', 'Padra', '10.55', '0.21', '40.00 %', '211']
+['2419', 'Vadodara', '50.00', '16.67', '33.33', '0.00', '0.00', '9', '241909', 'Savli', '14.07', '0.05', '35.71 %', '197']
+['2419', 'Vadodara', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '241910', 'Shinor', '8.63', '0.00', '12.50 %', '69']
+['2419', 'Vadodara', '0.00', '28.57', '28.57', '42.86', '0.00', '2720', '241911', 'Vadodara', '13.76', '9.41', '33.33 %', '289']
+['2419', 'Vadodara', '27.27', '27.27', '45.45', '0.00', '0.00', '24', '241912', 'Vaghodiya', '13.44', '0.11', '50.00 %', '215']
+['2419', 'Vadodara', '85.71', '0.00', '14.29', '0.00', '0.00', '03', '241913', 'Vadodara Corporation', '39.31', '0.00', '37.50 %', '629']
+['2419', 'Vadodara', '12.50', '6.25', '50.00', '31.25', '0.00', '67', '241914', 'Desar', '14.25', '0.59', '100.00 %', '114']
+['2420', 'Narmada', '25.00', '37.50', '25.00', '12.50', '0.00', '21', '242001', 'Nandod', '10.78', '0.11', '27.78 %', '194']
+['2420', 'Narmada', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242002', 'Dediyapada', '11.40', '0.00', '16.00 %', '285']
+['2420', 'Narmada', '40.00', '40.00', '20.00', '0.00', '0.00', '13', '242003', 'Sagbara', '9.73', '0.09', '53.33 %', '146']
+['2420', 'Narmada', '66.67', '8.33', '16.67', '8.33', '0.00', '20', '242004', 'Tilakvada', '10.00', '0.17', '66.67 %', '120']
+['2420', 'Narmada', '81.82', '18.18', '0.00', '0.00', '0.00', '2', '242005', 'Garudeshwar', '11.36', '0.01', '50.00 %', '159']
+['2421', 'Bharuch', '70.00', '30.00', '0.00', '0.00', '0.00', '4', '242101', 'Amod', '9.30', '0.04', '50.00 %', '93']
+['2421', 'Bharuch', '23.08', '23.08', '23.08', '23.08', '7.69', '48', '242102', 'Ankleshwar', '19.25', '0.21', '50.00 %', '231']
+['2421', 'Bharuch', '0.00', '20.00', '40.00', '40.00', '0.00', '1717', '242103', 'Bharuch', '13.21', '5.42', '12.50 %', '317']
+['2421', 'Bharuch', '44.44', '55.56', '0.00', '0.00', '0.00', '7', '242104', 'Hansot', '11.00', '0.09', '57.14 %', '77']
+['2421', 'Bharuch', '21.43', '14.29', '14.29', '35.71', '14.29', '74', '242105', 'Jambusar', '9.00', '0.43', '42.11 %', '171']
+['2421', 'Bharuch', '50.00', '25.00', '8.33', '16.67', '0.00', '27', '242108', 'Zaghadia', '10.05', '0.13', '42.86 %', '211']
+['2421', 'Bharuch', '66.67', '0.00', '33.33', '0.00', '0.00', '03', '242109', 'Netrang', '10.54', '0.02', '23.08 %', '137']
+['2422', 'Surat', '27.27', '18.18', '45.45', '9.09', '0.00', '31', '242201', 'Bardoli', '11.44', '0.17', '43.75 %', '183']
+['2422', 'Surat', '37.50', '25.00', '25.00', '12.50', '0.00', '14', '242202', 'Choryasi', '13.45', '0.09', '36.36 %', '148']
+['2422', 'Surat', '8.33', '0.00', '16.67', '50.00', '25.00', '0105035', '242203', 'Kamrej', '18.09', '527.81', '63.64 %', '199']
+['2422', 'Surat', '18.18', '0.00', '36.36', '45.45', '0.00', '01637', '242204', 'Mahuva', '11.60', '9.41', '40.00 %', '174']
+['2422', 'Surat', '73.33', '20.00', '6.67', '0.00', '0.00', '8', '242205', 'Mandavi', '11.00', '0.03', '29.17 %', '264']
+['2422', 'Surat', '0.00', '33.33', '0.00', '33.33', '33.33', '2913', '242208', 'Olpad', '13.25', '13.74', '12.50 %', '212']
+['2422', 'Surat', '23.08', '23.08', '30.77', '23.08', '0.00', '43', '242212', 'Umarpada', '10.67', '0.34', '66.67 %', '128']
+['2422', 'Surat', '53.85', '12.82', '10.26', '17.95', '5.13', '98', '242215', 'Surat Corpo.', '39.14', '0.06', '61.90 %', '1644']
+['2423', 'The Dangs', '56.25', '6.25', '31.25', '6.25', '0.00', '29', '242301', 'Ahwa', '11.72', '0.14', '50.00 %', '211']
+['2423', 'The Dangs', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242302', 'Subir', '11.08', '0.00', '66.67 %', '133']
+['2423', 'The Dangs', '57.14', '42.86', '0.00', '0.00', '0.00', '5', '242303', 'Waghai', '11.92', '0.03', '50.00 %', '143']
+['2424', 'Navsari', '10.00', '40.00', '40.00', '10.00', '0.00', '26', '242401', 'Chikhli', '10.67', '0.10', '33.33 %', '256']
+['2424', 'Navsari', '0.00', '33.33', '22.22', '44.44', '0.00', '6727', '242402', 'Gandevi', '11.33', '39.57', '53.33 %', '170']
+['2424', 'Navsari', '0.00', '27.27', '54.55', '9.09', '9.09', '526812', '242404', 'Navsari', '12.67', '2772.69', '53.33 %', '190']
+['2424', 'Navsari', '12.50', '0.00', '37.50', '50.00', '0.00', '01332', '242405', 'Vansda', '9.65', '5.31', '30.77 %', '251']
+['2424', 'Navsari', '37.50', '0.00', '12.50', '12.50', '37.50', '05746', '242406', 'Khergam', '11.00', '74.62', '71.43 %', '77']
+['2425', 'Valsad', '25.00', '0.00', '50.00', '25.00', '0.00', '03428', '242501', 'Valsad', '10.86', '11.28', '42.86 %', '304']
+['2425', 'Valsad', '8.33', '16.67', '16.67', '41.67', '16.67', '76', '242502', 'Pardi', '12.14', '0.45', '57.14 %', '170']
+['2425', 'Valsad', '14.29', '14.29', '21.43', '42.86', '7.14', '70', '242503', 'Umbergaon', '11.10', '0.30', '47.62 %', '233']
+['2425', 'Valsad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242505', 'Kaparada', '10.03', '0.00', '14.71 %', '341']
+['2426', 'Tapi', '76.92', '7.69', '7.69', '7.69', '0.00', '10', '242607', 'Nizar', '10.83', '0.15', '83.33 %', '65']
+['2426', 'Tapi', '66.67', '8.33', '16.67', '8.33', '0.00', '15', '242610', 'Songadh', '12.84', '0.05', '40.00 %', '321']
+['2426', 'Tapi', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '242611', 'Uchchhal', '11.30', '0.03', '30.00 %', '113']
+['2426', 'Tapi', '16.67', '16.67', '66.67', '0.00', '0.00', '16', '242614', 'Vyara', '14.67', '0.07', '33.33 %', '220']
+['2426', 'Tapi', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242615', 'Dolvan', '16.11', '0.00', '100.00 %', '145']
+['2426', 'Tapi', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242616', 'Kukarmunda', '13.17', '0.00', '100.00 %', '79']
+['2427', 'Aravalli', '28.57', '0.00', '14.29', '57.14', '0.00', '0428', '242701', 'Modasa', '10.50', '1.36', '23.33 %', '315']
+['2427', 'Aravalli', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242702', 'Bhiloda', '10.26', '0.00', '5.88 %', '349']
+['2427', 'Aravalli', '42.86', '28.57', '28.57', '0.00', '0.00', '10', '242703', 'Meghraj', '11.36', '0.03', '21.43 %', '318']
+['2427', 'Aravalli', '40.00', '20.00', '40.00', '0.00', '0.00', '8', '242704', 'Malpur', '11.06', '0.04', '29.41 %', '188']
+['2427', 'Aravalli', '40.00', '60.00', '0.00', '0.00', '0.00', '3', '242706', 'Bayad', '9.94', '0.01', '15.15 %', '328']
+['2428', 'Botad', '16.67', '0.00', '66.67', '16.67', '0.00', '0146', '242801', 'Barvala', '10.60', '2.75', '40.00 %', '53']
+['2428', 'Botad', '44.44', '22.22', '22.22', '11.11', '0.00', '19', '242802', 'Ranpur', '8.63', '0.28', '50.00 %', '69']
+['2428', 'Botad', '38.46', '23.08', '15.38', '23.08', '0.00', '32', '242803', 'Botad', '13.14', '0.17', '50.00 %', '184']
+['2428', 'Botad', '21.43', '28.57', '35.71', '14.29', '0.00', '37', '242804', 'Gadhada', '11.77', '0.24', '69.23 %', '153']
+['2429', 'Devbhoomi Dwarka', '71.43', '0.00', '21.43', '7.14', '0.00', '0106', '242901', 'Bhanvad', '11.67', '0.61', '60.00 %', '175']
+['2429', 'Devbhoomi Dwarka', '20.00', '30.00', '30.00', '20.00', '0.00', '31', '242902', 'Dwarka', '10.07', '0.21', '46.67 %', '151']
+['2429', 'Devbhoomi Dwarka', '21.43', '21.43', '50.00', '7.14', '0.00', '38', '242903', 'Jamkalyanpur', '12.00', '0.13', '40.00 %', '300']
+['2430', 'Gir Somnath', '40.00', '40.00', '20.00', '0.00', '0.00', '7', '243001', 'Talala', '13.50', '0.05', '30.00 %', '135']
+['2430', 'Gir Somnath', '61.54', '0.00', '23.08', '15.38', '0.00', '01313', '243002', 'Veraval', '20.07', '4.67', '57.14 %', '281']
+['2430', 'Gir Somnath', '50.00', '25.00', '25.00', '0.00', '0.00', '4', '243003', 'Sutrapada', '11.71', '0.02', '21.43 %', '164']
+['2430', 'Gir Somnath', '27.27', '9.09', '63.64', '0.00', '0.00', '29', '243004', 'Una', '12.53', '0.12', '52.63 %', '238']
+['2430', 'Gir Somnath', '42.86', '28.57', '28.57', '0.00', '0.00', '10', '243005', 'Kodinar', '11.33', '0.06', '33.33 %', '170']
+['2430', 'Gir Somnath', '50.00', '33.33', '16.67', '0.00', '0.00', '7', '243006', 'Girgadhada', '9.18', '0.07', '45.45 %', '101']
+['2431', 'Mahisagar', '66.67', '16.67', '16.67', '0.00', '0.00', '4', '243101', 'Kadana', '11.45', '0.02', '30.00 %', '229']
+['2431', 'Mahisagar', '50.00', '10.00', '20.00', '20.00', '0.00', '27', '243102', 'Khanpur', '10.00', '0.17', '37.50 %', '160']
+['2431', 'Mahisagar', '30.77', '30.77', '30.77', '7.69', '0.00', '26', '243103', 'Lunawada', '11.97', '0.06', '20.00 %', '419']
+['2431', 'Mahisagar', '72.73', '18.18', '9.09', '0.00', '0.00', '6', '243104', 'Santrampur', '11.78', '0.02', '31.25 %', '377']
+['2431', 'Mahisagar', '33.33', '33.33', '22.22', '11.11', '0.00', '17', '243105', 'Balasinor', '13.00', '0.09', '53.33 %', '195']
+['2431', 'Mahisagar', '12.50', '25.00', '12.50', '25.00', '25.00', '49', '243106', 'Virpur', '10.71', '0.27', '41.18 %', '182']
+['2432', 'Chhotaudepur', '36.36', '36.36', '18.18', '9.09', '0.00', '20', '243201', 'Chhota-Udepur', '15.16', '0.07', '36.84 %', '288']
+['2432', 'Chhotaudepur', '60.00', '20.00', '20.00', '0.00', '0.00', '11', '243203', 'Kawant', '13.21', '0.04', '42.11 %', '251']
+['2432', 'Chhotaudepur', '37.50', '0.00', '25.00', '37.50', '0.00', '0825', '243204', 'Naswadi', '12.91', '2.90', '36.36 %', '284']
+['2432', 'Chhotaudepur', '50.00', '50.00', '0.00', '0.00', '0.00', '2', '243205', 'Sankheda', '12.29', '0.01', '23.53 %', '209']
+['2432', 'Chhotaudepur', '44.44', '33.33', '11.11', '11.11', '0.00', '15', '243206', 'Bodeli', '11.91', '0.06', '27.27 %', '262']
+['2433', 'Morbi', '0.00', '55.56', '22.22', '22.22', '0.00', '8813', '243303', 'Tankara', '14.14', '89.02', '85.71 %', '99']
+['2433', 'Morbi', '33.33', '33.33', '16.67', '16.67', '0.00', '13', '243304', 'Wankaner', '10.59', '0.06', '22.73 %', '233']
+['2433', 'Morbi', '50.00', '10.00', '30.00', '10.00', '0.00', '26', '243305', 'Halvad', '12.33', '0.14', '46.67 %', '185']
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Cluster_wise_file.Crc_Reports</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: ['\ufeffdistrictId', 'districtName', 'visit_0', 'visit_1_2', 'visit_3_5', 'visit_6_10', 'visit_10_more', 'totalVisits', 'blockId', 'blockName', 'no_of_schools_per_crc', 'visits_per_school', 'percentage_crc_visited_school', 'totalSchools']
+['2401', 'Kachchh', '30.77', '23.08', '23.08', '23.08', '0.00', '36', '240102', 'Rapar', '9.97', '0.10', '25.71 %', '349']
+['2401', 'Kachchh', '16.67', '50.00', '16.67', '16.67', '0.00', '17', '240103', 'Bhachau', '9.92', '0.07', '16.67 %', '238']
+['2401', 'Kachchh', '11.11', '33.33', '33.33', '22.22', '0.00', '32', '240104', 'Anjar', '11.74', '0.14', '36.84 %', '223']
+['2401', 'Kachchh', '0.00', '66.67', '0.00', '33.33', '0.00', '515', '240105', 'Bhuj', '12.30', '0.97', '11.63 %', '529']
+['2401', 'Kachchh', '50.00', '0.00', '50.00', '0.00', '0.00', '04', '240106', 'Nakhatrana', '9.81', '0.02', '9.52 %', '206']
+['2401', 'Kachchh', '33.33', '33.33', '0.00', '33.33', '0.00', '16', '240107', 'Abdasa', '8.88', '0.08', '8.33 %', '213']
+['2401', 'Kachchh', '71.43', '0.00', '28.57', '0.00', '0.00', '07', '240108', 'Mandvi', '8.39', '0.03', '21.43 %', '235']
+['2401', 'Kachchh', '25.00', '25.00', '25.00', '25.00', '0.00', '22', '240109', 'Mundra', '11.00', '0.13', '46.67 %', '165']
+['2401', 'Kachchh', '30.77', '7.69', '53.85', '7.69', '0.00', '32', '240110', 'Gandhidham', '23.56', '0.15', '88.89 %', '212']
+['2402', 'Banaskantha', '50.00', '37.50', '12.50', '0.00', '0.00', '8', '240201', 'Amirgadh', '12.33', '0.05', '58.33 %', '148']
+['2402', 'Banaskantha', '66.67', '16.67', '16.67', '0.00', '0.00', '4', '240202', 'Bhabhar', '12.92', '0.03', '41.67 %', '155']
+['2402', 'Banaskantha', '30.00', '30.00', '20.00', '20.00', '0.00', '29', '240203', 'Danta', '11.00', '0.10', '25.93 %', '297']
+['2402', 'Banaskantha', '38.46', '15.38', '7.69', '30.77', '7.69', '51', '240204', 'Dantiwada', '12.00', '0.39', '72.73 %', '132']
+['2402', 'Banaskantha', '61.54', '0.00', '23.08', '15.38', '0.00', '0914', '240205', 'Deesa', '11.61', '2.07', '23.68 %', '441']
+['2402', 'Banaskantha', '0.00', '36.36', '27.27', '36.36', '0.00', '61331', '240206', 'Deodar', '11.89', '271.38', '42.11 %', '226']
+['2402', 'Banaskantha', '42.86', '0.00', '42.86', '14.29', '0.00', '0107', '240207', 'Dhanera', '14.27', '0.50', '26.67 %', '214']
+['2402', 'Banaskantha', '0.00', '83.33', '16.67', '0.00', '0.00', '83', '240208', 'Kankarej', '10.97', '0.26', '20.69 %', '318']
+['2402', 'Banaskantha', '75.00', '12.50', '12.50', '0.00', '0.00', '6', '240209', 'Palanpur', '15.15', '0.02', '30.77 %', '394']
+['2402', 'Banaskantha', '22.22', '11.11', '44.44', '22.22', '0.00', '31', '240210', 'Tharad', '12.23', '0.08', '20.00 %', '367']
+['2402', 'Banaskantha', '25.00', '0.00', '50.00', '25.00', '0.00', '086', '240211', 'Vadgam', '12.39', '0.39', '22.22 %', '223']
+['2402', 'Banaskantha', '50.00', '0.00', '25.00', '25.00', '0.00', '056', '240212', 'Vav', '10.73', '0.35', '20.00 %', '161']
+['2402', 'Banaskantha', '40.00', '50.00', '10.00', '0.00', '0.00', '9', '240213', 'Lakhani', '11.94', '0.04', '44.44 %', '215']
+['2402', 'Banaskantha', '50.00', '33.33', '16.67', '0.00', '0.00', '7', '240214', 'Suigam', '10.25', '0.09', '50.00 %', '82']
+['2403', 'Patan', '33.33', '25.00', '33.33', '8.33', '0.00', '29', '240301', 'Chanasma', '11.55', '0.23', '63.64 %', '127']
+['2403', 'Patan', '57.14', '7.14', '14.29', '21.43', '0.00', '32', '240302', 'Harij', '10.78', '0.33', '66.67 %', '97']
+['2403', 'Patan', '20.00', '50.00', '10.00', '20.00', '0.00', '25', '240303', 'Patan', '14.60', '0.11', '40.00 %', '219']
+['2403', 'Patan', '15.38', '0.00', '7.69', '69.23', '7.69', '046811', '240304', 'Sami', '9.82', '433.44', '54.55 %', '108']
+['2403', 'Patan', '10.00', '10.00', '40.00', '30.00', '10.00', '58', '240305', 'Siddhpur', '12.33', '0.39', '58.33 %', '148']
+['2403', 'Patan', '41.67', '0.00', '41.67', '16.67', '0.00', '01918', '240308', 'Radhanpur', '9.93', '12.87', '46.67 %', '149']
+['2403', 'Patan', '60.00', '0.00', '40.00', '0.00', '0.00', '08', '240309', 'Santalpur', '9.38', '0.07', '30.77 %', '122']
+['2403', 'Patan', '16.67', '0.00', '16.67', '0.00', '66.67', '0371', '240312', 'Saraswati', '11.38', '2.04', '25.00 %', '182']
+['2404', 'Mahesana', '66.67', '25.00', '8.33', '0.00', '0.00', '7', '240401', 'Becharaji', '11.44', '0.07', '66.67 %', '103']
+['2404', 'Mahesana', '18.75', '12.50', '31.25', '37.50', '0.00', '69', '240402', 'Kadi', '11.05', '0.28', '40.91 %', '243']
+['2404', 'Mahesana', '22.22', '33.33', '22.22', '22.22', '0.00', '29', '240403', 'Kheralu', '8.60', '0.22', '40.00 %', '129']
+['2404', 'Mahesana', '20.00', '30.00', '40.00', '10.00', '0.00', '26', '240404', 'Mehsana', '13.42', '0.08', '29.17 %', '322']
+['2404', 'Mahesana', '37.50', '50.00', '12.50', '0.00', '0.00', '9', '240405', 'Satlasana', '11.10', '0.08', '70.00 %', '111']
+['2404', 'Mahesana', '20.00', '40.00', '26.67', '13.33', '0.00', '38', '240406', 'Unjha', '10.55', '0.33', '72.73 %', '116']
+['2404', 'Mahesana', '0.00', '16.67', '83.33', '0.00', '0.00', '121', '240407', 'Vadnagar', '12.08', '0.83', '33.33 %', '145']
+['2404', 'Mahesana', '0.00', '28.57', '28.57', '42.86', '0.00', '3721', '240408', 'Vijapur', '11.10', '16.76', '25.00 %', '222']
+['2404', 'Mahesana', '18.18', '36.36', '45.45', '0.00', '0.00', '26', '240409', 'Visnagar', '11.18', '0.14', '41.18 %', '190']
+['2404', 'Mahesana', '9.09', '45.45', '27.27', '18.18', '0.00', '33', '240411', 'Jotana', '8.86', '0.53', '71.43 %', '62']
+['2405', 'Sabar Kantha', '71.43', '14.29', '14.29', '0.00', '0.00', '8', '240501', 'Khedbrahma', '11.68', '0.04', '52.63 %', '222']
+['2405', 'Sabar Kantha', '22.22', '55.56', '11.11', '11.11', '0.00', '22', '240502', 'Vijaynagar', '9.58', '0.12', '36.84 %', '182']
+['2405', 'Sabar Kantha', '9.09', '45.45', '18.18', '27.27', '0.00', '35', '240503', 'Vadali', '10.38', '0.26', '61.54 %', '135']
+['2405', 'Sabar Kantha', '21.43', '14.29', '21.43', '42.86', '0.00', '55', '240504', 'Idar', '11.10', '0.16', '29.03 %', '344']
+['2405', 'Sabar Kantha', '42.86', '7.14', '35.71', '14.29', '0.00', '42', '240507', 'Himmatnagar', '12.24', '0.10', '27.27 %', '404']
+['2405', 'Sabar Kantha', '20.00', '20.00', '40.00', '20.00', '0.00', '31', '240508', 'Prantij', '10.69', '0.18', '50.00 %', '171']
+['2405', 'Sabar Kantha', '8.33', '16.67', '8.33', '58.33', '8.33', '71', '240509', 'Talod', '9.00', '0.34', '30.43 %', '207']
+['2406', 'Gandhinagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240601', 'Dehgam', '11.86', '0.00', '3.57 %', '332']
+['2406', 'Gandhinagar', '75.00', '25.00', '0.00', '0.00', '0.00', '1', '240602', 'Gandhinagar', '18.76', '0.00', '12.12 %', '619']
+['2406', 'Gandhinagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240603', 'Kalol', '14.35', '0.00', '5.00 %', '287']
+['2407', 'Ahmedabad', '40.00', '40.00', '20.00', '0.00', '0.00', '7', '240701', 'Mandal', '9.13', '0.10', '37.50 %', '73']
+['2407', 'Ahmedabad', '0.00', '0.00', '66.67', '33.33', '0.00', '86', '240702', 'Detroj-Rampura', '7.45', '1.05', '27.27 %', '82']
+['2407', 'Ahmedabad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240703', 'Viramgam', '8.22', '0.00', '5.56 %', '148']
+['2407', 'Ahmedabad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240704', 'Sanand', '11.06', '0.00', '11.11 %', '199']
+['2407', 'Ahmedabad', '16.67', '33.33', '16.67', '33.33', '0.00', '21', '240706', 'Dascroi', '20.50', '0.03', '16.67 %', '615']
+['2407', 'Ahmedabad', '0.00', '0.00', '100.00', '0.00', '0.00', '3', '240707', 'Dholka', '11.16', '0.01', '5.26 %', '212']
+['2407', 'Ahmedabad', '25.00', '50.00', '25.00', '0.00', '0.00', '6', '240710', 'Bavla', '9.17', '0.05', '33.33 %', '110']
+['2407', 'Ahmedabad', '33.33', '44.44', '22.22', '0.00', '0.00', '13', '240711', 'Dhandhuka', '9.78', '0.15', '55.56 %', '88']
+['2407', 'Ahmedabad', '35.29', '25.49', '13.73', '23.53', '1.96', '145', '240712', 'Amc', '43.56', '0.08', '97.67 %', '1873']
+['2407', 'Ahmedabad', '80.00', '10.00', '10.00', '0.00', '0.00', '6', '240713', 'Dholera', '9.00', '0.11', '83.33 %', '54']
+['2408', 'Surendranagar', '36.36', '18.18', '45.45', '0.00', '0.00', '22', '240802', 'Dhrangadhra', '11.53', '0.11', '41.18 %', '196']
+['2408', 'Surendranagar', '66.67', '33.33', '0.00', '0.00', '0.00', '3', '240805', 'Wadhvan', '16.32', '0.01', '21.05 %', '310']
+['2408', 'Surendranagar', '44.44', '11.11', '44.44', '0.00', '0.00', '16', '240806', 'Muli', '12.00', '0.13', '50.00 %', '120']
+['2408', 'Surendranagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240807', 'Chotila', '18.00', '0.00', '36.36 %', '198']
+['2408', 'Surendranagar', '62.50', '37.50', '0.00', '0.00', '0.00', '6', '240808', 'Sayla', '10.53', '0.04', '40.00 %', '158']
+['2408', 'Surendranagar', '71.43', '0.00', '28.57', '0.00', '0.00', '06', '240809', 'Chuda', '7.67', '0.09', '44.44 %', '69']
+['2408', 'Surendranagar', '0.00', '90.91', '9.09', '0.00', '0.00', '154', '240810', 'Limbdi', '7.44', '1.29', '37.50 %', '119']
+['2408', 'Surendranagar', '11.11', '22.22', '44.44', '22.22', '0.00', '34', '240811', 'Thangadh', '15.80', '0.43', '80.00 %', '79']
+['2409', 'Rajkot', '0.00', '83.33', '16.67', '0.00', '0.00', '93', '240901', 'Dhoraji', '24.00', '0.65', '50.00 %', '144']
+['2409', 'Rajkot', '16.67', '33.33', '33.33', '0.00', '16.67', '1422', '240902', 'Gondal', '15.16', '4.94', '21.05 %', '288']
+['2409', 'Rajkot', '12.50', '37.50', '37.50', '12.50', '0.00', '25', '240903', 'Jamkandorna', '11.00', '0.28', '75.00 %', '88']
+['2409', 'Rajkot', '60.00', '40.00', '0.00', '0.00', '0.00', '3', '240904', 'Jasdan', '17.00', '0.01', '28.57 %', '238']
+['2409', 'Rajkot', '50.00', '0.00', '33.33', '16.67', '0.00', '086', '240906', 'Kotda Sangani', '14.00', '0.88', '42.86 %', '98']
+['2409', 'Rajkot', '50.00', '0.00', '40.00', '10.00', '0.00', '0147', '240907', 'Lodhika', '14.17', '1.73', '83.33 %', '85']
+['2409', 'Rajkot', '33.33', '50.00', '0.00', '16.67', '0.00', '67', '240911', 'Rajkot', '15.35', '0.26', '23.53 %', '261']
+['2409', 'Rajkot', '0.00', '28.57', '0.00', '57.14', '14.29', '22816', '240913', 'Upleta', '13.08', '134.21', '46.15 %', '170']
+['2409', 'Rajkot', '0.00', '42.86', '28.57', '14.29', '14.29', '48615', '240915', 'Rajkot Corporation', '38.83', '52.16', '25.00 %', '932']
+['2409', 'Rajkot', '66.67', '33.33', '0.00', '0.00', '0.00', '1', '240916', 'Vinchhiya', '13.80', '0.01', '30.00 %', '138']
+['2410', 'Jamnagar', '57.14', '42.86', '0.00', '0.00', '0.00', '3', '241002', 'Dhrol', '11.70', '0.03', '40.00 %', '117']
+['2410', 'Jamnagar', '28.57', '7.14', '42.86', '21.43', '0.00', '43', '241004', 'Jamjodhpur', '10.24', '0.25', '41.18 %', '174']
+['2410', 'Jamnagar', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '241007', 'Jamnagar', '17.74', '0.00', '17.65 %', '603']
+['2410', 'Jamnagar', '25.00', '16.67', '41.67', '16.67', '0.00', '35', '241008', 'Jodiya', '6.08', '0.48', '33.33 %', '73']
+['2410', 'Jamnagar', '44.44', '44.44', '11.11', '0.00', '0.00', '10', '241009', 'Kalavad', '9.83', '0.06', '33.33 %', '177']
+['2410', 'Jamnagar', '60.00', '40.00', '0.00', '0.00', '0.00', '5', '241010', 'Lalpur', '10.39', '0.03', '33.33 %', '187']
+['2411', 'Porbandar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '241101', 'Porbandar', '11.70', '0.00', '3.70 %', '316']
+['2411', 'Porbandar', '30.00', '50.00', '20.00', '0.00', '0.00', '14', '241102', 'Ranavav', '12.60', '0.11', '60.00 %', '126']
+['2411', 'Porbandar', '14.29', '42.86', '28.57', '14.29', '0.00', '17', '241103', 'Kutiyana', '9.09', '0.17', '36.36 %', '100']
+['2412', 'Junagadh', '12.50', '12.50', '62.50', '12.50', '0.00', '25', '241201', 'Junagadh', '15.67', '0.18', '66.67 %', '141']
+['2412', 'Junagadh', '14.29', '64.29', '14.29', '7.14', '0.00', '28', '241202', 'Mendarda', '10.10', '0.28', '80.00 %', '101']
+['2412', 'Junagadh', '75.00', '0.00', '0.00', '25.00', '0.00', '06', '241206', 'Maliya Hatina', '14.50', '0.03', '21.43 %', '203']
+['2412', 'Junagadh', '10.00', '10.00', '30.00', '40.00', '10.00', '51', '241207', 'Mangrol', '17.86', '0.20', '64.29 %', '250']
+['2412', 'Junagadh', '25.00', '0.00', '50.00', '25.00', '0.00', '077', '241208', 'Keshod', '19.27', '0.36', '36.36 %', '212']
+['2412', 'Junagadh', '23.08', '23.08', '30.77', '15.38', '7.69', '45', '241209', 'Manavadar', '12.70', '0.35', '80.00 %', '127']
+['2412', 'Junagadh', '21.43', '7.14', '57.14', '14.29', '0.00', '47', '241210', 'Vanthali', '12.44', '0.42', '77.78 %', '112']
+['2412', 'Junagadh', '57.14', '28.57', '0.00', '0.00', '14.29', '315', '241211', 'Bhesan', '11.29', '3.99', '42.86 %', '79']
+['2412', 'Junagadh', '40.00', '40.00', '20.00', '0.00', '0.00', '18', '241212', 'Visavadar', '14.17', '0.11', '83.33 %', '170']
+['2412', 'Junagadh', '66.67', '0.00', '33.33', '0.00', '0.00', '03', '241216', 'Junagadh Corporation', '51.50', '0.01', '75.00 %', '206']
+['2413', 'Amreli', '20.00', '80.00', '0.00', '0.00', '0.00', '5', '241301', 'Amreli', '14.43', '0.02', '35.71 %', '202']
+['2413', 'Amreli', '80.00', '20.00', '0.00', '0.00', '0.00', '3', '241302', 'Babara', '10.67', '0.02', '58.33 %', '128']
+['2413', 'Amreli', '80.00', '0.00', '0.00', '20.00', '0.00', '09', '241303', 'Bagasara', '10.86', '0.12', '71.43 %', '76']
+['2413', 'Amreli', '0.00', '50.00', '50.00', '0.00', '0.00', '14', '241304', 'Dhari', '9.86', '0.10', '14.29 %', '138']
+['2413', 'Amreli', '50.00', '33.33', '16.67', '0.00', '0.00', '6', '241305', 'Jafrabad', '10.75', '0.07', '37.50 %', '86']
+['2413', 'Amreli', '12.50', '25.00', '50.00', '12.50', '0.00', '23', '241306', 'Khambha', '8.50', '0.27', '40.00 %', '85']
+['2413', 'Amreli', '0.00', '44.44', '44.44', '11.11', '0.00', '8136', '241308', 'Lathi', '8.83', '76.75', '41.67 %', '106']
+['2413', 'Amreli', '62.50', '12.50', '12.50', '12.50', '0.00', '12', '241309', 'Liliya', '9.33', '0.21', '66.67 %', '56']
+['2413', 'Amreli', '33.33', '33.33', '0.00', '33.33', '0.00', '17', '241310', 'Rajula', '11.00', '0.11', '14.29 %', '154']
+['2413', 'Amreli', '18.18', '18.18', '45.45', '18.18', '0.00', '34', '241311', 'Savarkundla', '13.50', '0.18', '42.86 %', '189']
+['2414', 'Bhavnagar', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '241405', 'Bhavnagar', '18.18', '0.01', '9.09 %', '400']
+['2414', 'Bhavnagar', '0.00', '66.67', '22.22', '11.11', '0.00', '1077', '241406', 'Ghogha', '9.78', '12.24', '44.44 %', '88']
+['2414', 'Bhavnagar', '30.00', '0.00', '60.00', '10.00', '0.00', '0246', '241407', 'Shihor', '9.88', '1.46', '29.41 %', '168']
+['2414', 'Bhavnagar', '37.50', '37.50', '25.00', '0.00', '0.00', '12', '241408', 'Gariyadhar', '9.67', '0.14', '44.44 %', '87']
+['2414', 'Bhavnagar', '25.00', '25.00', '50.00', '0.00', '0.00', '7', '241409', 'Palitana', '10.25', '0.04', '25.00 %', '164']
+['2414', 'Bhavnagar', '30.00', '30.00', '20.00', '20.00', '0.00', '26', '241410', 'Talaja', '11.59', '0.10', '36.36 %', '255']
+['2414', 'Bhavnagar', '25.00', '33.33', '25.00', '16.67', '0.00', '38', '241411', 'Mahuva', '12.26', '0.13', '34.78 %', '282']
+['2414', 'Bhavnagar', '66.67', '0.00', '33.33', '0.00', '0.00', '07', '241413', 'Jesar', '8.00', '0.10', '55.56 %', '72']
+['2415', 'Anand', '12.50', '50.00', '37.50', '0.00', '0.00', '19', '241501', 'Anand', '11.95', '0.04', '21.62 %', '442']
+['2415', 'Anand', '37.50', '25.00', '12.50', '12.50', '12.50', '27', '241502', 'Anklav', '8.50', '0.23', '42.86 %', '119']
+['2415', 'Anand', '14.29', '0.00', '57.14', '14.29', '14.29', '016912', '241503', 'Borsad', '10.55', '51.72', '22.58 %', '327']
+['2415', 'Anand', '12.50', '25.00', '50.00', '12.50', '0.00', '25', '241504', 'Khambhat', '9.38', '0.11', '25.00 %', '225']
+['2415', 'Anand', '27.27', '18.18', '18.18', '36.36', '0.00', '38', '241506', 'Sojitra', '10.13', '0.47', '62.50 %', '81']
+['2415', 'Anand', '30.00', '30.00', '30.00', '10.00', '0.00', '21', '241507', 'Tarapur', '9.50', '0.28', '50.00 %', '76']
+['2415', 'Anand', '42.86', '28.57', '28.57', '0.00', '0.00', '11', '241508', 'Umreth', '10.31', '0.07', '37.50 %', '165']
+['2416', 'Kheda', '14.29', '35.71', '21.43', '21.43', '7.14', '51', '241602', 'Kapadvanj', '9.71', '0.15', '22.86 %', '340']
+['2416', 'Kheda', '27.27', '27.27', '27.27', '18.18', '0.00', '32', '241603', 'Kathlal', '11.29', '0.14', '42.86 %', '237']
+['2416', 'Kheda', '0.00', '100.00', '0.00', '0.00', '0.00', '2', '241604', 'Kheda', '11.60', '0.02', '10.00 %', '116']
+['2416', 'Kheda', '40.00', '60.00', '0.00', '0.00', '0.00', '4', '241605', 'Mahemdavad', '11.70', '0.02', '25.00 %', '234']
+['2416', 'Kheda', '33.33', '55.56', '11.11', '0.00', '0.00', '11', '241606', 'Mahudha', '10.64', '0.09', '54.55 %', '117']
+['2416', 'Kheda', '21.43', '28.57', '42.86', '7.14', '0.00', '35', '241607', 'Matar', '11.08', '0.26', '58.33 %', '133']
+['2416', 'Kheda', '33.33', '22.22', '33.33', '11.11', '0.00', '22', '241608', 'Nadiad', '12.90', '0.06', '23.33 %', '387']
+['2416', 'Kheda', '71.43', '0.00', '0.00', '28.57', '0.00', '017', '241609', 'Thasara', '9.52', '0.08', '21.74 %', '219']
+['2416', 'Kheda', '25.00', '0.00', '25.00', '0.00', '50.00', '0426', '241611', 'Galteshwar', '10.42', '3.41', '33.33 %', '125']
+['2416', 'Kheda', '12.50', '62.50', '25.00', '0.00', '0.00', '29', '241612', 'Vaso', '14.60', '0.40', '100.00 %', '73']
+['2417', 'Panch Mahals', '55.56', '22.22', '22.22', '0.00', '0.00', '12', '241701', 'Ghoghamba', '10.48', '0.04', '33.33 %', '283']
+['2417', 'Panch Mahals', '33.33', '50.00', '16.67', '0.00', '0.00', '7', '241702', 'Godhra', '12.64', '0.01', '10.26 %', '493']
+['2417', 'Panch Mahals', '58.33', '25.00', '0.00', '16.67', '0.00', '512', '241704', 'Jambughoda', '10.86', '6.74', '71.43 %', '76']
+['2417', 'Panch Mahals', '25.00', '41.67', '16.67', '16.67', '0.00', '34', '241709', 'Morva Hadaf', '9.86', '0.16', '42.86 %', '207']
+['2417', 'Panch Mahals', '42.86', '42.86', '14.29', '0.00', '0.00', '7', '241711', 'Shahera', '10.33', '0.02', '20.00 %', '310']
+['2418', 'Dohad', '57.14', '14.29', '28.57', '0.00', '0.00', '8', '241801', 'Dahod', '14.67', '0.02', '22.22 %', '396']
+['2418', 'Dohad', '60.00', '10.00', '30.00', '0.00', '0.00', '13', '241802', 'Garbada', '12.07', '0.07', '46.67 %', '181']
+['2418', 'Dohad', '50.00', '50.00', '0.00', '0.00', '0.00', '2', '241803', 'Limkheda', '13.10', '0.01', '13.79 %', '380']
+['2418', 'Dohad', '60.00', '20.00', '20.00', '0.00', '0.00', '6', '241804', 'Dhanpur', '11.30', '0.03', '20.00 %', '226']
+['2418', 'Dohad', '33.33', '66.67', '0.00', '0.00', '0.00', '5', '241805', 'Fatepura', '12.15', '0.02', '23.08 %', '316']
+['2418', 'Dohad', '42.86', '28.57', '28.57', '0.00', '0.00', '12', '241806', 'Zalod', '13.61', '0.03', '25.00 %', '381']
+['2418', 'Dohad', '54.55', '18.18', '27.27', '0.00', '0.00', '12', '241807', 'Dev.Baria', '13.55', '0.04', '40.91 %', '298']
+['2418', 'Dohad', '50.00', '25.00', '25.00', '0.00', '0.00', '5', '241808', 'Sanjeli', '13.00', '0.04', '44.44 %', '117']
+['2419', 'Vadodara', '33.33', '0.00', '33.33', '33.33', '0.00', '01221', '241902', 'Dabhoi', '12.79', '5.02', '42.11 %', '243']
+['2419', 'Vadodara', '60.00', '20.00', '0.00', '20.00', '0.00', '26', '241904', 'Karjan', '10.06', '0.16', '18.75 %', '161']
+['2419', 'Vadodara', '15.38', '46.15', '7.69', '30.77', '0.00', '44', '241907', 'Padra', '10.55', '0.21', '40.00 %', '211']
+['2419', 'Vadodara', '50.00', '16.67', '33.33', '0.00', '0.00', '9', '241909', 'Savli', '14.07', '0.05', '35.71 %', '197']
+['2419', 'Vadodara', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '241910', 'Shinor', '8.63', '0.00', '12.50 %', '69']
+['2419', 'Vadodara', '0.00', '28.57', '28.57', '42.86', '0.00', '2720', '241911', 'Vadodara', '13.76', '9.41', '33.33 %', '289']
+['2419', 'Vadodara', '27.27', '27.27', '45.45', '0.00', '0.00', '24', '241912', 'Vaghodiya', '13.44', '0.11', '50.00 %', '215']
+['2419', 'Vadodara', '85.71', '0.00', '14.29', '0.00', '0.00', '03', '241913', 'Vadodara Corporation', '39.31', '0.00', '37.50 %', '629']
+['2419', 'Vadodara', '12.50', '6.25', '50.00', '31.25', '0.00', '67', '241914', 'Desar', '14.25', '0.59', '100.00 %', '114']
+['2420', 'Narmada', '25.00', '37.50', '25.00', '12.50', '0.00', '21', '242001', 'Nandod', '10.78', '0.11', '27.78 %', '194']
+['2420', 'Narmada', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242002', 'Dediyapada', '11.40', '0.00', '16.00 %', '285']
+['2420', 'Narmada', '40.00', '40.00', '20.00', '0.00', '0.00', '13', '242003', 'Sagbara', '9.73', '0.09', '53.33 %', '146']
+['2420', 'Narmada', '66.67', '8.33', '16.67', '8.33', '0.00', '20', '242004', 'Tilakvada', '10.00', '0.17', '66.67 %', '120']
+['2420', 'Narmada', '81.82', '18.18', '0.00', '0.00', '0.00', '2', '242005', 'Garudeshwar', '11.36', '0.01', '50.00 %', '159']
+['2421', 'Bharuch', '70.00', '30.00', '0.00', '0.00', '0.00', '4', '242101', 'Amod', '9.30', '0.04', '50.00 %', '93']
+['2421', 'Bharuch', '23.08', '23.08', '23.08', '23.08', '7.69', '48', '242102', 'Ankleshwar', '19.25', '0.21', '50.00 %', '231']
+['2421', 'Bharuch', '0.00', '20.00', '40.00', '40.00', '0.00', '1717', '242103', 'Bharuch', '13.21', '5.42', '12.50 %', '317']
+['2421', 'Bharuch', '44.44', '55.56', '0.00', '0.00', '0.00', '7', '242104', 'Hansot', '11.00', '0.09', '57.14 %', '77']
+['2421', 'Bharuch', '21.43', '14.29', '14.29', '35.71', '14.29', '74', '242105', 'Jambusar', '9.00', '0.43', '42.11 %', '171']
+['2421', 'Bharuch', '50.00', '25.00', '8.33', '16.67', '0.00', '27', '242108', 'Zaghadia', '10.05', '0.13', '42.86 %', '211']
+['2421', 'Bharuch', '66.67', '0.00', '33.33', '0.00', '0.00', '03', '242109', 'Netrang', '10.54', '0.02', '23.08 %', '137']
+['2422', 'Surat', '27.27', '18.18', '45.45', '9.09', '0.00', '31', '242201', 'Bardoli', '11.44', '0.17', '43.75 %', '183']
+['2422', 'Surat', '37.50', '25.00', '25.00', '12.50', '0.00', '14', '242202', 'Choryasi', '13.45', '0.09', '36.36 %', '148']
+['2422', 'Surat', '8.33', '0.00', '16.67', '50.00', '25.00', '0105035', '242203', 'Kamrej', '18.09', '527.81', '63.64 %', '199']
+['2422', 'Surat', '18.18', '0.00', '36.36', '45.45', '0.00', '01637', '242204', 'Mahuva', '11.60', '9.41', '40.00 %', '174']
+['2422', 'Surat', '73.33', '20.00', '6.67', '0.00', '0.00', '8', '242205', 'Mandavi', '11.00', '0.03', '29.17 %', '264']
+['2422', 'Surat', '0.00', '33.33', '0.00', '33.33', '33.33', '2913', '242208', 'Olpad', '13.25', '13.74', '12.50 %', '212']
+['2422', 'Surat', '23.08', '23.08', '30.77', '23.08', '0.00', '43', '242212', 'Umarpada', '10.67', '0.34', '66.67 %', '128']
+['2422', 'Surat', '53.85', '12.82', '10.26', '17.95', '5.13', '98', '242215', 'Surat Corpo.', '39.14', '0.06', '61.90 %', '1644']
+['2423', 'The Dangs', '56.25', '6.25', '31.25', '6.25', '0.00', '29', '242301', 'Ahwa', '11.72', '0.14', '50.00 %', '211']
+['2423', 'The Dangs', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242302', 'Subir', '11.08', '0.00', '66.67 %', '133']
+['2423', 'The Dangs', '57.14', '42.86', '0.00', '0.00', '0.00', '5', '242303', 'Waghai', '11.92', '0.03', '50.00 %', '143']
+['2424', 'Navsari', '10.00', '40.00', '40.00', '10.00', '0.00', '26', '242401', 'Chikhli', '10.67', '0.10', '33.33 %', '256']
+['2424', 'Navsari', '0.00', '33.33', '22.22', '44.44', '0.00', '6727', '242402', 'Gandevi', '11.33', '39.57', '53.33 %', '170']
+['2424', 'Navsari', '0.00', '27.27', '54.55', '9.09', '9.09', '526812', '242404', 'Navsari', '12.67', '2772.69', '53.33 %', '190']
+['2424', 'Navsari', '12.50', '0.00', '37.50', '50.00', '0.00', '01332', '242405', 'Vansda', '9.65', '5.31', '30.77 %', '251']
+['2424', 'Navsari', '37.50', '0.00', '12.50', '12.50', '37.50', '05746', '242406', 'Khergam', '11.00', '74.62', '71.43 %', '77']
+['2425', 'Valsad', '25.00', '0.00', '50.00', '25.00', '0.00', '03428', '242501', 'Valsad', '10.86', '11.28', '42.86 %', '304']
+['2425', 'Valsad', '8.33', '16.67', '16.67', '41.67', '16.67', '76', '242502', 'Pardi', '12.14', '0.45', '57.14 %', '170']
+['2425', 'Valsad', '14.29', '14.29', '21.43', '42.86', '7.14', '70', '242503', 'Umbergaon', '11.10', '0.30', '47.62 %', '233']
+['2425', 'Valsad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242505', 'Kaparada', '10.03', '0.00', '14.71 %', '341']
+['2426', 'Tapi', '76.92', '7.69', '7.69', '7.69', '0.00', '10', '242607', 'Nizar', '10.83', '0.15', '83.33 %', '65']
+['2426', 'Tapi', '66.67', '8.33', '16.67', '8.33', '0.00', '15', '242610', 'Songadh', '12.84', '0.05', '40.00 %', '321']
+['2426', 'Tapi', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '242611', 'Uchchhal', '11.30', '0.03', '30.00 %', '113']
+['2426', 'Tapi', '16.67', '16.67', '66.67', '0.00', '0.00', '16', '242614', 'Vyara', '14.67', '0.07', '33.33 %', '220']
+['2426', 'Tapi', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242615', 'Dolvan', '16.11', '0.00', '100.00 %', '145']
+['2426', 'Tapi', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242616', 'Kukarmunda', '13.17', '0.00', '100.00 %', '79']
+['2427', 'Aravalli', '28.57', '0.00', '14.29', '57.14', '0.00', '0428', '242701', 'Modasa', '10.50', '1.36', '23.33 %', '315']
+['2427', 'Aravalli', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242702', 'Bhiloda', '10.26', '0.00', '5.88 %', '349']
+['2427', 'Aravalli', '42.86', '28.57', '28.57', '0.00', '0.00', '10', '242703', 'Meghraj', '11.36', '0.03', '21.43 %', '318']
+['2427', 'Aravalli', '40.00', '20.00', '40.00', '0.00', '0.00', '8', '242704', 'Malpur', '11.06', '0.04', '29.41 %', '188']
+['2427', 'Aravalli', '40.00', '60.00', '0.00', '0.00', '0.00', '3', '242706', 'Bayad', '9.94', '0.01', '15.15 %', '328']
+['2428', 'Botad', '16.67', '0.00', '66.67', '16.67', '0.00', '0146', '242801', 'Barvala', '10.60', '2.75', '40.00 %', '53']
+['2428', 'Botad', '44.44', '22.22', '22.22', '11.11', '0.00', '19', '242802', 'Ranpur', '8.63', '0.28', '50.00 %', '69']
+['2428', 'Botad', '38.46', '23.08', '15.38', '23.08', '0.00', '32', '242803', 'Botad', '13.14', '0.17', '50.00 %', '184']
+['2428', 'Botad', '21.43', '28.57', '35.71', '14.29', '0.00', '37', '242804', 'Gadhada', '11.77', '0.24', '69.23 %', '153']
+['2429', 'Devbhoomi Dwarka', '71.43', '0.00', '21.43', '7.14', '0.00', '0106', '242901', 'Bhanvad', '11.67', '0.61', '60.00 %', '175']
+['2429', 'Devbhoomi Dwarka', '20.00', '30.00', '30.00', '20.00', '0.00', '31', '242902', 'Dwarka', '10.07', '0.21', '46.67 %', '151']
+['2429', 'Devbhoomi Dwarka', '21.43', '21.43', '50.00', '7.14', '0.00', '38', '242903', 'Jamkalyanpur', '12.00', '0.13', '40.00 %', '300']
+['2430', 'Gir Somnath', '40.00', '40.00', '20.00', '0.00', '0.00', '7', '243001', 'Talala', '13.50', '0.05', '30.00 %', '135']
+['2430', 'Gir Somnath', '61.54', '0.00', '23.08', '15.38', '0.00', '01313', '243002', 'Veraval', '20.07', '4.67', '57.14 %', '281']
+['2430', 'Gir Somnath', '50.00', '25.00', '25.00', '0.00', '0.00', '4', '243003', 'Sutrapada', '11.71', '0.02', '21.43 %', '164']
+['2430', 'Gir Somnath', '27.27', '9.09', '63.64', '0.00', '0.00', '29', '243004', 'Una', '12.53', '0.12', '52.63 %', '238']
+['2430', 'Gir Somnath', '42.86', '28.57', '28.57', '0.00', '0.00', '10', '243005', 'Kodinar', '11.33', '0.06', '33.33 %', '170']
+['2430', 'Gir Somnath', '50.00', '33.33', '16.67', '0.00', '0.00', '7', '243006', 'Girgadhada', '9.18', '0.07', '45.45 %', '101']
+['2431', 'Mahisagar', '66.67', '16.67', '16.67', '0.00', '0.00', '4', '243101', 'Kadana', '11.45', '0.02', '30.00 %', '229']
+['2431', 'Mahisagar', '50.00', '10.00', '20.00', '20.00', '0.00', '27', '243102', 'Khanpur', '10.00', '0.17', '37.50 %', '160']
+['2431', 'Mahisagar', '30.77', '30.77', '30.77', '7.69', '0.00', '26', '243103', 'Lunawada', '11.97', '0.06', '20.00 %', '419']
+['2431', 'Mahisagar', '72.73', '18.18', '9.09', '0.00', '0.00', '6', '243104', 'Santrampur', '11.78', '0.02', '31.25 %', '377']
+['2431', 'Mahisagar', '33.33', '33.33', '22.22', '11.11', '0.00', '17', '243105', 'Balasinor', '13.00', '0.09', '53.33 %', '195']
+['2431', 'Mahisagar', '12.50', '25.00', '12.50', '25.00', '25.00', '49', '243106', 'Virpur', '10.71', '0.27', '41.18 %', '182']
+['2432', 'Chhotaudepur', '36.36', '36.36', '18.18', '9.09', '0.00', '20', '243201', 'Chhota-Udepur', '15.16', '0.07', '36.84 %', '288']
+['2432', 'Chhotaudepur', '60.00', '20.00', '20.00', '0.00', '0.00', '11', '243203', 'Kawant', '13.21', '0.04', '42.11 %', '251']
+['2432', 'Chhotaudepur', '37.50', '0.00', '25.00', '37.50', '0.00', '0825', '243204', 'Naswadi', '12.91', '2.90', '36.36 %', '284']
+['2432', 'Chhotaudepur', '50.00', '50.00', '0.00', '0.00', '0.00', '2', '243205', 'Sankheda', '12.29', '0.01', '23.53 %', '209']
+['2432', 'Chhotaudepur', '44.44', '33.33', '11.11', '11.11', '0.00', '15', '243206', 'Bodeli', '11.91', '0.06', '27.27 %', '262']
+['2433', 'Morbi', '0.00', '55.56', '22.22', '22.22', '0.00', '8813', '243303', 'Tankara', '14.14', '89.02', '85.71 %', '99']
+['2433', 'Morbi', '33.33', '33.33', '16.67', '16.67', '0.00', '13', '243304', 'Wankaner', '10.59', '0.06', '22.73 %', '233']
+['2433', 'Morbi', '50.00', '10.00', '30.00', '10.00', '0.00', '26', '243305', 'Halvad', '12.33', '0.14', '46.67 %', '185']
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.CRCreports.Crc_Reports</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: X axis menu list...
+choose x-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+Y axis menu list...
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+Total Number of visits: 5029
+Total Number of schools: 54728
+Total schools visited: 1993
+Total schools not visited: 52735
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>CRC_Report.dist_blk_clu.Ahmedabad_report</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='ft9.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        error</a>
+
+    <div id='div_ft9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft9.1: Total Number of visits: 0
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/dist_blk_clu.py", line 39, in tearDown
+    print(footer[i].text)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 76, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)['value']
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>CRC_Report.Dist_block.Crc_Reports</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='ft10.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
+        error</a>
+
+    <div id='div_ft10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft10.1: Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Dist_block.py", line 15, in setUp
+    self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=81.0.4044.138)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.District_click_all.Crc_Reports</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: Choose a District 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.District_wise_file.Crc_Reports</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: ['\ufeffdistrictId', 'districtName', 'visit_0', 'visit_1_2', 'visit_3_5', 'visit_6_10', 'visit_10_more', 'totalVisits', 'blockId', 'blockName', 'no_of_schools_per_crc', 'visits_per_school', 'percentage_crc_visited_school', 'totalSchools']
+['2401', 'Kachchh', '30.77', '23.08', '23.08', '23.08', '0.00', '36', '240102', 'Rapar', '9.97', '0.10', '25.71 %', '349']
+['2401', 'Kachchh', '16.67', '50.00', '16.67', '16.67', '0.00', '17', '240103', 'Bhachau', '9.92', '0.07', '16.67 %', '238']
+['2401', 'Kachchh', '11.11', '33.33', '33.33', '22.22', '0.00', '32', '240104', 'Anjar', '11.74', '0.14', '36.84 %', '223']
+['2401', 'Kachchh', '0.00', '66.67', '0.00', '33.33', '0.00', '515', '240105', 'Bhuj', '12.30', '0.97', '11.63 %', '529']
+['2401', 'Kachchh', '50.00', '0.00', '50.00', '0.00', '0.00', '04', '240106', 'Nakhatrana', '9.81', '0.02', '9.52 %', '206']
+['2401', 'Kachchh', '33.33', '33.33', '0.00', '33.33', '0.00', '16', '240107', 'Abdasa', '8.88', '0.08', '8.33 %', '213']
+['2401', 'Kachchh', '71.43', '0.00', '28.57', '0.00', '0.00', '07', '240108', 'Mandvi', '8.39', '0.03', '21.43 %', '235']
+['2401', 'Kachchh', '25.00', '25.00', '25.00', '25.00', '0.00', '22', '240109', 'Mundra', '11.00', '0.13', '46.67 %', '165']
+['2401', 'Kachchh', '30.77', '7.69', '53.85', '7.69', '0.00', '32', '240110', 'Gandhidham', '23.56', '0.15', '88.89 %', '212']
+['2402', 'Banaskantha', '50.00', '37.50', '12.50', '0.00', '0.00', '8', '240201', 'Amirgadh', '12.33', '0.05', '58.33 %', '148']
+['2402', 'Banaskantha', '66.67', '16.67', '16.67', '0.00', '0.00', '4', '240202', 'Bhabhar', '12.92', '0.03', '41.67 %', '155']
+['2402', 'Banaskantha', '30.00', '30.00', '20.00', '20.00', '0.00', '29', '240203', 'Danta', '11.00', '0.10', '25.93 %', '297']
+['2402', 'Banaskantha', '38.46', '15.38', '7.69', '30.77', '7.69', '51', '240204', 'Dantiwada', '12.00', '0.39', '72.73 %', '132']
+['2402', 'Banaskantha', '61.54', '0.00', '23.08', '15.38', '0.00', '0914', '240205', 'Deesa', '11.61', '2.07', '23.68 %', '441']
+['2402', 'Banaskantha', '0.00', '36.36', '27.27', '36.36', '0.00', '61331', '240206', 'Deodar', '11.89', '271.38', '42.11 %', '226']
+['2402', 'Banaskantha', '42.86', '0.00', '42.86', '14.29', '0.00', '0107', '240207', 'Dhanera', '14.27', '0.50', '26.67 %', '214']
+['2402', 'Banaskantha', '0.00', '83.33', '16.67', '0.00', '0.00', '83', '240208', 'Kankarej', '10.97', '0.26', '20.69 %', '318']
+['2402', 'Banaskantha', '75.00', '12.50', '12.50', '0.00', '0.00', '6', '240209', 'Palanpur', '15.15', '0.02', '30.77 %', '394']
+['2402', 'Banaskantha', '22.22', '11.11', '44.44', '22.22', '0.00', '31', '240210', 'Tharad', '12.23', '0.08', '20.00 %', '367']
+['2402', 'Banaskantha', '25.00', '0.00', '50.00', '25.00', '0.00', '086', '240211', 'Vadgam', '12.39', '0.39', '22.22 %', '223']
+['2402', 'Banaskantha', '50.00', '0.00', '25.00', '25.00', '0.00', '056', '240212', 'Vav', '10.73', '0.35', '20.00 %', '161']
+['2402', 'Banaskantha', '40.00', '50.00', '10.00', '0.00', '0.00', '9', '240213', 'Lakhani', '11.94', '0.04', '44.44 %', '215']
+['2402', 'Banaskantha', '50.00', '33.33', '16.67', '0.00', '0.00', '7', '240214', 'Suigam', '10.25', '0.09', '50.00 %', '82']
+['2403', 'Patan', '33.33', '25.00', '33.33', '8.33', '0.00', '29', '240301', 'Chanasma', '11.55', '0.23', '63.64 %', '127']
+['2403', 'Patan', '57.14', '7.14', '14.29', '21.43', '0.00', '32', '240302', 'Harij', '10.78', '0.33', '66.67 %', '97']
+['2403', 'Patan', '20.00', '50.00', '10.00', '20.00', '0.00', '25', '240303', 'Patan', '14.60', '0.11', '40.00 %', '219']
+['2403', 'Patan', '15.38', '0.00', '7.69', '69.23', '7.69', '046811', '240304', 'Sami', '9.82', '433.44', '54.55 %', '108']
+['2403', 'Patan', '10.00', '10.00', '40.00', '30.00', '10.00', '58', '240305', 'Siddhpur', '12.33', '0.39', '58.33 %', '148']
+['2403', 'Patan', '41.67', '0.00', '41.67', '16.67', '0.00', '01918', '240308', 'Radhanpur', '9.93', '12.87', '46.67 %', '149']
+['2403', 'Patan', '60.00', '0.00', '40.00', '0.00', '0.00', '08', '240309', 'Santalpur', '9.38', '0.07', '30.77 %', '122']
+['2403', 'Patan', '16.67', '0.00', '16.67', '0.00', '66.67', '0371', '240312', 'Saraswati', '11.38', '2.04', '25.00 %', '182']
+['2404', 'Mahesana', '66.67', '25.00', '8.33', '0.00', '0.00', '7', '240401', 'Becharaji', '11.44', '0.07', '66.67 %', '103']
+['2404', 'Mahesana', '18.75', '12.50', '31.25', '37.50', '0.00', '69', '240402', 'Kadi', '11.05', '0.28', '40.91 %', '243']
+['2404', 'Mahesana', '22.22', '33.33', '22.22', '22.22', '0.00', '29', '240403', 'Kheralu', '8.60', '0.22', '40.00 %', '129']
+['2404', 'Mahesana', '20.00', '30.00', '40.00', '10.00', '0.00', '26', '240404', 'Mehsana', '13.42', '0.08', '29.17 %', '322']
+['2404', 'Mahesana', '37.50', '50.00', '12.50', '0.00', '0.00', '9', '240405', 'Satlasana', '11.10', '0.08', '70.00 %', '111']
+['2404', 'Mahesana', '20.00', '40.00', '26.67', '13.33', '0.00', '38', '240406', 'Unjha', '10.55', '0.33', '72.73 %', '116']
+['2404', 'Mahesana', '0.00', '16.67', '83.33', '0.00', '0.00', '121', '240407', 'Vadnagar', '12.08', '0.83', '33.33 %', '145']
+['2404', 'Mahesana', '0.00', '28.57', '28.57', '42.86', '0.00', '3721', '240408', 'Vijapur', '11.10', '16.76', '25.00 %', '222']
+['2404', 'Mahesana', '18.18', '36.36', '45.45', '0.00', '0.00', '26', '240409', 'Visnagar', '11.18', '0.14', '41.18 %', '190']
+['2404', 'Mahesana', '9.09', '45.45', '27.27', '18.18', '0.00', '33', '240411', 'Jotana', '8.86', '0.53', '71.43 %', '62']
+['2405', 'Sabar Kantha', '71.43', '14.29', '14.29', '0.00', '0.00', '8', '240501', 'Khedbrahma', '11.68', '0.04', '52.63 %', '222']
+['2405', 'Sabar Kantha', '22.22', '55.56', '11.11', '11.11', '0.00', '22', '240502', 'Vijaynagar', '9.58', '0.12', '36.84 %', '182']
+['2405', 'Sabar Kantha', '9.09', '45.45', '18.18', '27.27', '0.00', '35', '240503', 'Vadali', '10.38', '0.26', '61.54 %', '135']
+['2405', 'Sabar Kantha', '21.43', '14.29', '21.43', '42.86', '0.00', '55', '240504', 'Idar', '11.10', '0.16', '29.03 %', '344']
+['2405', 'Sabar Kantha', '42.86', '7.14', '35.71', '14.29', '0.00', '42', '240507', 'Himmatnagar', '12.24', '0.10', '27.27 %', '404']
+['2405', 'Sabar Kantha', '20.00', '20.00', '40.00', '20.00', '0.00', '31', '240508', 'Prantij', '10.69', '0.18', '50.00 %', '171']
+['2405', 'Sabar Kantha', '8.33', '16.67', '8.33', '58.33', '8.33', '71', '240509', 'Talod', '9.00', '0.34', '30.43 %', '207']
+['2406', 'Gandhinagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240601', 'Dehgam', '11.86', '0.00', '3.57 %', '332']
+['2406', 'Gandhinagar', '75.00', '25.00', '0.00', '0.00', '0.00', '1', '240602', 'Gandhinagar', '18.76', '0.00', '12.12 %', '619']
+['2406', 'Gandhinagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240603', 'Kalol', '14.35', '0.00', '5.00 %', '287']
+['2407', 'Ahmedabad', '40.00', '40.00', '20.00', '0.00', '0.00', '7', '240701', 'Mandal', '9.13', '0.10', '37.50 %', '73']
+['2407', 'Ahmedabad', '0.00', '0.00', '66.67', '33.33', '0.00', '86', '240702', 'Detroj-Rampura', '7.45', '1.05', '27.27 %', '82']
+['2407', 'Ahmedabad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240703', 'Viramgam', '8.22', '0.00', '5.56 %', '148']
+['2407', 'Ahmedabad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240704', 'Sanand', '11.06', '0.00', '11.11 %', '199']
+['2407', 'Ahmedabad', '16.67', '33.33', '16.67', '33.33', '0.00', '21', '240706', 'Dascroi', '20.50', '0.03', '16.67 %', '615']
+['2407', 'Ahmedabad', '0.00', '0.00', '100.00', '0.00', '0.00', '3', '240707', 'Dholka', '11.16', '0.01', '5.26 %', '212']
+['2407', 'Ahmedabad', '25.00', '50.00', '25.00', '0.00', '0.00', '6', '240710', 'Bavla', '9.17', '0.05', '33.33 %', '110']
+['2407', 'Ahmedabad', '33.33', '44.44', '22.22', '0.00', '0.00', '13', '240711', 'Dhandhuka', '9.78', '0.15', '55.56 %', '88']
+['2407', 'Ahmedabad', '35.29', '25.49', '13.73', '23.53', '1.96', '145', '240712', 'Amc', '43.56', '0.08', '97.67 %', '1873']
+['2407', 'Ahmedabad', '80.00', '10.00', '10.00', '0.00', '0.00', '6', '240713', 'Dholera', '9.00', '0.11', '83.33 %', '54']
+['2408', 'Surendranagar', '36.36', '18.18', '45.45', '0.00', '0.00', '22', '240802', 'Dhrangadhra', '11.53', '0.11', '41.18 %', '196']
+['2408', 'Surendranagar', '66.67', '33.33', '0.00', '0.00', '0.00', '3', '240805', 'Wadhvan', '16.32', '0.01', '21.05 %', '310']
+['2408', 'Surendranagar', '44.44', '11.11', '44.44', '0.00', '0.00', '16', '240806', 'Muli', '12.00', '0.13', '50.00 %', '120']
+['2408', 'Surendranagar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '240807', 'Chotila', '18.00', '0.00', '36.36 %', '198']
+['2408', 'Surendranagar', '62.50', '37.50', '0.00', '0.00', '0.00', '6', '240808', 'Sayla', '10.53', '0.04', '40.00 %', '158']
+['2408', 'Surendranagar', '71.43', '0.00', '28.57', '0.00', '0.00', '06', '240809', 'Chuda', '7.67', '0.09', '44.44 %', '69']
+['2408', 'Surendranagar', '0.00', '90.91', '9.09', '0.00', '0.00', '154', '240810', 'Limbdi', '7.44', '1.29', '37.50 %', '119']
+['2408', 'Surendranagar', '11.11', '22.22', '44.44', '22.22', '0.00', '34', '240811', 'Thangadh', '15.80', '0.43', '80.00 %', '79']
+['2409', 'Rajkot', '0.00', '83.33', '16.67', '0.00', '0.00', '93', '240901', 'Dhoraji', '24.00', '0.65', '50.00 %', '144']
+['2409', 'Rajkot', '16.67', '33.33', '33.33', '0.00', '16.67', '1422', '240902', 'Gondal', '15.16', '4.94', '21.05 %', '288']
+['2409', 'Rajkot', '12.50', '37.50', '37.50', '12.50', '0.00', '25', '240903', 'Jamkandorna', '11.00', '0.28', '75.00 %', '88']
+['2409', 'Rajkot', '60.00', '40.00', '0.00', '0.00', '0.00', '3', '240904', 'Jasdan', '17.00', '0.01', '28.57 %', '238']
+['2409', 'Rajkot', '50.00', '0.00', '33.33', '16.67', '0.00', '086', '240906', 'Kotda Sangani', '14.00', '0.88', '42.86 %', '98']
+['2409', 'Rajkot', '50.00', '0.00', '40.00', '10.00', '0.00', '0147', '240907', 'Lodhika', '14.17', '1.73', '83.33 %', '85']
+['2409', 'Rajkot', '33.33', '50.00', '0.00', '16.67', '0.00', '67', '240911', 'Rajkot', '15.35', '0.26', '23.53 %', '261']
+['2409', 'Rajkot', '0.00', '28.57', '0.00', '57.14', '14.29', '22816', '240913', 'Upleta', '13.08', '134.21', '46.15 %', '170']
+['2409', 'Rajkot', '0.00', '42.86', '28.57', '14.29', '14.29', '48615', '240915', 'Rajkot Corporation', '38.83', '52.16', '25.00 %', '932']
+['2409', 'Rajkot', '66.67', '33.33', '0.00', '0.00', '0.00', '1', '240916', 'Vinchhiya', '13.80', '0.01', '30.00 %', '138']
+['2410', 'Jamnagar', '57.14', '42.86', '0.00', '0.00', '0.00', '3', '241002', 'Dhrol', '11.70', '0.03', '40.00 %', '117']
+['2410', 'Jamnagar', '28.57', '7.14', '42.86', '21.43', '0.00', '43', '241004', 'Jamjodhpur', '10.24', '0.25', '41.18 %', '174']
+['2410', 'Jamnagar', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '241007', 'Jamnagar', '17.74', '0.00', '17.65 %', '603']
+['2410', 'Jamnagar', '25.00', '16.67', '41.67', '16.67', '0.00', '35', '241008', 'Jodiya', '6.08', '0.48', '33.33 %', '73']
+['2410', 'Jamnagar', '44.44', '44.44', '11.11', '0.00', '0.00', '10', '241009', 'Kalavad', '9.83', '0.06', '33.33 %', '177']
+['2410', 'Jamnagar', '60.00', '40.00', '0.00', '0.00', '0.00', '5', '241010', 'Lalpur', '10.39', '0.03', '33.33 %', '187']
+['2411', 'Porbandar', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '241101', 'Porbandar', '11.70', '0.00', '3.70 %', '316']
+['2411', 'Porbandar', '30.00', '50.00', '20.00', '0.00', '0.00', '14', '241102', 'Ranavav', '12.60', '0.11', '60.00 %', '126']
+['2411', 'Porbandar', '14.29', '42.86', '28.57', '14.29', '0.00', '17', '241103', 'Kutiyana', '9.09', '0.17', '36.36 %', '100']
+['2412', 'Junagadh', '12.50', '12.50', '62.50', '12.50', '0.00', '25', '241201', 'Junagadh', '15.67', '0.18', '66.67 %', '141']
+['2412', 'Junagadh', '14.29', '64.29', '14.29', '7.14', '0.00', '28', '241202', 'Mendarda', '10.10', '0.28', '80.00 %', '101']
+['2412', 'Junagadh', '75.00', '0.00', '0.00', '25.00', '0.00', '06', '241206', 'Maliya Hatina', '14.50', '0.03', '21.43 %', '203']
+['2412', 'Junagadh', '10.00', '10.00', '30.00', '40.00', '10.00', '51', '241207', 'Mangrol', '17.86', '0.20', '64.29 %', '250']
+['2412', 'Junagadh', '25.00', '0.00', '50.00', '25.00', '0.00', '077', '241208', 'Keshod', '19.27', '0.36', '36.36 %', '212']
+['2412', 'Junagadh', '23.08', '23.08', '30.77', '15.38', '7.69', '45', '241209', 'Manavadar', '12.70', '0.35', '80.00 %', '127']
+['2412', 'Junagadh', '21.43', '7.14', '57.14', '14.29', '0.00', '47', '241210', 'Vanthali', '12.44', '0.42', '77.78 %', '112']
+['2412', 'Junagadh', '57.14', '28.57', '0.00', '0.00', '14.29', '315', '241211', 'Bhesan', '11.29', '3.99', '42.86 %', '79']
+['2412', 'Junagadh', '40.00', '40.00', '20.00', '0.00', '0.00', '18', '241212', 'Visavadar', '14.17', '0.11', '83.33 %', '170']
+['2412', 'Junagadh', '66.67', '0.00', '33.33', '0.00', '0.00', '03', '241216', 'Junagadh Corporation', '51.50', '0.01', '75.00 %', '206']
+['2413', 'Amreli', '20.00', '80.00', '0.00', '0.00', '0.00', '5', '241301', 'Amreli', '14.43', '0.02', '35.71 %', '202']
+['2413', 'Amreli', '80.00', '20.00', '0.00', '0.00', '0.00', '3', '241302', 'Babara', '10.67', '0.02', '58.33 %', '128']
+['2413', 'Amreli', '80.00', '0.00', '0.00', '20.00', '0.00', '09', '241303', 'Bagasara', '10.86', '0.12', '71.43 %', '76']
+['2413', 'Amreli', '0.00', '50.00', '50.00', '0.00', '0.00', '14', '241304', 'Dhari', '9.86', '0.10', '14.29 %', '138']
+['2413', 'Amreli', '50.00', '33.33', '16.67', '0.00', '0.00', '6', '241305', 'Jafrabad', '10.75', '0.07', '37.50 %', '86']
+['2413', 'Amreli', '12.50', '25.00', '50.00', '12.50', '0.00', '23', '241306', 'Khambha', '8.50', '0.27', '40.00 %', '85']
+['2413', 'Amreli', '0.00', '44.44', '44.44', '11.11', '0.00', '8136', '241308', 'Lathi', '8.83', '76.75', '41.67 %', '106']
+['2413', 'Amreli', '62.50', '12.50', '12.50', '12.50', '0.00', '12', '241309', 'Liliya', '9.33', '0.21', '66.67 %', '56']
+['2413', 'Amreli', '33.33', '33.33', '0.00', '33.33', '0.00', '17', '241310', 'Rajula', '11.00', '0.11', '14.29 %', '154']
+['2413', 'Amreli', '18.18', '18.18', '45.45', '18.18', '0.00', '34', '241311', 'Savarkundla', '13.50', '0.18', '42.86 %', '189']
+['2414', 'Bhavnagar', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '241405', 'Bhavnagar', '18.18', '0.01', '9.09 %', '400']
+['2414', 'Bhavnagar', '0.00', '66.67', '22.22', '11.11', '0.00', '1077', '241406', 'Ghogha', '9.78', '12.24', '44.44 %', '88']
+['2414', 'Bhavnagar', '30.00', '0.00', '60.00', '10.00', '0.00', '0246', '241407', 'Shihor', '9.88', '1.46', '29.41 %', '168']
+['2414', 'Bhavnagar', '37.50', '37.50', '25.00', '0.00', '0.00', '12', '241408', 'Gariyadhar', '9.67', '0.14', '44.44 %', '87']
+['2414', 'Bhavnagar', '25.00', '25.00', '50.00', '0.00', '0.00', '7', '241409', 'Palitana', '10.25', '0.04', '25.00 %', '164']
+['2414', 'Bhavnagar', '30.00', '30.00', '20.00', '20.00', '0.00', '26', '241410', 'Talaja', '11.59', '0.10', '36.36 %', '255']
+['2414', 'Bhavnagar', '25.00', '33.33', '25.00', '16.67', '0.00', '38', '241411', 'Mahuva', '12.26', '0.13', '34.78 %', '282']
+['2414', 'Bhavnagar', '66.67', '0.00', '33.33', '0.00', '0.00', '07', '241413', 'Jesar', '8.00', '0.10', '55.56 %', '72']
+['2415', 'Anand', '12.50', '50.00', '37.50', '0.00', '0.00', '19', '241501', 'Anand', '11.95', '0.04', '21.62 %', '442']
+['2415', 'Anand', '37.50', '25.00', '12.50', '12.50', '12.50', '27', '241502', 'Anklav', '8.50', '0.23', '42.86 %', '119']
+['2415', 'Anand', '14.29', '0.00', '57.14', '14.29', '14.29', '016912', '241503', 'Borsad', '10.55', '51.72', '22.58 %', '327']
+['2415', 'Anand', '12.50', '25.00', '50.00', '12.50', '0.00', '25', '241504', 'Khambhat', '9.38', '0.11', '25.00 %', '225']
+['2415', 'Anand', '27.27', '18.18', '18.18', '36.36', '0.00', '38', '241506', 'Sojitra', '10.13', '0.47', '62.50 %', '81']
+['2415', 'Anand', '30.00', '30.00', '30.00', '10.00', '0.00', '21', '241507', 'Tarapur', '9.50', '0.28', '50.00 %', '76']
+['2415', 'Anand', '42.86', '28.57', '28.57', '0.00', '0.00', '11', '241508', 'Umreth', '10.31', '0.07', '37.50 %', '165']
+['2416', 'Kheda', '14.29', '35.71', '21.43', '21.43', '7.14', '51', '241602', 'Kapadvanj', '9.71', '0.15', '22.86 %', '340']
+['2416', 'Kheda', '27.27', '27.27', '27.27', '18.18', '0.00', '32', '241603', 'Kathlal', '11.29', '0.14', '42.86 %', '237']
+['2416', 'Kheda', '0.00', '100.00', '0.00', '0.00', '0.00', '2', '241604', 'Kheda', '11.60', '0.02', '10.00 %', '116']
+['2416', 'Kheda', '40.00', '60.00', '0.00', '0.00', '0.00', '4', '241605', 'Mahemdavad', '11.70', '0.02', '25.00 %', '234']
+['2416', 'Kheda', '33.33', '55.56', '11.11', '0.00', '0.00', '11', '241606', 'Mahudha', '10.64', '0.09', '54.55 %', '117']
+['2416', 'Kheda', '21.43', '28.57', '42.86', '7.14', '0.00', '35', '241607', 'Matar', '11.08', '0.26', '58.33 %', '133']
+['2416', 'Kheda', '33.33', '22.22', '33.33', '11.11', '0.00', '22', '241608', 'Nadiad', '12.90', '0.06', '23.33 %', '387']
+['2416', 'Kheda', '71.43', '0.00', '0.00', '28.57', '0.00', '017', '241609', 'Thasara', '9.52', '0.08', '21.74 %', '219']
+['2416', 'Kheda', '25.00', '0.00', '25.00', '0.00', '50.00', '0426', '241611', 'Galteshwar', '10.42', '3.41', '33.33 %', '125']
+['2416', 'Kheda', '12.50', '62.50', '25.00', '0.00', '0.00', '29', '241612', 'Vaso', '14.60', '0.40', '100.00 %', '73']
+['2417', 'Panch Mahals', '55.56', '22.22', '22.22', '0.00', '0.00', '12', '241701', 'Ghoghamba', '10.48', '0.04', '33.33 %', '283']
+['2417', 'Panch Mahals', '33.33', '50.00', '16.67', '0.00', '0.00', '7', '241702', 'Godhra', '12.64', '0.01', '10.26 %', '493']
+['2417', 'Panch Mahals', '58.33', '25.00', '0.00', '16.67', '0.00', '512', '241704', 'Jambughoda', '10.86', '6.74', '71.43 %', '76']
+['2417', 'Panch Mahals', '25.00', '41.67', '16.67', '16.67', '0.00', '34', '241709', 'Morva Hadaf', '9.86', '0.16', '42.86 %', '207']
+['2417', 'Panch Mahals', '42.86', '42.86', '14.29', '0.00', '0.00', '7', '241711', 'Shahera', '10.33', '0.02', '20.00 %', '310']
+['2418', 'Dohad', '57.14', '14.29', '28.57', '0.00', '0.00', '8', '241801', 'Dahod', '14.67', '0.02', '22.22 %', '396']
+['2418', 'Dohad', '60.00', '10.00', '30.00', '0.00', '0.00', '13', '241802', 'Garbada', '12.07', '0.07', '46.67 %', '181']
+['2418', 'Dohad', '50.00', '50.00', '0.00', '0.00', '0.00', '2', '241803', 'Limkheda', '13.10', '0.01', '13.79 %', '380']
+['2418', 'Dohad', '60.00', '20.00', '20.00', '0.00', '0.00', '6', '241804', 'Dhanpur', '11.30', '0.03', '20.00 %', '226']
+['2418', 'Dohad', '33.33', '66.67', '0.00', '0.00', '0.00', '5', '241805', 'Fatepura', '12.15', '0.02', '23.08 %', '316']
+['2418', 'Dohad', '42.86', '28.57', '28.57', '0.00', '0.00', '12', '241806', 'Zalod', '13.61', '0.03', '25.00 %', '381']
+['2418', 'Dohad', '54.55', '18.18', '27.27', '0.00', '0.00', '12', '241807', 'Dev.Baria', '13.55', '0.04', '40.91 %', '298']
+['2418', 'Dohad', '50.00', '25.00', '25.00', '0.00', '0.00', '5', '241808', 'Sanjeli', '13.00', '0.04', '44.44 %', '117']
+['2419', 'Vadodara', '33.33', '0.00', '33.33', '33.33', '0.00', '01221', '241902', 'Dabhoi', '12.79', '5.02', '42.11 %', '243']
+['2419', 'Vadodara', '60.00', '20.00', '0.00', '20.00', '0.00', '26', '241904', 'Karjan', '10.06', '0.16', '18.75 %', '161']
+['2419', 'Vadodara', '15.38', '46.15', '7.69', '30.77', '0.00', '44', '241907', 'Padra', '10.55', '0.21', '40.00 %', '211']
+['2419', 'Vadodara', '50.00', '16.67', '33.33', '0.00', '0.00', '9', '241909', 'Savli', '14.07', '0.05', '35.71 %', '197']
+['2419', 'Vadodara', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '241910', 'Shinor', '8.63', '0.00', '12.50 %', '69']
+['2419', 'Vadodara', '0.00', '28.57', '28.57', '42.86', '0.00', '2720', '241911', 'Vadodara', '13.76', '9.41', '33.33 %', '289']
+['2419', 'Vadodara', '27.27', '27.27', '45.45', '0.00', '0.00', '24', '241912', 'Vaghodiya', '13.44', '0.11', '50.00 %', '215']
+['2419', 'Vadodara', '85.71', '0.00', '14.29', '0.00', '0.00', '03', '241913', 'Vadodara Corporation', '39.31', '0.00', '37.50 %', '629']
+['2419', 'Vadodara', '12.50', '6.25', '50.00', '31.25', '0.00', '67', '241914', 'Desar', '14.25', '0.59', '100.00 %', '114']
+['2420', 'Narmada', '25.00', '37.50', '25.00', '12.50', '0.00', '21', '242001', 'Nandod', '10.78', '0.11', '27.78 %', '194']
+['2420', 'Narmada', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242002', 'Dediyapada', '11.40', '0.00', '16.00 %', '285']
+['2420', 'Narmada', '40.00', '40.00', '20.00', '0.00', '0.00', '13', '242003', 'Sagbara', '9.73', '0.09', '53.33 %', '146']
+['2420', 'Narmada', '66.67', '8.33', '16.67', '8.33', '0.00', '20', '242004', 'Tilakvada', '10.00', '0.17', '66.67 %', '120']
+['2420', 'Narmada', '81.82', '18.18', '0.00', '0.00', '0.00', '2', '242005', 'Garudeshwar', '11.36', '0.01', '50.00 %', '159']
+['2421', 'Bharuch', '70.00', '30.00', '0.00', '0.00', '0.00', '4', '242101', 'Amod', '9.30', '0.04', '50.00 %', '93']
+['2421', 'Bharuch', '23.08', '23.08', '23.08', '23.08', '7.69', '48', '242102', 'Ankleshwar', '19.25', '0.21', '50.00 %', '231']
+['2421', 'Bharuch', '0.00', '20.00', '40.00', '40.00', '0.00', '1717', '242103', 'Bharuch', '13.21', '5.42', '12.50 %', '317']
+['2421', 'Bharuch', '44.44', '55.56', '0.00', '0.00', '0.00', '7', '242104', 'Hansot', '11.00', '0.09', '57.14 %', '77']
+['2421', 'Bharuch', '21.43', '14.29', '14.29', '35.71', '14.29', '74', '242105', 'Jambusar', '9.00', '0.43', '42.11 %', '171']
+['2421', 'Bharuch', '50.00', '25.00', '8.33', '16.67', '0.00', '27', '242108', 'Zaghadia', '10.05', '0.13', '42.86 %', '211']
+['2421', 'Bharuch', '66.67', '0.00', '33.33', '0.00', '0.00', '03', '242109', 'Netrang', '10.54', '0.02', '23.08 %', '137']
+['2422', 'Surat', '27.27', '18.18', '45.45', '9.09', '0.00', '31', '242201', 'Bardoli', '11.44', '0.17', '43.75 %', '183']
+['2422', 'Surat', '37.50', '25.00', '25.00', '12.50', '0.00', '14', '242202', 'Choryasi', '13.45', '0.09', '36.36 %', '148']
+['2422', 'Surat', '8.33', '0.00', '16.67', '50.00', '25.00', '0105035', '242203', 'Kamrej', '18.09', '527.81', '63.64 %', '199']
+['2422', 'Surat', '18.18', '0.00', '36.36', '45.45', '0.00', '01637', '242204', 'Mahuva', '11.60', '9.41', '40.00 %', '174']
+['2422', 'Surat', '73.33', '20.00', '6.67', '0.00', '0.00', '8', '242205', 'Mandavi', '11.00', '0.03', '29.17 %', '264']
+['2422', 'Surat', '0.00', '33.33', '0.00', '33.33', '33.33', '2913', '242208', 'Olpad', '13.25', '13.74', '12.50 %', '212']
+['2422', 'Surat', '23.08', '23.08', '30.77', '23.08', '0.00', '43', '242212', 'Umarpada', '10.67', '0.34', '66.67 %', '128']
+['2422', 'Surat', '53.85', '12.82', '10.26', '17.95', '5.13', '98', '242215', 'Surat Corpo.', '39.14', '0.06', '61.90 %', '1644']
+['2423', 'The Dangs', '56.25', '6.25', '31.25', '6.25', '0.00', '29', '242301', 'Ahwa', '11.72', '0.14', '50.00 %', '211']
+['2423', 'The Dangs', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242302', 'Subir', '11.08', '0.00', '66.67 %', '133']
+['2423', 'The Dangs', '57.14', '42.86', '0.00', '0.00', '0.00', '5', '242303', 'Waghai', '11.92', '0.03', '50.00 %', '143']
+['2424', 'Navsari', '10.00', '40.00', '40.00', '10.00', '0.00', '26', '242401', 'Chikhli', '10.67', '0.10', '33.33 %', '256']
+['2424', 'Navsari', '0.00', '33.33', '22.22', '44.44', '0.00', '6727', '242402', 'Gandevi', '11.33', '39.57', '53.33 %', '170']
+['2424', 'Navsari', '0.00', '27.27', '54.55', '9.09', '9.09', '526812', '242404', 'Navsari', '12.67', '2772.69', '53.33 %', '190']
+['2424', 'Navsari', '12.50', '0.00', '37.50', '50.00', '0.00', '01332', '242405', 'Vansda', '9.65', '5.31', '30.77 %', '251']
+['2424', 'Navsari', '37.50', '0.00', '12.50', '12.50', '37.50', '05746', '242406', 'Khergam', '11.00', '74.62', '71.43 %', '77']
+['2425', 'Valsad', '25.00', '0.00', '50.00', '25.00', '0.00', '03428', '242501', 'Valsad', '10.86', '11.28', '42.86 %', '304']
+['2425', 'Valsad', '8.33', '16.67', '16.67', '41.67', '16.67', '76', '242502', 'Pardi', '12.14', '0.45', '57.14 %', '170']
+['2425', 'Valsad', '14.29', '14.29', '21.43', '42.86', '7.14', '70', '242503', 'Umbergaon', '11.10', '0.30', '47.62 %', '233']
+['2425', 'Valsad', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242505', 'Kaparada', '10.03', '0.00', '14.71 %', '341']
+['2426', 'Tapi', '76.92', '7.69', '7.69', '7.69', '0.00', '10', '242607', 'Nizar', '10.83', '0.15', '83.33 %', '65']
+['2426', 'Tapi', '66.67', '8.33', '16.67', '8.33', '0.00', '15', '242610', 'Songadh', '12.84', '0.05', '40.00 %', '321']
+['2426', 'Tapi', '50.00', '50.00', '0.00', '0.00', '0.00', '3', '242611', 'Uchchhal', '11.30', '0.03', '30.00 %', '113']
+['2426', 'Tapi', '16.67', '16.67', '66.67', '0.00', '0.00', '16', '242614', 'Vyara', '14.67', '0.07', '33.33 %', '220']
+['2426', 'Tapi', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242615', 'Dolvan', '16.11', '0.00', '100.00 %', '145']
+['2426', 'Tapi', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242616', 'Kukarmunda', '13.17', '0.00', '100.00 %', '79']
+['2427', 'Aravalli', '28.57', '0.00', '14.29', '57.14', '0.00', '0428', '242701', 'Modasa', '10.50', '1.36', '23.33 %', '315']
+['2427', 'Aravalli', '100.00', '0.00', '0.00', '0.00', '0.00', '0', '242702', 'Bhiloda', '10.26', '0.00', '5.88 %', '349']
+['2427', 'Aravalli', '42.86', '28.57', '28.57', '0.00', '0.00', '10', '242703', 'Meghraj', '11.36', '0.03', '21.43 %', '318']
+['2427', 'Aravalli', '40.00', '20.00', '40.00', '0.00', '0.00', '8', '242704', 'Malpur', '11.06', '0.04', '29.41 %', '188']
+['2427', 'Aravalli', '40.00', '60.00', '0.00', '0.00', '0.00', '3', '242706', 'Bayad', '9.94', '0.01', '15.15 %', '328']
+['2428', 'Botad', '16.67', '0.00', '66.67', '16.67', '0.00', '0146', '242801', 'Barvala', '10.60', '2.75', '40.00 %', '53']
+['2428', 'Botad', '44.44', '22.22', '22.22', '11.11', '0.00', '19', '242802', 'Ranpur', '8.63', '0.28', '50.00 %', '69']
+['2428', 'Botad', '38.46', '23.08', '15.38', '23.08', '0.00', '32', '242803', 'Botad', '13.14', '0.17', '50.00 %', '184']
+['2428', 'Botad', '21.43', '28.57', '35.71', '14.29', '0.00', '37', '242804', 'Gadhada', '11.77', '0.24', '69.23 %', '153']
+['2429', 'Devbhoomi Dwarka', '71.43', '0.00', '21.43', '7.14', '0.00', '0106', '242901', 'Bhanvad', '11.67', '0.61', '60.00 %', '175']
+['2429', 'Devbhoomi Dwarka', '20.00', '30.00', '30.00', '20.00', '0.00', '31', '242902', 'Dwarka', '10.07', '0.21', '46.67 %', '151']
+['2429', 'Devbhoomi Dwarka', '21.43', '21.43', '50.00', '7.14', '0.00', '38', '242903', 'Jamkalyanpur', '12.00', '0.13', '40.00 %', '300']
+['2430', 'Gir Somnath', '40.00', '40.00', '20.00', '0.00', '0.00', '7', '243001', 'Talala', '13.50', '0.05', '30.00 %', '135']
+['2430', 'Gir Somnath', '61.54', '0.00', '23.08', '15.38', '0.00', '01313', '243002', 'Veraval', '20.07', '4.67', '57.14 %', '281']
+['2430', 'Gir Somnath', '50.00', '25.00', '25.00', '0.00', '0.00', '4', '243003', 'Sutrapada', '11.71', '0.02', '21.43 %', '164']
+['2430', 'Gir Somnath', '27.27', '9.09', '63.64', '0.00', '0.00', '29', '243004', 'Una', '12.53', '0.12', '52.63 %', '238']
+['2430', 'Gir Somnath', '42.86', '28.57', '28.57', '0.00', '0.00', '10', '243005', 'Kodinar', '11.33', '0.06', '33.33 %', '170']
+['2430', 'Gir Somnath', '50.00', '33.33', '16.67', '0.00', '0.00', '7', '243006', 'Girgadhada', '9.18', '0.07', '45.45 %', '101']
+['2431', 'Mahisagar', '66.67', '16.67', '16.67', '0.00', '0.00', '4', '243101', 'Kadana', '11.45', '0.02', '30.00 %', '229']
+['2431', 'Mahisagar', '50.00', '10.00', '20.00', '20.00', '0.00', '27', '243102', 'Khanpur', '10.00', '0.17', '37.50 %', '160']
+['2431', 'Mahisagar', '30.77', '30.77', '30.77', '7.69', '0.00', '26', '243103', 'Lunawada', '11.97', '0.06', '20.00 %', '419']
+['2431', 'Mahisagar', '72.73', '18.18', '9.09', '0.00', '0.00', '6', '243104', 'Santrampur', '11.78', '0.02', '31.25 %', '377']
+['2431', 'Mahisagar', '33.33', '33.33', '22.22', '11.11', '0.00', '17', '243105', 'Balasinor', '13.00', '0.09', '53.33 %', '195']
+['2431', 'Mahisagar', '12.50', '25.00', '12.50', '25.00', '25.00', '49', '243106', 'Virpur', '10.71', '0.27', '41.18 %', '182']
+['2432', 'Chhotaudepur', '36.36', '36.36', '18.18', '9.09', '0.00', '20', '243201', 'Chhota-Udepur', '15.16', '0.07', '36.84 %', '288']
+['2432', 'Chhotaudepur', '60.00', '20.00', '20.00', '0.00', '0.00', '11', '243203', 'Kawant', '13.21', '0.04', '42.11 %', '251']
+['2432', 'Chhotaudepur', '37.50', '0.00', '25.00', '37.50', '0.00', '0825', '243204', 'Naswadi', '12.91', '2.90', '36.36 %', '284']
+['2432', 'Chhotaudepur', '50.00', '50.00', '0.00', '0.00', '0.00', '2', '243205', 'Sankheda', '12.29', '0.01', '23.53 %', '209']
+['2432', 'Chhotaudepur', '44.44', '33.33', '11.11', '11.11', '0.00', '15', '243206', 'Bodeli', '11.91', '0.06', '27.27 %', '262']
+['2433', 'Morbi', '0.00', '55.56', '22.22', '22.22', '0.00', '8813', '243303', 'Tankara', '14.14', '89.02', '85.71 %', '99']
+['2433', 'Morbi', '33.33', '33.33', '16.67', '16.67', '0.00', '13', '243304', 'Wankaner', '10.59', '0.06', '22.73 %', '233']
+['2433', 'Morbi', '50.00', '10.00', '30.00', '10.00', '0.00', '26', '243305', 'Halvad', '12.33', '0.14', '46.67 %', '185']
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Districtwise_validation.dwise_type</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_select_for_download</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Kheda_matar.Kheda_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='ft14.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.1')" >
+        fail</a>
+
+    <div id='div_ft14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft14.1:  Kheda 
+ Matar 
+ Malavada 
+no of records in file: 8
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 'Total Number of schools: 0' != 8 : unmatching count found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Kheda_matar.py", line 51, in test_crcclick
+    self.assertEqual(count, lines, "unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: Total Number of schools: 0 != 8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Kheda_Sandhana_cluster.Sandhana_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='ft15.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
+        fail</a>
+
+    <div id='div_ft15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.1:  Kheda 
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 1193, in assertMultiLineEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/usr/lib/python3.5/unittest/case.py", line 665, in fail
+    raise self.failureException(msg)
+AssertionError: ' kheda ' != ' Kheda '
+-  kheda 
+?  ^
++  Kheda 
+?  ^
+ : is not selected 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Kheda_Sandhana_cluster.py", line 30, in test_crcclick
+    self.assertEqual(" kheda ",disttxt,"is not selected ")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: is not selected  ::  kheda  !=  Kheda 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.mahesana_mehsana.Mahesana_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='ft16.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
+        fail</a>
+
+    <div id='div_ft16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.1:  Mahesana 
+ Mehsana 
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 1193, in assertMultiLineEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+  File "/usr/lib/python3.5/unittest/case.py", line 665, in fail
+    raise self.failureException(msg)
+AssertionError: 'Mehsana' != ' Mehsana '
+- Mehsana
++  Mehsana 
+? +       +
+ : is not selected 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/mahesana_mehsana.py", line 34, in test_crcclick
+    self.assertEqual("Mehsana",block,"is not selected ")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: is not selected  :: Mehsana !=  Mehsana 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Mehasana_blockwise.Gothva_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='ft17.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft17.1')" >
+        fail</a>
+
+    <div id='div_ft17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft17.1:  Mahesana 
+ Jotana 
+no of records in file: 6
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 'Total Number of schools: 48' != 6 : unmatching count found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Mehasana_blockwise.py", line 51, in test_crcclick
+    self.assertEqual(count, lines, "unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: Total Number of schools: 48 != 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Nav_cluster.Nav_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='ft18.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft18.1')" >
+        fail</a>
+
+    <div id='div_ft18.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft18.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft18.1:  Navsari 
+ Navsari 
+ Khadsupa 
+no of records in file: 9
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 'Total Number of schools: 0' != 9 : unmatching count found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Nav_cluster.py", line 50, in test_crcclick
+    self.assertEqual(count, lines, "unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: Total Number of schools: 0 != 9
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Navsari_clusters.Navsari_cluster</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt19.1')" >
+        pass</a>
+
+    <div id='div_pt19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt19.1:  Navsari 
+ Gandevi 
+ Amalsad 
+District Name
+Block Name
+Cluster Name
+Visit-0 times (%)
+Visit-1 to 2 times (%)
+Visit-3 to 5 times (%)
+Visit-6 to 10 times (%)
+Visits more than 10 times (%)
+Number of schools per CRC
+Visits per schools
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Navsari
+Gandevi
+Amalsad
+0.00
+50.00
+0.00
+50.00
+0.00
+12.00
+2.33
+12
+28
+Navsari
+Gandevi
+Gandevi
+0.00
+0.00
+0.00
+100.00
+0.00
+15.00
+0.47
+15
+7
+Navsari
+Gandevi
+Bigri
+0.00
+0.00
+100.00
+0.00
+0.00
+11.00
+0.36
+11
+4
+Navsari
+Gandevi
+Vadsagal
+0.00
+0.00
+100.00
+0.00
+0.00
+9.00
+0.33
+9
+3
+Total Number of visits: 0
+Total Number of schools: 0
+Total schools visited: 9
+Total schools not visited: 80
+Date range:
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Patan_district.Patan_cluster</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='pt20.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt20.1')" >
+        pass</a>
+
+    <div id='div_pt20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt20.1:  Patan 
+ Siddhpur 
+ Gangalasan 
+Patan
+Siddhpur
+Biliya
+0.00
+0.00
+100.00
+0.00
+0.00
+13.00
+0.23
+13
+3
+Patan
+Siddhpur
+Kakoshi
+0.00
+0.00
+0.00
+100.00
+0.00
+13.00
+0.62
+13
+8
+Patan
+Siddhpur
+Samoda
+0.00
+50.00
+0.00
+0.00
+50.00
+7.00
+31.00
+7
+217
+Patan
+Siddhpur
+Dethali
+100.00
+0.00
+0.00
+0.00
+0.00
+8.00
+0.00
+8
+0
+Total Number of visits: 0
+Total Number of schools: 0
+Total schools visited: 10
+Total schools not visited: 96
+Date range:
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Rajkot_Jasapur.Jasapur_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='ft21.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft21.1')" >
+        fail</a>
+
+    <div id='div_ft21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft21.1:  Rajkot 
+ Jamkandorna 
+ Jasapar 
+no of records in file: 7
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 'Total Number of schools: 0' != 7 : unmatching count found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Rajkot_Jasapur.py", line 49, in test_crcclick
+    self.assertEqual(count, lines, "unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: Total Number of schools: 0 != 7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Select_Type.Sel_type</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_select_for_download</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt22.1')" >
+        pass</a>
+
+    <div id='div_pt22.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt22.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt22.1: 5
+ select for Download
+ Dist_Wise Report 
+ Block_Wise Report 
+ Cluster_Wise Report 
+ School_Wise Report 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Selecttype_files.Crc_Reports</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
+</tr>
+
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.1')" >
+        pass</a>
+
+    <div id='div_pt23.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt23.1:  Dist_Wise Report 
+ Block_Wise Report 
+ Cluster_Wise Report 
+ School_Wise Report 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.TableData_District.Crc_Reports</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
+</tr>
+
+<tr id='pt24.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.1')" >
+        pass</a>
+
+    <div id='div_pt24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.1: District Name
+Visit-0 times (%)
+Visit-1 to 2 times (%)
+Visit-3 to 5 times (%)
+Visit-6 to 10 times (%)
+Visits more than 10 times (%)
+Number of schools per CRC
+Visits per schools
+Total schools
+
+
+
+
+
+
+
+
+
+
+
+Ahmedabad
+39.78
+25.81
+17.20
+16.13
+1.08
+22.11
+0.05
+4068
+215
+Anand
+25.42
+25.42
+32.20
+13.56
+3.39
+10.27
+0.11
+1674
+178
+Banaskantha
+39.13
+23.48
+21.74
+14.78
+0.87
+12.13
+0.08
+3373
+271
+Bhavnagar
+30.16
+30.16
+30.16
+9.52
+0.00
+11.47
+0.09
+1674
+147
+Chhotaudepur
+45.24
+26.19
+16.67
+11.90
+0.00
+13.03
+0.05
+1512
+81
+Dohad
+51.85
+25.93
+22.22
+0.00
+0.00
+13.19
+0.03
+2295
+63
+Gir Somnath
+45.65
+17.39
+32.61
+4.35
+0.00
+13.12
+0.08
+1089
+83
+Junagadh
+28.26
+25.00
+30.43
+13.04
+3.26
+16.01
+0.16
+1601
+255
+Kheda
+26.67
+36.67
+23.33
+10.00
+3.33
+11.07
+0.12
+1981
+233
+Mahisagar
+43.86
+22.81
+19.30
+10.53
+3.51
+11.57
+0.08
+1562
+129
+Narmada
+60.00
+22.22
+13.33
+4.44
+0.00
+10.76
+0.06
+904
+56
+Panch Mahals
+43.48
+34.78
+13.04
+8.70
+0.00
+11.02
+0.04
+1884
+77
+Porbandar
+27.78
+44.44
+22.22
+5.56
+0.00
+11.29
+0.06
+542
+31
+Sabar Kantha
+29.76
+22.62
+21.43
+25.00
+1.19
+10.81
+0.15
+1805
+264
+Surendranagar
+42.42
+30.30
+24.24
+3.03
+0.00
+11.81
+0.07
+1464
+106
+The Dangs
+69.70
+12.12
+15.15
+3.03
+0.00
+11.60
+0.07
+487
+34
+Valsad
+25.53
+8.51
+27.66
+31.91
+6.38
+11.35
+0.14
+1509
+208
+Total Number of visits: 5029
+Total Number of schools: 54728
+Total schools visited: 1993
+Total schools not visited: 52735
+Date range:
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>CRC_Report.Vansada_cluster.Vansada_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c25',1)">Detail</a></td>
+</tr>
+
+<tr id='ft25.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft25.1')" >
+        error</a>
+
+    <div id='div_ft25.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft25.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft25.1: Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Vansada_cluster.py", line 17, in setUp
+    self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='exampleInputEmail']"}
+  (Session info: chrome=81.0.4044.138)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Vasad_blocktest.Valsad_Umbergaon</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c26',1)">Detail</a></td>
+</tr>
+
+<tr id='ft26.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft26.1')" >
+        fail</a>
+
+    <div id='div_ft26.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft26.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft26.1:  Valsad 
+ Umbergaon 
+no of records in file: 11
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 'Total Number of schools: 139' != 11 : unmatching count found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Vasad_blocktest.py", line 44, in test_crcclick
+    self.assertEqual(count, lines, "unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: Total Number of schools: 139 != 11
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.X_axis.Xaxis</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c27',1)">Detail</a></td>
+</tr>
+
+<tr id='pt27.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_xaxis</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt27.1')" >
+        pass</a>
+
+    <div id='div_pt27.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt27.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt27.1: choose x-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.Y_axis.Yaxis</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c28',1)">Detail</a></td>
+</tr>
+
+<tr id='pt28.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_yaxis</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.1')" >
+        pass</a>
+
+    <div id='div_pt28.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.1: choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>CRC_Report.Ahmedbad_district.Ahmedabad_report</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c29',1)">Detail</a></td>
+</tr>
+
+<tr id='ft29.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft29.1')" >
+        error</a>
+
+    <div id='div_ft29.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft29.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft29.1: Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Ahmedbad_district.py", line 23, in test_crcclick
+    self.driver.find_element_by_xpath(Data.crc).click()
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=81.0.4044.138)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>CRC_Report.Mahesena_Gothva.Gothva_cluster</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c30',1)">Detail</a></td>
+</tr>
+
+<tr id='ft30.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_crcclick</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft30.1')" >
+        fail</a>
+
+    <div id='div_ft30.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft30.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft30.1:  Mahesana 
+ Visnagar 
+ Gothva 
+no of records in file: 8
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 'Total Number of schools: 68' != 8 : unmatching count found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/CRC_Report/Mahesena_Gothva.py", line 52, in test_crcclick
+    self.assertEqual(count, lines, "unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: Total Number of schools: 68 != 8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>CRC_Report.X_Yaxis.XYaxis</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c31',1)">Detail</a></td>
+</tr>
+
+<tr id='pt31.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_xyaxis</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt31.1')" >
+        pass</a>
+
+    <div id='div_pt31.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt31.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt31.1: choose x-axis 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+ Visit-0 times (%) 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+ Visit-1 to 2 times (%) 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+ Visit-3 to 5 times (%) 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+ Visit-6 to 10 times (%) 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+ Visits more than 10 times (%) 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+ Number of schools per CRC 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+ Visits per schools 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+ Total schools 
+choose y-axis 
+ Visit-0 times (%) 
+ Visit-1 to 2 times (%) 
+ Visit-3 to 5 times (%) 
+ Visit-6 to 10 times (%) 
+ Visits more than 10 times (%) 
+ Number of schools per CRC 
+ Visits per schools 
+ Total schools 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>31</td>
+    <td>17</td>
+    <td>10</td>
+    <td>4</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

@@ -15,15 +15,15 @@ class Crc_Reports(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.email).send_keys(Data.username)
         self.driver.find_element_by_xpath(Data.pwd).send_keys(Data.password)
         self.driver.find_element_by_xpath(Data.loginbtn).click()
-        time.sleep(2)
+        time.sleep(5)
 
     def test_crcclick(self):
         self.driver.find_element_by_xpath(Data.Dashboard).click()
-        head =self.driver.find_element_by_xpath("//td[contains(text(),'CRC Reports ')]").text
-        # self.assertEqual(head,"    CRC Reports ","not matching!..")
+        time.sleep(3)
         self.driver.find_element_by_xpath(Data.crc).click()
         time.sleep(30)
         x_axis = self.driver.find_elements_by_xpath(Data.xaxis)
+        time.sleep(2)
         print("X axis menu list...")
         for i in range(len(x_axis)):
             print(x_axis[i].text)
