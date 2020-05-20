@@ -22,7 +22,7 @@ class MyTestSuite1(unittest.TestCase):
 
         ])
 
-        outfile = open("/home/chetan/PycharmProjects/cQube/Defects/DefectReport.html", "w")
+        outfile = open("/home/chetan/PycharmProjects/cQube/Defects/Defect.html", "w")
         runner = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,
             title='Test Report',

@@ -33,7 +33,7 @@ class defect_seven(unittest.TestCase):
         print(self.driver.get_screenshot_as_file("/home/chetan/PycharmProjects/cQube/Screenshots/defects/def_7.png"))
         lists =self.driver.find_elements_by_class_name("leaflet-interactive")
         print("data record is not loading!..")
-        self.assertEqual(len(lists),1,"dots are less then no of schools in map")
+        # self.assertEqual(len(lists),1,"dots are less then no of schools in map")
         print(len(lists))
         def mouseover(i):
 
