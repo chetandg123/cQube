@@ -32,9 +32,9 @@ class Choose6(unittest.TestCase):
         print(self.driver.find_element_by_xpath(Data.clu6).text)
         print(self.driver.find_element_by_xpath(Data.blk6).text)
         time.sleep(15)
-        data = self.driver.find_elements_by_xpath(Data.details)
-        for i in range(len(data)):
-            print(data[i].text)
+        # data = self.driver.find_elements_by_xpath(Data.details)
+        # for i in range(len(data)):
+        #     print(data[i].text)
 
         lists = self.driver.find_elements_by_class_name(Data.dots)
 

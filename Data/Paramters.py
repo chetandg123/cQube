@@ -3,8 +3,10 @@ import base64
 
 class Data():
     #path should be chrome.exe file location
-    Path =executable_path="/home/chetan/PycharmProjects/cQube/Driverfile/chromedriver"
-    fpath="Driverfile/geckodriver"
+    Path =executable_path="/home/chetan/Documents/Semester/chromedriver_linux64/chromedriver"
+
+    fpath="/home/chetan/PycharmProjects/cQube/Driverfile/geckodriver"
+
 
     # URL = base64.b64decode("aHR0cHM6Ly9jcXViZS50aWJpbHByb2plY3RzLmNvbQ==").decode("utf-8")
     URL ="http://52.66.209.6:4200/#/login"
@@ -133,8 +135,10 @@ class Data():
     dload = "//img[@alt='Download Report']"
     Notemsg = "//div[@class='col-sm-12']/p/b"
 
-
-
+# semester Report
+    dnames ="//select[@class='ng-untouched ng-pristine ng-valid']/option"
+    srcluster = "//select[@class='ng-pristine ng-valid ng-touched']/option"
+    srblock ="/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[2]/option"
 
 
 

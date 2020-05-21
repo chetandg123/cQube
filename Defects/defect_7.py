@@ -13,7 +13,8 @@ from Testscripts.login_page import Home_page
 class defect_seven(unittest.TestCase):
     @classmethod
     def setUp(self):
-        self.driver = webdriver.Chrome(Data.Path)
+        # self.driver = webdriver.Chrome(Data.Path)
+        self.driver = webdriver.Firefox(executable_path="/home/chetan/PycharmProjects/cQube/Driverfile/geckodriver")
         print("scripts starts ....")
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
@@ -32,7 +33,7 @@ class defect_seven(unittest.TestCase):
         time.sleep(3)
         print(self.driver.get_screenshot_as_file("/home/chetan/PycharmProjects/cQube/Screenshots/defects/def_7.png"))
         lists =self.driver.find_elements_by_class_name("leaflet-interactive")
-        print("data record is not loading!..")
+        # print("data record is not loading!..")
         # self.assertEqual(len(lists),1,"dots are less then no of schools in map")
         print(len(lists))
         def mouseover(i):
