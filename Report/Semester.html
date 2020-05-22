@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-05-20 18:43:40</p>
-<p class='attribute'><strong>Duration:</strong> 0:29:17.150594</p>
-<p class='attribute'><strong>Status:</strong> Pass 6 Failure 1 Error 18</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-05-21 16:15:27</p>
+<p class='attribute'><strong>Duration:</strong> 0:26:32.560127</p>
+<p class='attribute'><strong>Status:</strong> Pass 12 Failure 4 Error 8</p>
 
 <p class='description'>Integration Testing of Semester Assessment</p>
 </div>
@@ -309,7 +309,7 @@ ft2.1: Traceback (most recent call last):
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
+  (Session info: chrome=83.0.4103.61)
 
 
 
@@ -345,18 +345,18 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         <pre>
         
 ft3.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Arvali_district.py", line 22, in test_validate_schoolrecords
-    self.driver.find_element_by_xpath(Data.Dashboard).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Arvali_district.py", line 24, in test_validate_schoolrecords
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/app-home/mat-toolbar/button[1]/span/mat-icon"}
-  (Session info: chrome=80.0.3987.149)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
 
 
 
@@ -391,17 +391,20 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
         </div>
         <pre>
         
-ft4.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Block_btn.py", line 16, in setUp
-    self.driver.get(Data.URL)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
-    self.execute(Command.GET, {'url': url})
+ft4.1: cQube
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Block_btn.py", line 26, in test_blockbtn
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: -0.002
-  (Session info: chrome=80.0.3987.149)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
 
 
 
@@ -413,7 +416,7 @@ selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receivi
 </tr>
 
 <tr class='errorClass'>
-    <td>Semester_Assessment.Cluster_btn.blockbtn_click</td>
+    <td>Semester_Assessment.Dangs.District_TheDangs</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
@@ -422,7 +425,7 @@ selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receivi
 </tr>
 
 <tr id='ft5.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td class='errorCase'><div class='testcase'>test_Bayad</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -436,9 +439,8 @@ selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receivi
         </div>
         <pre>
         
-ft5.1: cQube
-Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Cluster_btn.py", line 26, in test_clusterbtn
+ft5.1: Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Dangs.py", line 24, in test_Bayad
     self.driver.find_element_by_xpath(Data.SR).click()
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
     self._execute(Command.CLICK_ELEMENT)
@@ -449,7 +451,7 @@ Traceback (most recent call last):
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
+  (Session info: chrome=83.0.4103.61)
 
 
 
@@ -461,7 +463,7 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
 </tr>
 
 <tr class='errorClass'>
-    <td>Semester_Assessment.Dangs.District_TheDangs</td>
+    <td>Semester_Assessment.Dev_test.District_Dev</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
@@ -485,7 +487,7 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         <pre>
         
 ft6.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Dangs.py", line 24, in test_Bayad
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Dev_test.py", line 24, in test_Bayad
     self.driver.find_element_by_xpath(Data.SR).click()
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
     self._execute(Command.CLICK_ELEMENT)
@@ -496,43 +498,8 @@ ft6.1: Traceback (most recent call last):
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
+  (Session info: chrome=83.0.4103.61)
 
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='passClass'>
-    <td>Semester_Assessment.Dev_test.District_Dev</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
-</tr>
-
-<tr id='pt7.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_Bayad</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
-        pass</a>
-
-    <div id='div_pt7.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.1: no of dots: 16
-no of records in file: 16
 
 
         </pre>
@@ -548,25 +515,25 @@ no of records in file: 16
     <td>0</td>
     <td>0</td>
     <td>1</td>
-    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
 </tr>
 
-<tr id='ft8.1' class='none'>
+<tr id='ft7.1' class='none'>
     <td class='errorCase'><div class='testcase'>test_Distnames</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
         error</a>
 
-    <div id='div_ft8.1' class="popup_window">
+    <div id='div_ft7.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft8.1: Traceback (most recent call last):
+ft7.1: Traceback (most recent call last):
   File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/dist_check.py", line 26, in test_Distnames
     self.driver.find_element_by_xpath(Data.SR).click()
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
@@ -578,7 +545,7 @@ ft8.1: Traceback (most recent call last):
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
+  (Session info: chrome=83.0.4103.61)
 
 
 
@@ -589,45 +556,99 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
     </td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>Semester_Assessment.District_block_clicks.Districts</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
-    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
 </tr>
 
-<tr id='ft9.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_click_on_districtnames</div></td>
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_districtnames</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
 
-    <div id='div_ft9.1' class="popup_window">
+    <div id='div_pt8.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft9.1: cQube
-Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/District_block_clicks.py", line 27, in test_click_on_districtnames
-    self.driver.find_element_by_xpath(Data.SR).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
+pt8.1: cQube
 
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.District_dataTest.Semester_Home</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Distnames</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: no of dots : 33
+['\ufeffDistrictId', 'DistrictName', 'Semester_Performance', 'Grade3', 'Grade4', 'Grade5', 'Grade6', 'Grade7', 'Grade8', 'TotalSchools', 'TotalStudents']
+['2419', 'Vadodara', '42.9 %', '61.80 %', '58.90 %', '49.90 %', '35.50 %', '39.30 %', '41.90 %', '1159', '116588']
+['2418', 'Dohad', '42.9 %', '61.60 %', '59.70 %', '51.30 %', '34.20 %', '39.10 %', '42.70 %', '1635', '250074']
+['2415', 'Anand', '44.3 %', '62.60 %', '60.80 %', '48.00 %', '37.50 %', '40.50 %', '43.40 %', '1028', '140639']
+['2423', 'The Dangs', '44.5 %', '60.00 %', '59.10 %', '58.00 %', '34.70 %', '39.10 %', '44.10 %', '349', '28790']
+['2428', 'Botad', '45.2 %', '62.40 %', '61.30 %', '47.50 %', '37.80 %', '42.40 %', '45.80 %', '245', '52652']
+['2407', 'Ahmedabad', '45.3 %', '64.50 %', '60.90 %', '50.30 %', '38.70 %', '41.70 %', '44.90 %', '1152', '216491']
+['2406', 'Gandhinagar', '45.9 %', '64.70 %', '62.40 %', '49.90 %', '39.30 %', '42.30 %', '45.20 %', '621', '87148']
+['2401', 'Kachchh', '46.0 %', '60.30 %', '59.20 %', '48.00 %', '40.40 %', '43.20 %', '45.90 %', '1697', '165456']
+['2432', 'Chhotaudepur', '46.6 %', '61.20 %', '59.50 %', '53.10 %', '37.70 %', '42.50 %', '47.60 %', '1244', '82124']
+['2403', 'Patan', '47.0 %', '64.20 %', '62.40 %', '50.10 %', '39.80 %', '44.20 %', '47.10 %', '802', '115597']
+['2402', 'Banaskantha', '47.1 %', '63.40 %', '61.10 %', '52.00 %', '38.60 %', '43.90 %', '48.40 %', '2306', '319201']
+['2430', 'Gir Somnath', '48.0 %', '62.20 %', '61.20 %', '52.00 %', '42.00 %', '45.40 %', '47.90 %', '531', '76752']
+['2411', 'Porbandar', '48.1 %', '65.90 %', '63.10 %', '54.10 %', '42.30 %', '44.40 %', '47.90 %', '314', '29749']
+['2408', 'Surendranagar', '48.3 %', '63.70 %', '61.70 %', '52.40 %', '41.10 %', '45.20 %', '49.30 %', '865', '118764']
+['2417', 'Panch Mahals', '48.9 %', '65.00 %', '61.90 %', '54.80 %', '42.40 %', '45.60 %', '48.80 %', '1407', '151386']
+['2416', 'Kheda', '48.9 %', '66.10 %', '64.10 %', '54.10 %', '41.60 %', '45.00 %', '49.10 %', '1365', '154823']
+['2422', 'Surat', '49.3 %', '64.40 %', '64.20 %', '53.00 %', '41.30 %', '46.00 %', '51.50 %', '1219', '170366']
+['2410', 'Jamnagar', '49.5 %', '62.90 %', '61.50 %', '54.40 %', '44.20 %', '47.40 %', '48.20 %', '725', '63331']
+['2405', 'Sabar Kantha', '49.7 %', '65.50 %', '61.70 %', '54.20 %', '42.80 %', '46.80 %', '49.80 %', '1213', '117514']
+['2413', 'Amreli', '49.8 %', '66.10 %', '64.00 %', '53.70 %', '43.00 %', '47.20 %', '50.10 %', '771', '94241']
+['2420', 'Narmada', '49.9 %', '63.20 %', '60.40 %', '54.50 %', '42.10 %', '46.40 %', '52.50 %', '690', '45215']
+['2414', 'Bhavnagar', '50.0 %', '66.00 %', '64.40 %', '51.60 %', '42.70 %', '47.10 %', '51.70 %', '976', '171696']
+['2431', 'Mahisagar', '50.6 %', '69.10 %', '65.80 %', '59.00 %', '43.70 %', '46.70 %', '49.60 %', '1203', '94152']
+['2421', 'Bharuch', '50.9 %', '65.60 %', '63.10 %', '56.40 %', '44.20 %', '47.90 %', '51.60 %', '917', '81484']
+['2425', 'Valsad', '51.0 %', '67.40 %', '66.50 %', '56.50 %', '42.90 %', '47.00 %', '51.80 %', '976', '102930']
+['2424', 'Navsari', '51.4 %', '69.80 %', '69.00 %', '55.10 %', '43.80 %', '47.70 %', '52.20 %', '716', '63734']
+['2404', 'Mahesana', '51.9 %', '70.10 %', '67.90 %', '57.40 %', '44.70 %', '49.10 %', '50.80 %', '960', '135402']
+['2427', 'Aravalli', '52.1 %', '69.00 %', '65.90 %', '59.60 %', '45.40 %', '49.10 %', '51.00 %', '1237', '86120']
+['2426', 'Tapi', '53.5 %', '71.50 %', '69.60 %', '60.20 %', '44.30 %', '48.10 %', '54.70 %', '624', '42296']
+['2412', 'Junagadh', '53.9 %', '68.70 %', '66.80 %', '58.90 %', '47.80 %', '51.30 %', '53.80 %', '731', '59649']
+['2429', 'Devbhoomi Dwarka', '54.0 %', '67.40 %', '65.00 %', '58.20 %', '48.60 %', '51.30 %', '53.40 %', '609', '47326']
+['2433', 'Morbi', '54.1 %', '66.50 %', '64.40 %', '58.80 %', '48.90 %', '52.30 %', '52.90 %', '587', '64674']
+['2409', 'Rajkot', '55.6 %', '69.20 %', '67.80 %', '60.30 %', '49.70 %', '53.10 %', '55.50 %', '943', '109728']
 
 
         </pre>
@@ -638,12 +659,12 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
 </tr>
 
 <tr class='errorClass'>
-    <td>Semester_Assessment.District_dataTest.Semester_Home</td>
-    <td>1</td>
+    <td>Semester_Assessment.DistrictNames.Semester_Home</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c10',2)">Detail</a></td>
 </tr>
 
 <tr id='ft10.1' class='none'>
@@ -661,9 +682,79 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
         </div>
         <pre>
         
-ft10.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/District_dataTest.py", line 26, in test_Distnames
-    self.driver.find_element_by_xpath(Data.SR).click()
+ft10.1: None
+Choose a District : 33
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+None
+Choose a Block : 6
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/DistrictNames.py", line 29, in test_Distnames
+    print(distnames[i].click())
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
     self._execute(Command.CLICK_ELEMENT)
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
@@ -672,8 +763,8 @@ ft10.1: Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable: Element is not currently visible and may not be manipulated
+  (Session info: chrome=83.0.4103.61)
 
 
 
@@ -684,69 +775,92 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
     </td>
 </tr>
 
-<tr class='errorClass'>
-    <td>Semester_Assessment.DistrictNames.Semester_Home</td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td>2</td>
-    <td><a href="javascript:showClassDetail('c11',2)">Detail</a></td>
-</tr>
-
-<tr id='ft11.1' class='none'>
+<tr id='ft10.2' class='none'>
     <td class='errorCase'><div class='testcase'>test_Distnames</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.2')" >
         error</a>
 
-    <div id='div_ft11.1' class="popup_window">
+    <div id='div_ft10.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft11.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft11.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/DistrictNames.py", line 25, in test_Distnames
-    self.driver.find_element_by_xpath(Data.SR).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft11.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_Distnames</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.2')" >
-        error</a>
-
-    <div id='div_ft11.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft11.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft11.2: Traceback (most recent call last):
+ft10.2: None
+Choose a District : 33
+None
+ Ahmedabad  : 11
+None
+ Amreli  : 11
+None
+ Anand  : 8
+None
+ Aravalli  : 6
+None
+ Banaskantha  : 14
+None
+ Bharuch  : 9
+None
+ Bhavnagar  : 10
+None
+ Botad  : 4
+None
+ Chhotaudepur  : 6
+None
+ Devbhoomi Dwarka  : 4
+None
+ Dohad  : 8
+None
+ Gandhinagar  : 4
+None
+ Gir Somnath  : 6
+None
+ Jamnagar  : 6
+None
+ Junagadh  : 10
+None
+ Kachchh  : 10
+None
+ Kheda  : 10
+None
+ Mahesana  : 10
+None
+ Mahisagar  : 6
+None
+ Morbi  : 5
+None
+ Narmada  : 5
+None
+ Navsari  : 6
+None
+ Panch Mahals  : 7
+None
+ Patan  : 9
+None
+ Porbandar  : 3
+None
+ Rajkot  : 12
+None
+ Sabar Kantha  : 8
+None
+ Surat  : 10
+None
+ Surendranagar  : 10
+None
+ Tapi  : 5
+None
+ The Dangs  : 3
+None
+ Vadodara  : 9
+None
+ Valsad  : 6
+None
+Choose a Block : 6
+Traceback (most recent call last):
   File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/DistrictNames.py", line 37, in tearDown
     time.sleep()
 TypeError: sleep() takes exactly one argument (0 given)
@@ -761,6 +875,41 @@ TypeError: sleep() takes exactly one argument (0 given)
 
 <tr class='passClass'>
     <td>Semester_Assessment.Gandhinagar_district.Gandhinagar_dist_validation</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: no of dots: 5
+no of records in file: 5
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Jamnagar_district.Jamnagar_block</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -783,8 +932,8 @@ TypeError: sleep() takes exactly one argument (0 given)
         </div>
         <pre>
         
-pt12.1: no of dots: 5
-no of records in file: 5
+pt12.1: no of dots: 7
+no of records in file: 7
 
 
         </pre>
@@ -795,7 +944,7 @@ no of records in file: 5
 </tr>
 
 <tr class='passClass'>
-    <td>Semester_Assessment.Jamnagar_district.Jamnagar_block</td>
+    <td>Semester_Assessment.Jamnagar_Lalpur.Jamnaagar_block</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -818,42 +967,7 @@ no of records in file: 5
         </div>
         <pre>
         
-pt13.1: no of dots: 7
-no of records in file: 7
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='passClass'>
-    <td>Semester_Assessment.Jamnagar_Lalpur.Jamnaagar_block</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
-</tr>
-
-<tr id='pt14.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_validate_District</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
-        pass</a>
-
-    <div id='div_pt14.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt14.1: no of dots: 19
+pt13.1: no of dots: 19
 no of records in file: 19
 
 
@@ -870,30 +984,65 @@ no of records in file: 19
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
 </tr>
 
-<tr id='pt15.1' class='hiddenRow'>
+<tr id='pt14.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_semester</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>Semester_Assessment.Mahesana_dist.Mahesana_test</td>
     <td>1</td>
+    <td>1</td>
     <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt15.1')" >
+        pass</a>
+
+    <div id='div_pt15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt15.1: no of dots: 11
+no of records in file: 11
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>Semester_Assessment.Mahisagar_test.Mahisagar_test</td>
+    <td>1</td>
     <td>0</td>
     <td>1</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
 </tr>
 
 <tr id='ft16.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
+    <td class='failCase'><div class='testcase'>test_validate_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
-        error</a>
+        fail</a>
 
     <div id='div_ft16.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
@@ -902,20 +1051,25 @@ no of records in file: 19
         </div>
         <pre>
         
-ft16.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Mahesana_dist.py", line 30, in test_validate_District
-    dist = self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option[19]").click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option[19]"}
-  (Session info: chrome=80.0.3987.149)
+ft16.1: no of dots: 11
+no of records in file: 7
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 11 != 7 : unmatching count found
 
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Mahisagar_test.py", line 42, in test_validate_District
+    self.assertEqual(count,lines,"unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: 11 != 7
 
 
         </pre>
@@ -925,44 +1079,32 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
     </td>
 </tr>
 
-<tr class='errorClass'>
-    <td>Semester_Assessment.Mahisagar_test.Mahisagar_test</td>
+<tr class='passClass'>
+    <td>Semester_Assessment.Morbi_blocks.Morbhi</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
 </tr>
 
-<tr id='ft17.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft17.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.1')" >
+        pass</a>
 
-    <div id='div_ft17.1' class="popup_window">
+    <div id='div_pt17.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft17.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt17.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft17.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Mahisagar_test.py", line 30, in test_validate_District
-    dist = self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option[19]").click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option[19]"}
-  (Session info: chrome=80.0.3987.149)
-
+pt17.1: no of dots: 16
+no of records in file: 16
 
 
         </pre>
@@ -972,22 +1114,22 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
     </td>
 </tr>
 
-<tr class='errorClass'>
-    <td>Semester_Assessment.Morbi_blocks.Morbhi</td>
+<tr class='failClass'>
+    <td>Semester_Assessment.Morbi_wise_validation.Morbhi</td>
     <td>1</td>
     <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
 </tr>
 
 <tr id='ft18.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
+    <td class='failCase'><div class='testcase'>test_validate_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft18.1')" >
-        error</a>
+        fail</a>
 
     <div id='div_ft18.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
@@ -996,20 +1138,26 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
         </div>
         <pre>
         
-ft18.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Morbi_blocks.py", line 25, in test_validate_District
-    self.driver.find_element_by_xpath(Data.SR).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
+ft18.1: http://52.66.209.6:4200/#/home/semester-report
+no of dots: 6
+no of records in file: 19
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 6 != 19 : unmatching count found
 
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Morbi_wise_validation.py", line 41, in test_validate_District
+    self.assertEqual(count,lines,"unmatching count found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: unmatching count found :: 6 != 19
 
 
         </pre>
@@ -1019,91 +1167,32 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
     </td>
 </tr>
 
-<tr class='errorClass'>
-    <td>Semester_Assessment.Morbi_wise_validation.Morbhi</td>
+<tr class='passClass'>
+    <td>Semester_Assessment.Rajkot_blockwisie.Rajkot_test</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
 </tr>
 
-<tr id='ft19.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_District</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft19.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt19.1')" >
+        pass</a>
 
-    <div id='div_ft19.1' class="popup_window">
+    <div id='div_pt19.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft19.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt19.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft19.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Morbi_wise_validation.py", line 25, in test_validate_District
-    self.driver.find_element_by_xpath(Data.SR).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='errorClass'>
-    <td>Semester_Assessment.Rajkot_blockwisie.Rajkot_test</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
-</tr>
-
-<tr id='ft20.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_validate_District</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft20.1')" >
-        error</a>
-
-    <div id='div_ft20.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft20.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft20.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Rajkot_blockwisie.py", line 28, in test_validate_District
-    self.driver.find_element_by_xpath(Data.SR).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=80.0.3987.149)
-
+pt19.1: no of dots: 13
+no of records in file: 13
 
 
         </pre>
@@ -1119,25 +1208,25 @@ selenium.common.exceptions.ElementNotInteractableException: Message: element not
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
 </tr>
 
-<tr id='pt21.1' class='hiddenRow'>
+<tr id='pt20.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_login</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt21.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt20.1')" >
         pass</a>
 
-    <div id='div_pt21.1' class="popup_window">
+    <div id='div_pt20.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt21.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt20.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt21.1: cQube
+pt20.1: cQube
 
 
         </pre>
@@ -1147,44 +1236,83 @@ pt21.1: cQube
     </td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='failClass'>
     <td>Semester_Assessment.SR_Home.Semester_Home</td>
     <td>1</td>
     <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='ft21.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_semester</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft21.1')" >
+        fail</a>
+
+    <div id='div_ft21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft21.1: No of dots : 34
+no of districts : 0
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: 0 != 34 : both are not matching
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/SR_Home.py", line 45, in test_semester
+    self.assertEqual(dist,count,"both are not matching")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: both are not matching :: 0 != 34
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Tapi_blockwise.Tapi_blkwise</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
 </tr>
 
-<tr id='ft22.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_semester</div></td>
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_click_on_blockwise</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft22.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt22.1')" >
+        pass</a>
 
-    <div id='div_ft22.1' class="popup_window">
+    <div id='div_pt22.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft22.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt22.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft22.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/SR_Home.py", line 23, in test_semester
-    self.driver.find_element_by_xpath(Data.Dashboard).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/app-home/mat-toolbar/button[1]/span/mat-icon"}
-  (Session info: chrome=80.0.3987.149)
-
+pt22.1: cQube
 
 
         </pre>
@@ -1194,92 +1322,32 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
     </td>
 </tr>
 
-<tr class='errorClass'>
-    <td>Semester_Assessment.Tapi_blockwise.Tapi_blkwise</td>
+<tr class='passClass'>
+    <td>Semester_Assessment.Vallabnagar_clusters.Vallabnagar_dist</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
 </tr>
 
-<tr id='ft23.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_click_on_blockwise</div></td>
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_validate_schoolrecords</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft23.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.1')" >
+        pass</a>
 
-    <div id='div_ft23.1' class="popup_window">
+    <div id='div_pt23.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft23.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft23.1: cQube
-Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Tapi_blockwise.py", line 25, in test_click_on_blockwise
-    self.driver.find_element_by_xpath(Data.Dashboard).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/app-home/mat-toolbar/button[1]/span/mat-icon"}
-  (Session info: chrome=80.0.3987.149)
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='errorClass'>
-    <td>Semester_Assessment.Vallabnagar_clusters.Vallabnagar_dist</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
-</tr>
-
-<tr id='ft24.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_validate_schoolrecords</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft24.1')" >
-        error</a>
-
-    <div id='div_ft24.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft24.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft24.1: Traceback (most recent call last):
-  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Vallabnagar_clusters.py", line 22, in test_validate_schoolrecords
-    self.driver.find_element_by_xpath(Data.Dashboard).click()
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/app-home/mat-toolbar/button[1]/span/mat-icon"}
-  (Session info: chrome=80.0.3987.149)
-
+pt23.1: no of dots: 15
+no of records in file: 15
 
 
         </pre>
@@ -1291,10 +1359,10 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>25</td>
-    <td>6</td>
-    <td>1</td>
-    <td>18</td>
+    <td>24</td>
+    <td>12</td>
+    <td>4</td>
+    <td>8</td>
     <td>&nbsp;</td>
 </tr>
 </table>

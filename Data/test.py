@@ -25,3 +25,4 @@ print(res)
 #         print(row)
 # usrPass = "http://52.66.209.6:4200/#/login"
 # b64Val = base64.b64encode(usrPass)
+

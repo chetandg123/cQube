@@ -10,6 +10,7 @@ from Data.Paramters import Data
 class Semester_Home(unittest.TestCase):
     def setUp(self):
         # self.driver = webdriver.Firefox(executable_path=Data.fpath)
+        time.sleep(3)
         self.driver =webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
@@ -27,16 +28,17 @@ class Semester_Home(unittest.TestCase):
         distnames = self.driver.find_elements_by_xpath(Data.Distoptions)
 
         lists = self.driver.find_elements_by_class_name(Data.dots)
-        def mouseover(i):
-            action = ActionChains(self.driver)
-            action.move_to_element(lists[i]).perform()
-            time.sleep(2)
-            del action
-
-        i = 0
-        while i < len(lists):
-            mouseover(2)
-            i = i + 1
+        # def mouseover(i):
+        #     action = ActionChains(self.driver)
+        #     action.move_to_element(lists[i]).perform()
+        #     time.sleep(2)
+        #     del action
+        #
+        # i = 0
+        # while i < len(lists):
+        #     mouseover(2)
+        #     i = i + 1
+        time.sleep(10)
         count = len(lists)
         print("No of dots :", count)
         dist = len(distnames)

@@ -8,7 +8,9 @@ from Data.Paramters import Data
 
 class Semester_click(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox(executable_path=Data.fpath)
+        # self.driver = webdriver.Firefox(executable_path=Data.fpath)
+        time.sleep(3)
+        self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
         self.driver.get(Data.URL)

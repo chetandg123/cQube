@@ -10,6 +10,8 @@ from Data.Paramters import Data
 
 class Morbhi(unittest.TestCase):
     def setUp(self):
+        time.sleep(3)
+
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
@@ -27,6 +29,8 @@ class Morbhi(unittest.TestCase):
         dist = self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option[21]").click()
 
         time.sleep(5)
+
+        print(self.driver.current_url)
         self.driver.find_element_by_xpath(Data.Download).click()
         lists = self.driver.find_elements_by_class_name(Data.dots)
         count = len(lists)

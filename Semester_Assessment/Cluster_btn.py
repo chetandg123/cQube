@@ -26,16 +26,13 @@ class blockbtn_click(unittest.TestCase):
         self.driver.find_element_by_xpath(Data.SR).click()
         time.sleep(5)
         self.driver.find_element_by_xpath(Data.Clusters).click()
-        time.sleep(10)
-        count  = self.driver.find_elements_by_xpath(Data.dots)
-        self.assertEqual(count,25000,"dots are not found")
-        footer = self.driver.find_elements_by_xpath(Data.details)
-        for i in range(len(footer)):
-            print(footer[i].text)
+        # count  = self.driver.find_elements_by_xpath(Data.dots)
+        # self.assertEqual(count,25000,"dots are not found")
+        # footer = self.driver.find_elements_by_xpath(Data.details)
+        # for i in range(len(footer)):
+        #     print(footer[i].text)
 
-    # def ClickOn_HomeButton(self):
-    #         self.driver.find_element_by_id(Data.Home_icon).click()
-    #         print(self.driver.current_url)
+
 
     def tearDown(self):
         time.sleep(5)

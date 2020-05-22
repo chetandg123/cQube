@@ -1,0 +1,1770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2020-05-22 17:35:44</p>
+<p class='attribute'><strong>Duration:</strong> 1:09:48.670860</p>
+<p class='attribute'><strong>Status:</strong> Pass 27 Failure 1 Error 3</p>
+
+<p class='description'>Integration Testing of Semester Assessment</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Amreli.Amreli_district</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: cQube
+no of dots : 8
+no of records in file: 8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Amreli_District.Amreli_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: cQube
+no of amc dots : 14
+Choose a Cluster  :  14
+ Jaliya Pri.School   :  8
+ Jasvantgadh Pri.School   :  5
+ Kanya Shala-2 Pri.School   :  9
+ Manekpara Pri.School   :  7
+ Mota Machiyala Pri.School   :  5
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  5
+ Nana Bhandariya Pri.School   :  6
+ Pratappara Pri.School   :  8
+ Vankiya Pri.School   :  5
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Anand_test.Anand_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: cQube
+no of amc dots : 31
+Choose a Cluster  :  31
+ Badalpur   :  3
+ Banejda   :  9
+ Bochasan   :  6
+ Bodal Kanya   :  10
+ Branch -3 Kumar   :  7
+ Chuva   :  5
+ Dahevan   :  9
+ Davol Kumar   :  6
+ Jantral   :  7
+ Kanbha   :  7
+ Kathana Kumar   :  5
+ Kavitha Kumar   :  5
+ Khedasa   :  6
+ Kinkhlod   :  7
+ Mukhy Kanya   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  10
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  9
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  5
+ Napa Kanya   :  8
+ Pamol   :  8
+ Shantaba Kumar   :  7
+ Sisva   :  3
+ Vasna Borsad   :  7
+ Virsad Kumar   :  7
+ Zarola Kumar Shala   :  8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Arvalli_district.Aravalli_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: cQube
+no of amc dots : 34
+Choose a Cluster  :  34
+ Ambabar   :  10
+ Bhetali   :  7
+ Bhiloda-1   :  7
+ Bhiloda-2   :  6
+ Chorimala   :  10
+ Dholvani   :  7
+ Janali   :  8
+ Khalvad   :  6
+ Khari   :  6
+ Khiloda   :  7
+ Khodamba   :  7
+ Kishangadh   :  8
+ Kushki   :  8
+ Lusadiya   :  4
+ Maheru   :  6
+ Mahudiyadera   :  6
+ Mau   :  8
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  4
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  6
+ Nandoj   :  6
+ Palla   :  8
+ Raypur   :  5
+ Sarkilimdi   :  6
+ Takatuka   :  9
+ Torda   :  7
+ Vankaner   :  8
+ Zabchitariya   :  8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Banaskanth_test.Banskanth_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: cQube
+no of amc dots : 12
+Choose a Cluster  :  12
+ Amirgadh   :  9
+ Balundra   :  9
+ Dabhela   :  8
+ Iqbalgadh   :  8
+ Jethi   :  10
+ Kanpura   :  7
+ NO NAME FOUND   :  10
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  8
+ Rampura   :  7
+ Sarotra   :  10
+ Virampur   :  6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Bharuch_amodtest.Amod_block</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: cQube
+no of dots : 9
+no of records in file: 9
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Bhavnagar_test.Bhavnagar_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: cQube
+no of amc dots : 9
+Choose a Cluster  :  9
+ Gariyadhar K.V 1   :  5
+ Gariyadhar K.V. 2   :  6
+ Mandavi K.V.   :  6
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  7
+ Paravadi K.V.   :  6
+ Rupavati K.V.   :  6
+ Virdi P. School   :  7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Botad_district.Botad_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: cQube
+no of amc dots : 5
+Choose a Cluster  :  5
+ Barvala   :  7
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Chota_district.chhota_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: cQube
+no of amc dots : 19
+Choose a Cluster  :  19
+ Bhilpur   :  9
+ Chhotaudepur   :  15
+ Devhant   :  9
+ Dhandhoda   :  14
+ Dolariya   :  16
+ Ghoghadev   :  14
+ Gunata   :  10
+ Gundiyamahuda   :  9
+ Khadakvada   :  9
+ Mithibor   :  11
+ Motisadhali   :  12
+ NO NAME FOUND   :  12
+ NO NAME FOUND   :  13
+ NO NAME FOUND   :  15
+ NO NAME FOUND   :  13
+ Palsanda   :  9
+ Puniyavant   :  16
+ Raysingpura   :  11
+ Vasedi   :  9
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Assessment.Clusterwise_validation.clickon_Clusterbtn.blockbtn_click</td>
+    <td>2</td>
+    <td>0</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c10',2)">Detail</a></td>
+</tr>
+
+<tr id='ft10.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
+        fail</a>
+
+    <div id='div_ft10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft10.1: cQube
+Traceback (most recent call last):
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 32, in _patched_equals
+    old(self, first, second, msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 820, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "/usr/lib/python3.5/unittest/case.py", line 813, in _baseAssertEqual
+    raise self.failureException(msg)
+AssertionError: [] != 25000 : dots are not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Clusterwise_validation/clickon_Clusterbtn.py", line 31, in test_clusterbtn
+    self.assertEqual(count,25000,"dots are not found")
+  File "/snap/pycharm-community/194/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py", line 38, in _patched_equals
+    raise error
+teamcity.diff_tools.EqualsAssertionError: dots are not found :: [] != 25000
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft10.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.2')" >
+        error</a>
+
+    <div id='div_ft10.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft10.2: cQube
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Clusterwise_validation/clickon_Clusterbtn.py", line 40, in tearDown
+    self.driver.close()
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 688, in close
+    self.execute(Command.CLOSE)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Cluster_Chatrali.Chatrali_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: cQube
+no of dots : 16
+no of records in file: 16
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Cluster_validation.Ahmedabad_amc</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: cQube
+no of amc dots : 42
+Choose a Cluster  :  42
+ Amraiwadi   :  9
+ Amraiwadi Hindi   :  7
+ Amraiwadi Hindi 1   :  7
+ Asarwa - 2   :  10
+ Asarwa -1   :  9
+ Asarwa Hindi   :  8
+ Baherampura Urdu   :  8
+ Bapunagar   :  7
+ Bapunagar Hindi   :  11
+ Bapunagar Urdu   :  6
+ Behrampura-2   :  9
+ Bhaipura Hatkeshwar   :  9
+ Danilimda-1   :  10
+ Danilimda-2   :  7
+ Dariyapur   :  5
+ Dudheshvar   :  7
+ Ellisbridge 1   :  6
+ Ellisbridge 2   :  9
+ Ellisbridge 3   :  8
+ Gomtipur   :  9
+ Gomtipur Urdu   :  6
+ Hansol   :  9
+ Hathijan   :  11
+ Ishanpur   :  9
+ Jahangirpura   :  9
+ Jamalpur   :  10
+ Jamalpur Urdu   :  8
+ Jashodanagar   :  9
+ Kalupur   :  9
+ Kankariya-1   :  9
+ Kankariya-2   :  8
+ Karsannagar   :  10
+ Khadiya   :  6
+ Khokhara   :  9
+ Kubernagar   :  7
+ Kubernagar Hindi   :  7
+ Lilanagar   :  6
+ Maninagar   :  8
+ Meghaninagar   :  8
+ Naranpura   :  7
+ Naranpura 1   :  6
+ Naranpura 2   :  7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Dangs.Dangs_district</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.1')" >
+        pass</a>
+
+    <div id='div_pt13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.1: cQube
+no of amc dots : 15
+Choose a Cluster  :  15
+ Ahwa   :  7
+ Borkhal   :  9
+ Chikhali   :  13
+ Lahancharya   :  6
+ Linga   :  8
+ Mahalpada   :  12
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  11
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  12
+ NO NAME FOUND   :  10
+ NO NAME FOUND   :  4
+ Tankalipada   :  8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Gandhinagar_test.Ghandinagar_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: cQube
+no of amc dots : 20
+Choose a Cluster  :  20
+ Bhoyanmoti   :  6
+ Borisana   :  6
+ Chhatral   :  7
+ Kalol City-1   :  5
+ Kalol-2   :  4
+ Limbodara   :  9
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  4
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  5
+ Nardipur   :  5
+ Pansar   :  7
+ Rancharda   :  6
+ Sherisa   :  5
+ Soja   :  6
+ Vadsar   :  5
+ Veda   :  8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Girsomanath_test.Gir_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='ft15.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Gir</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
+        error</a>
+
+    <div id='div_ft15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.1: cQube
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Clusterwise_validation/Girsomanath_test.py", line 26, in test_Gir
+    self.driver.find_element_by_xpath(Data.SR).click()
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.home_icon.Home_icon</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='pt16.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt16.1')" >
+        pass</a>
+
+    <div id='div_pt16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt16.1: cQube
+http://52.66.209.6:4200/#/home/semester-report
+http://52.66.209.6:4200/#/home/dashboard
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Jamnagar_test.Jamnagar_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.1')" >
+        pass</a>
+
+    <div id='div_pt17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt17.1: cQube
+no of amc dots : 10
+Choose a Cluster  :  10
+ Dhrol Taluka Shala-1   :  7
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  9
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  9
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Juna_district.Juna_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt18.1')" >
+        pass</a>
+
+    <div id='div_pt18.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt18.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt18.1: cQube
+no of amc dots : 7
+Choose a Cluster  :  7
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  5
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.junagadh_Mendarda.Panch_mahals</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt19.1')" >
+        pass</a>
+
+    <div id='div_pt19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt19.1: cQube
+no of dots : 6
+no of records in file: 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Kheda.kheda_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='pt20.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt20.1')" >
+        pass</a>
+
+    <div id='div_pt20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt20.1: cQube
+no of amc dots : 21
+Choose a Cluster  :  21
+ Anara   :  9
+ Bhaner   :  9
+ Bhatera   :  7
+ Chared   :  8
+ Chhipiyal   :  7
+ Fagvel   :  8
+ Gogjipura   :  9
+ Kalesar   :  7
+ Kathlal Kumar   :  6
+ Khadal   :  11
+ Ladvel   :  8
+ Moti Mudel   :  9
+ NO NAME FOUND   :  9
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  10
+ NO NAME FOUND   :  7
+ Pithai   :  8
+ Ravdavat   :  12
+ Sarkhej   :  11
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Testscripts.login_page.Home_page</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='pt21.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt21.1')" >
+        pass</a>
+
+    <div id='div_pt21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt21.1: cQube
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Mahisagar.Mahisagar_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt22.1')" >
+        pass</a>
+
+    <div id='div_pt22.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt22.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt22.1: cQube
+no of amc dots : 17
+Choose a Cluster  :  17
+ Bar   :  9
+ Bharodi   :  10
+ Debhari   :  8
+ Kharod   :  6
+ Kheroli   :  8
+ Koydam   :  9
+ Koyla   :  6
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  9
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  8
+ Pahadiya   :  8
+ Pansroda   :  0
+ Rajena   :  0
+ Vaghas   :  0
+ Virpur   :  0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Navsari.Navsari_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
+</tr>
+
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.1')" >
+        pass</a>
+
+    <div id='div_pt23.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt23.1: cQube
+no of amc dots : 15
+Choose a Cluster  :  15
+ Amalsad   :  7
+ Andhal   :  7
+ Antaliya   :  7
+ Bhatha   :  7
+ Bigri   :  8
+ Bilimora   :  6
+ Gadat   :  7
+ Gandevi   :  6
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  7
+ Saristation   :  8
+ Vadsagal   :  8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Panch_mahals.Panch_mahals</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
+</tr>
+
+<tr id='pt24.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.1')" >
+        pass</a>
+
+    <div id='div_pt24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.1: cQube
+no of dots : 6
+no of records in file: 6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Sabarkant_district.sabarkaanth_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c25',1)">Detail</a></td>
+</tr>
+
+<tr id='pt25.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt25.1')" >
+        pass</a>
+
+    <div id='div_pt25.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt25.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt25.1: cQube
+no of amc dots : 33
+Choose a Cluster  :  33
+ Aambavadi   :  6
+ Adpodara   :  4
+ Agiyol   :  10
+ Bamna   :  3
+ Bavsar   :  7
+ Chandarni -1   :  7
+ Derol   :  7
+ Hadiyol   :  6
+ Hadiyol Pul Chaapariya   :  9
+ Hajipur   :  8
+ Himatnagar-1   :  8
+ Himatpur   :  11
+ Ilol   :  10
+ Jambudi   :  10
+ Jamla   :  6
+ Kaniyol   :  10
+ Karanpur   :  6
+ Mahetapura   :  5
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  15
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  4
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  9
+ Raigadh-1   :  7
+ Sachodar   :  7
+ Tajpuri Katwad   :  4
+ Vaktapur   :  6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Surat_test.Surat_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c26',1)">Detail</a></td>
+</tr>
+
+<tr id='pt26.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt26.1')" >
+        pass</a>
+
+    <div id='div_pt26.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt26.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt26.1: cQube
+no of amc dots : 11
+Choose a Cluster  :  11
+ Kamrej   :  8
+ Kholvad   :  8
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  5
+ Navi Pardi   :  4
+ Orna   :  8
+ Shampura   :  4
+ Valan Parab   :  6
+ Vav   :  8
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Surendranagar_district.surendranagar_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c27',1)">Detail</a></td>
+</tr>
+
+<tr id='pt27.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt27.1')" >
+        pass</a>
+
+    <div id='div_pt27.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt27.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt27.1: cQube
+no of amc dots : 11
+Choose a Cluster  :  11
+ NO NAME FOUND   :  12
+ NO NAME FOUND   :  8
+ NO NAME FOUND   :  17
+ NO NAME FOUND   :  15
+ NO NAME FOUND   :  16
+ NO NAME FOUND   :  13
+ NO NAME FOUND   :  14
+ NO NAME FOUND   :  17
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  15
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Tapi_district.Tapi_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c28',1)">Detail</a></td>
+</tr>
+
+<tr id='pt28.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.1')" >
+        pass</a>
+
+    <div id='div_pt28.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.1: cQube
+no of amc dots : 25
+Choose a Cluster  :  25
+ Agasvan   :  11
+ Bhurivel   :  14
+ Borda   :  11
+ Chakvan   :  12
+ Dhamodi   :  8
+ Galkuva   :  7
+ Ghodchit   :  6
+ Gopalpura   :  8
+ Hindala   :  10
+ Juni Bavli   :  10
+ Kikakui   :  13
+ Malangdev   :  12
+ Mota Tarpada   :  5
+ NO NAME FOUND   :  12
+ NO NAME FOUND   :  12
+ NO NAME FOUND   :  10
+ NO NAME FOUND   :  11
+ NO NAME FOUND   :  10
+ NO NAME FOUND   :  9
+ Panchpipla   :  13
+ Raniamba   :  9
+ Singpur   :  11
+ Songadh-1   :  12
+ Tokarva   :  10
+ Ukhalda   :  11
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Vadodara_test.Vadodara_test</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c29',1)">Detail</a></td>
+</tr>
+
+<tr id='ft29.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft29.1')" >
+        error</a>
+
+    <div id='div_ft29.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft29.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft29.1: cQube
+Traceback (most recent call last):
+  File "/home/chetan/PycharmProjects/cQube/Semester_Assessment/Clusterwise_validation/Vadodara_test.py", line 24, in test_clusterbtn
+    self.driver.find_element_by_xpath(Data.Dashboard).click()
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/chetan/PycharmProjects/cQube/venv/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/app-home/mat-toolbar/button[1]/span/mat-icon"}
+  (Session info: chrome=83.0.4103.61)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>Semester_Assessment.Clusterwise_validation.Valsad_test.Valsad_District</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c30',1)">Detail</a></td>
+</tr>
+
+<tr id='pt30.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_clusterbtn</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt30.1')" >
+        pass</a>
+
+    <div id='div_pt30.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt30.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt30.1: cQube
+no of amc dots : 28
+Choose a Cluster  :  28
+ Ambatalat   :  4
+ Bamti   :  7
+ Baroliya   :  7
+ Bilpudi   :  6
+ Bopi   :  7
+ Gundiya   :  8
+ Hanmatmal   :  6
+ Jamliya   :  6
+ Lakadmaad   :  8
+ Makadban   :  10
+ Moti Korvad   :  7
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  7
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  5
+ NO NAME FOUND   :  9
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  6
+ NO NAME FOUND   :  9
+ NO NAME FOUND   :  5
+ Pendha   :  9
+ Sadadpada   :  8
+ Sidumbar   :  6
+ Tutarkhed   :  8
+ Vankhas   :  7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>31</td>
+    <td>27</td>
+    <td>1</td>
+    <td>3</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

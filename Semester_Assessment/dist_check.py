@@ -10,6 +10,8 @@ from Data.Paramters import Data
 
 class Semester_Home(unittest.TestCase):
     def setUp(self):
+        time.sleep(3)
+
         # self.driver = webdriver.Firefox(executable_path=Data.fpath)
         self.driver =webdriver.Chrome(Data.Path)
         self.driver.maximize_window()

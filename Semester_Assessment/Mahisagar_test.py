@@ -13,6 +13,7 @@ from Data.Paramters import Data
 
 class Mahisagar_test(unittest.TestCase):
     def setUp(self):
+        time.sleep(3)
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
@@ -27,8 +28,9 @@ class Mahisagar_test(unittest.TestCase):
         time.sleep(3)
         self.driver.find_element_by_xpath(Data.SR).click()
         time.sleep(5)
-        dist = self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option[19]").click()
-
+        dist = self.driver.find_element_by_xpath("/html/body/app-root/app-home/mat-sidenav-container/mat-sidenav-content/div/app-sem-view/div/div[2]/div[2]/select[1]/option[19]")
+        dist.click()
+        print(dist.text)
         time.sleep(5)
         self.driver.find_element_by_xpath(Data.Download).click()
         lists = self.driver.find_elements_by_class_name(Data.dots)

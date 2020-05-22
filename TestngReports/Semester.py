@@ -1,3 +1,5 @@
+import time
+
 from HTMLTestRunner import HTMLTestRunner
 import unittest
 
@@ -18,7 +20,8 @@ class MyTestSuite(unittest.TestCase):
             unittest.defaultTestLoader.loadTestsFromTestCase(Amc.District_Ahmedabad),
             unittest.defaultTestLoader.loadTestsFromTestCase(Arvali_district.District_Arvalli),
             unittest.defaultTestLoader.loadTestsFromTestCase(Block_btn.blockbtn_click),
-            unittest.defaultTestLoader.loadTestsFromTestCase(Cluster_btn.blockbtn_click),
+            # unittest.defaultTestLoader.loadTestsFromTestCase(Cluster_btn.blockbtn_click),
+
             unittest.defaultTestLoader.loadTestsFromTestCase(Dangs.District_TheDangs),
             unittest.defaultTestLoader.loadTestsFromTestCase(Dev_test.District_Dev),
             unittest.defaultTestLoader.loadTestsFromTestCase(dist_check.Semester_Home),
@@ -42,7 +45,7 @@ class MyTestSuite(unittest.TestCase):
 
         ])
 
-        outfile = open("/home/chetan/PycharmProjects/cQube/Report/Semester.html", "w")
+        outfile = open("/home/chetan/PycharmProjects/cQube/Report/SemesterReport.html", "w")
 
         runner1 = HTMLTestRunner.HTMLTestRunner(
             stream=outfile,

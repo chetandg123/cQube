@@ -9,6 +9,8 @@ from Data.Paramters import Data
 
 class District_Ahmedabad(unittest.TestCase):
     def setUp(self):
+        time.sleep(3)
+
         self.driver = webdriver.Chrome(Data.Path)
         self.driver.maximize_window()
         self.driver.implicitly_wait(10)
